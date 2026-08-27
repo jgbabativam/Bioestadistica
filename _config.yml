@@ -1,0 +1,8 @@
+remote_theme: pages-themes/architect@v0.2.0
+
+plugins:
+  - jekyll-remote-theme
+
+title: Bioestadística
+description: Curso de Bioestadística
+show_downloads: false
