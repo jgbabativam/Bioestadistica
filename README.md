@@ -75,6 +75,21 @@ Video guía de instalación:
 
 ---
 
+## 📚 Material del curso
+
+
+
+| Tema | Materiales de apoyo | Material de clase |
+| :--- | :--- | :--- |
+| Bienvenida | - | [Ver diapositivas](https://jgbabativam.github.io/Bioestadistica/0.Bienvenida.html) |
+| Introducción | - | [Ver diapositivas](https://jgbabativam.github.io/Bioestadistica/1.Intro.html) |
+| Probabilidad | - | [Ver diapositivas](https://jgbabativam.github.io/Bioestadistica/2.Probabilidad.html) |
+| Variables aleatorias y <br> distribuciones de probabilidad | - | - |
+| Medidas Descriptivas | - | - |
+| Inferencia estadística | | - | - |
+
+---
+
 ## Citación y derechos de autor
 
 Material creado por [Giovany Babativa-Márquez](https://github.com/jgbabativam) para el curso *Bioestadística*. Se distribuye bajo la licencia [Creative Commons Attribution-ShareAlike 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Cualquier copia parcial o total debe citar al autor.
