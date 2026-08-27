@@ -2,6 +2,8 @@
 
 Repositorio con materiales académicos del curso **Bioestadística**, en este repositorio se incluyen diapositivas, guías, recursos en R y contenidos de apoyo para el aprendizaje de conceptos estadísticos aplicados a Biología, Farmacia, Química, Geología y demás áreas de las ciencias naturales.
 
+url del curso: https://jgbabativam.github.io/Bioestadistica/
+
 ---
 
 ## 📖 Descripción del Curso
