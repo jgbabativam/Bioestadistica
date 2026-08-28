@@ -90,6 +90,12 @@ Video guía de instalación:
 
 ---
 
+## 📄 Programa del curso
+
+* [Ver programa oficial del curso](Programa.pdf)
+
+---
+
 ## Citación y derechos de autor
 
 Material creado por [Giovany Babativa-Márquez](https://github.com/jgbabativam) para el curso *Bioestadística*. Se distribuye bajo la licencia [Creative Commons Attribution-ShareAlike 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Cualquier copia parcial o total debe citar al autor.
