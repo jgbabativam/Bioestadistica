@@ -153,6 +153,34 @@ Tipo: **Infinito no numerable (continuo)**
 
 :::
 
+## Tu turno 🌱
+
+En un ensayo de germinación se siembran **15 semillas** de una misma especie y se cuenta cuántas germinan.
+
+</br>
+
+**Pregunta:** Describa el espacio muestral $\Omega$ de este experimento e indique si es discreto finito, discreto infinito numerable o continuo.
+
+---
+
+### Solución
+
+Como se siembran 15 semillas, el número de semillas que germinan sólo puede tomar los valores enteros entre 0 y 15:
+
+$$
+\Omega = \{0, 1, 2, \dots, 15\}
+$$
+
+::: {.fragment}
+
+Tipo: **Discreto finito** (16 resultados posibles).
+
+</br>
+
+💡 A diferencia del conteo de colonias bacterianas (que no tiene un límite superior conocido), aquí el número de semillas sembradas **acota** el espacio muestral.
+
+:::
+
 ## σ-álgebra y eventos
 
 ### Definición
@@ -335,6 +363,38 @@ Encuentre: $A \cap B$, $B \cap C$, $A \cup C$, $B^c \cap A$, $A \cap B \cap C$, 
 
 ---
 
+## Tu turno 💊
+
+En una farmacia se revisan **50 fórmulas magistrales** preparadas en una semana:
+
+- 18 contienen un antibiótico ($A$)
+- 15 contienen un antiinflamatorio ($B$)
+- 6 contienen ambos ($A \cap B$)
+
+</br>
+
+**Preguntas:**
+
+a) ¿Cuántas fórmulas contienen antibiótico o antiinflamatorio (o ambos)?
+
+b) ¿Cuántas fórmulas no contienen ninguno de los dos?
+
+---
+
+### Solución
+
+a) $|A \cup B| = |A| + |B| - |A \cap B| = 18 + 15 - 6 = 27$ fórmulas.
+
+::: {.fragment}
+
+b) $|A^c \cap B^c| = 50 - |A \cup B| = 50 - 27 = 23$ fórmulas.
+
+</br>
+
+En términos de probabilidad: $P(A \cup B) = 27/50 = 0.54$ y $P(A^c \cap B^c) = 23/50 = 0.46$.
+
+:::
+
 ## Espacio de Probabilidad
 
 Un **espacio de probabilidad** es la tripleta: $(\Omega, \mathcal{F}, P)$
@@ -430,6 +490,32 @@ Si la probabilidad de que un lote de tabletas **no cumpla** el control de calida
 
 Entonces la probabilidad de que **sí cumpla** es: $$P(C^c) = 1 - P(C) = 0.9$$
 
+## Tu turno ⛏️
+
+En una campaña de perforación, la probabilidad de que un pozo **no** produzca agua es $P(N) = 0.35$. Además, la probabilidad de que un pozo sea profundo (más de 100 m) es $P(H) = 0.20$, y la probabilidad de que un pozo sea profundo **y** no produzca agua es $P(N \cap H) = 0.05$.
+
+</br>
+
+**Preguntas:**
+
+a) ¿Cuál es la probabilidad de que un pozo sí produzca agua?
+
+b) ¿Cuál es la probabilidad de que un pozo no produzca agua o sea profundo?
+
+---
+
+### Solución
+
+a) $P(N^c) = 1 - P(N) = 1 - 0.35 = 0.65$.
+
+::: {.fragment}
+
+b) Usando la regla de la unión:
+
+$$P(N \cup H) = P(N) + P(H) - P(N \cap H) = 0.35 + 0.20 - 0.05 = \boxed{0.50}$$
+
+:::
+
 # REGLAS DE CONTEO {background-color="#0077b6"}
 
 ## Teorema fundamental del conteo
@@ -490,9 +576,9 @@ Se usan cuando **el orden importa**
 
 Ejemplos donde el orden importa:
 
-- orden de análisis de muestras en el espectrofotómetro
 - orden de llegada en una carrera
 - orden de presentación de resultados en un congreso científico
+- placa de un vehículo
 
 ---
 
@@ -566,19 +652,95 @@ Ejemplos:
 
 ---
 
-### Ejercicios
+## Tu turno 1 ⚗️
 
-1. Un plan experimental incluye: 4 tipos de solvente, 3 catalizadores y 2 temperaturas de reacción. ¿Cuántos experimentos diferentes pueden diseñarse?
+Un plan experimental incluye: **4 tipos de solvente**, **3 catalizadores** y **2 temperaturas** de reacción.
 
+</br>
 
-2. En un laboratorio hay **5 muestras** esperando ser analizadas. ¿De cuántas formas distintas pueden ser analizadas?
+**Pregunta:** ¿Cuántos experimentos diferentes pueden diseñarse?
 
+---
 
-3. De **10 técnicos de laboratorio**, se deben elegir **4** para un equipo de investigación. ¿Cuántos equipos diferentes pueden formarse?
+### Solución 1
 
-4. En un laboratorio hay **6 reactivos** disponibles. ¿De cuántas maneras se pueden elegir **2 reactivos** para un ensayo?
+Es un proceso que ocurre en **3 etapas** (solvente, catalizador, temperatura), así que se aplica la **regla de la multiplicación**:
 
-5. Tres muestras deben analizarse en **3 equipos diferentes**. ¿De cuántas maneras pueden asignarse?
+$$4 \times 3 \times 2 = \boxed{24}$$
+
+Hay **24 experimentos diferentes** posibles.
+
+## Tu turno 2 🧬
+
+En un laboratorio de biología molecular hay **5 muestras de tejido** esperando ser analizadas en secuencia.
+
+</br>
+
+**Pregunta:** ¿De cuántas formas distintas pueden ordenarse las 5 muestras para su análisis?
+
+---
+
+### Solución 2
+
+Aquí **el orden importa** (es una secuencia de análisis), así que se usa una **permutación** de 5 elementos:
+
+$$5! = 5\times4\times3\times2\times1 = \boxed{120}$$
+
+Hay **120 formas diferentes** de ordenar las muestras.
+
+## Tu turno 3 🪨
+
+De **10 muestras de roca** recolectadas en campo, se deben elegir **4** para enviar a datación radiométrica.
+
+</br>
+
+**Pregunta:** ¿Cuántos grupos diferentes de 4 muestras pueden formarse?
+
+---
+
+### Solución 3
+
+Aquí **el orden NO importa** (sólo interesa qué muestras se eligen), así que se usa una **combinación**:
+
+$${10 \choose 4} = \frac{10!}{4!\,6!} = \boxed{210}$$
+
+Hay **210 grupos diferentes** posibles.
+
+## Tu turno 4 💊
+
+Un laboratorio farmacéutico dispone de **6 excipientes**. Para un nuevo ensayo se deben elegir **2** de ellos.
+
+</br>
+
+**Pregunta:** ¿De cuántas maneras se pueden elegir los 2 excipientes?
+
+---
+
+### Solución 4
+
+Elegir 2 de 6 sin importar el orden es una **combinación**:
+
+$${6 \choose 2} = \frac{6!}{2!\,4!} = \boxed{15}$$
+
+Hay **15 formas diferentes** de elegir los excipientes.
+
+## Tu turno 5 🪨
+
+**Tres núcleos de perforación** deben analizarse en **3 laboratorios diferentes**, uno por laboratorio.
+
+</br>
+
+**Pregunta:** ¿De cuántas maneras pueden asignarse los 3 núcleos a los 3 laboratorios?
+
+---
+
+### Solución 5
+
+Cada núcleo ocupa un laboratorio distinto: es una asignación uno-a-uno, equivalente a ordenar 3 elementos:
+
+$$3! = 3\times2\times1 = \boxed{6}$$
+
+Hay **6 formas diferentes** de asignar los núcleos a los laboratorios.
 
 # PROBABILIDAD CONDICIONAL {background-color="#0077b6"}
 
@@ -856,38 +1018,38 @@ $$P(+\mid D^c) = 1 - 0.88 = 0.12$$
 
 :::
 
+
+
+## Tu turno ⛏️
+
+Se aplica una prueba de campo para detectar **oro** en 200 muestras de sedimento:
+
+- De las **40 muestras** que realmente contienen oro, **36** dan resultado positivo.
+- De las **160 muestras** sin oro, **24** dan (falsamente) resultado positivo.
+
+</br>
+
+**Preguntas:**
+
+a) Calcule $P(+ \mid \text{Oro})$ (sensibilidad de la prueba).
+
+b) Calcule $P(+ \mid \text{No oro})$ (tasa de falsos positivos).
+
 ---
 
-### Interpretación de los resultados
+### Solución
 
-```{r}
-#| echo: false
-#| fig-align: center
-#| fig-height: 3.5
-#| fig-width: 9
+a) $P(+ \mid \text{Oro}) = \dfrac{36}{40} = \boxed{0.90}$
 
-mat <- data.frame(
-  resultado  = factor(c("Positivo","Negativo","Positivo","Negativo"),
-                      levels = c("Positivo","Negativo")),
-  estado     = c("Contaminada","Contaminada","No contaminada","No contaminada"),
-  prob       = c(0.092, 0.008, 0.108, 0.792),
-  color      = c("#C62828","#EF9A9A","#42A5F5","#BBDEFB")
-)
+::: {.fragment}
 
-ggplot(mat, aes(x = resultado, y = estado)) +
-  geom_tile(aes(fill = color), color = "white", linewidth = 2) +
-  geom_text(aes(label = paste0("P = ", prob)),
-            size = 6, fontface = "bold", color = "white") +
-  scale_fill_identity() +
-  theme_minimal(base_size = 13) +
-  labs(x = "Resultado de la prueba", y = "",
-       title = "Probabilidades conjuntas P(Contaminación ∩ Resultado)") +
-  theme(plot.title       = element_text(hjust = 0.5, face = "bold"),
-        panel.grid       = element_blank(),
-        axis.text        = element_text(size = 12, face = "bold"))
-```
+b) $P(+ \mid \text{No oro}) = \dfrac{24}{160} = \boxed{0.15}$
 
-Recuerda que: $$P(A \cap B) = P(A|B) \cdot P(B) = P(B|A)  \cdot P(A)$$
+</br>
+
+La prueba detecta correctamente el 90% de las muestras con oro, pero también da falsos positivos en el 15% de las muestras sin oro.
+
+:::
 
 ## Ejemplo 2: Factores de riesgo en un cultivo
 
@@ -982,6 +1144,35 @@ $$RR = \frac{0.04}{0.16} = 0.25$$
 
 :::
 
+## Tu turno 🔬
+
+En un ensayo con **400 parcelas** se analiza el uso de un **biofertilizante** y el **bajo rendimiento** del cultivo:
+
+| | **Bajo rendimiento** | **Rendimiento normal** | **Total** |
+|:--|:---:|:---:|:---:|
+| **Tratada** | 18 | 132 | 150 |
+| **No tratada** | 60 | 190 | 250 |
+| **Total** | 78 | 322 | 400 |
+
+</br>
+
+**Preguntas:** a) Calcule $P(\text{Bajo} \mid \text{Tratada})$ y $P(\text{Bajo} \mid \text{No tratada})$. b) ¿El biofertilizante y el bajo rendimiento son independientes?
+
+---
+
+### Solución
+
+a) $P(\text{Bajo} \mid \text{Tratada}) = \dfrac{18}{150} = 0.12$; $\quad P(\text{Bajo} \mid \text{No tratada}) = \dfrac{60}{250} = 0.24$
+
+::: {.fragment}
+
+b) $P(\text{Bajo}) = \dfrac{78}{400} = 0.195$. Como $P(\text{Bajo}\mid\text{Tratada}) = 0.12 \neq P(\text{Bajo}) = 0.195$, **no son independientes**.
+
+</br>
+
+El biofertilizante **reduce a la mitad** el riesgo de bajo rendimiento: $RR = 0.12/0.24 = \boxed{0.5}$
+
+:::
 
 # PROBABILIDAD TOTAL {background-color="#0077b6"}
 
@@ -1125,6 +1316,34 @@ $$P(R) = 0.09+0.12+0.07 = \boxed{0.28}$$
 </br>
 
 El **28%** de las muestras del laboratorio requieren reanálisis.
+
+:::
+
+## Tu turno 🌱
+
+Un vivero clasifica sus semillas en tres lotes:
+
+- Lote A: 50% de las semillas. Germina el 90%.
+- Lote B: 30% de las semillas. Germina el 75%.
+- Lote C: 20% de las semillas. Germina el 60%.
+
+</br>
+
+**Pregunta:** ¿Cuál es la probabilidad de que una semilla elegida al azar germine?
+
+---
+
+### Solución
+
+$$P(G) = (0.90)(0.50) + (0.75)(0.30) + (0.60)(0.20)$$
+
+::: {.fragment}
+
+$$P(G) = 0.450 + 0.225 + 0.120 = \boxed{0.795}$$
+
+</br>
+
+El **79.5%** de las semillas del vivero germinan.
 
 :::
 
@@ -1291,6 +1510,28 @@ El Proveedor C concentra el **47.6% de los defectos**, aunque solo aporta el 25%
 
 :::
 
+## Tu turno 🌱
+
+Retome el ejemplo del vivero: Lote A (50%, germina 90%), Lote B (30%, germina 75%), Lote C (20%, germina 60%), con $P(\text{Germina}) = 0.795$.
+
+</br>
+
+**Pregunta:** Si una semilla germinó, ¿cuál es la probabilidad de que proviniera del **Lote C**?
+
+---
+
+### Solución
+
+$$P(C \mid G) = \frac{P(G\mid C)\cdot P(C)}{P(G)} = \frac{(0.60)(0.20)}{0.795} = \frac{0.120}{0.795} \approx \boxed{0.151}$$
+
+::: {.fragment}
+
+</br>
+
+Antes de observar el resultado, $P(C) = 0.20$ (20%). Después de saber que la semilla germinó, esa probabilidad **baja** a 15.1%: es menos probable que una semilla germinada provenga del lote de peor calidad.
+
+:::
+
 ## Ejemplo 2: Valor Predictivo Positivo
 
 Una **prueba rápida de laboratorio** para detectar residuos de un plaguicida prohibido en muestras de fruta tiene las siguientes características:
@@ -1333,43 +1574,6 @@ $$P(C\mid +) = \frac{P(+\mid C)\cdot P(C)}{P(+)} = \frac{(0.95)(0.01)}{0.1085} \
 
 :::
 
----
-
-### La paradoja del falso positivo
-
-```{r}
-#| echo: false
-#| fig-align: center
-#| fig-height: 6.6
-#| fig-width: 10
-
-# Simulated population of 10 000
-pob <- data.frame(
-  grupo = c("Verdadero positivo\n(contaminada, test +)",
-            "Falso positivo\n(no contaminada, test +)",
-            "Falso negativo\n(contaminada, test -)",
-            "Verdadero negativo\n(no contaminada, test -)"),
-  n     = c(95, 990, 5, 8910),
-  color = c("#C62828","#EF9A9A","#81C784","#1B5E20"),
-  tipo  = c("Test Positivo","Test Positivo","Test Negativo","Test Negativo")
-)
-
-ggplot(pob, aes(x = tipo, y = n, fill = color)) +
-  geom_col(position = "stack", color = "white", linewidth = 1.2) +
-  geom_text(aes(label = paste0(grupo, "\nn = ", n)),
-            position = position_stack(vjust = 0.5),
-            size = 3.2, fontface = "bold",
-            color = c("white","#7B0000","white","white")) +
-  scale_fill_identity() +
-  scale_y_continuous(labels = function(x) paste0(x/100, "%  (", x, ")")) +
-  theme_minimal(base_size = 12) +
-  labs(x = "", y = "Muestras (de 10000)",
-       title    = "Distribucion de 10000 muestras sometidas a la prueba",
-       subtitle = "De los 1085 tests positivos, solo 95 estan realmente contaminadas (8.75%)") +
-  theme(plot.title    = element_text(hjust = 0.5, face = "bold"),
-        plot.subtitle = element_text(hjust = 0.5, color = "#C62828"),
-        panel.grid.minor = element_blank())
-```
 
 ---
 
@@ -1426,6 +1630,34 @@ ggplot(df_vpp, aes(x = prevalencia, y = VPP)) +
 
 > Con **Bayes** se actualiza la probabilidad de contaminación con base en los resultados de las pruebas.
 
+## Tu turno 🥛
+
+Una prueba para detectar **residuos de antibióticos** en leche cruda tiene sensibilidad del 90% y especificidad del 95%. La prevalencia de contaminación en los tanques analizados es del 2%.
+
+</br>
+
+**Pregunta:** Si un tanque da resultado positivo, ¿cuál es la probabilidad de que realmente esté contaminado (VPP)?
+
+---
+
+### Solución
+
+**Paso 1 — Probabilidad total de positivo:**
+
+$$P(+) = (0.90)(0.02) + (0.05)(0.98) = 0.018 + 0.049 = 0.067$$
+
+::: {.fragment}
+
+**Paso 2 — Teorema de Bayes:**
+
+$$P(C\mid +) = \frac{(0.90)(0.02)}{0.067} = \frac{0.018}{0.067} \approx \boxed{0.269}$$
+
+</br>
+
+Aunque el test es positivo, sólo hay **26.9% de probabilidad** de que el tanque esté realmente contaminado: de nuevo, la baja prevalencia hace que la mayoría de los positivos sean falsos.
+
+:::
+
 # GRACIAS! {background-color="#ddf3ff"}
 
 
@@ -1435,4 +1667,4 @@ Este material ha sido creado por [Giovany Babativa-Márquez](https://github.com/
 
 Cualquier copia parcial o total de este material, debe citar la fuente como:
 
-> Babativa-Márquez, J.G. *Diapositivas del curso de Bioestadística*. URL: https://jgbabativam.github.io/EstadFundSalud/
+> Babativa-Márquez, J.G. *Diapositivas del curso de Bioestadística*. URL: https://jgbabativam.github.io/Bioestadistica/
