@@ -84,7 +84,7 @@ Video guía de instalación:
 | Bienvenida | - | [Ver diapositivas](https://jgbabativam.github.io/Bioestadistica/0.Bienvenida.html) |
 | Introducción | - | [Ver diapositivas](https://jgbabativam.github.io/Bioestadistica/1.Intro.html) |
 | Probabilidad | [Taller 1](https://jgbabativam.github.io/Bioestadistica/Talleres/1Taller.pdf) | [Ver diapositivas](https://jgbabativam.github.io/Bioestadistica/2.Probabilidad.html) |
-| Variables aleatorias y <br> distribuciones de probabilidad | - | - |
+| Variables aleatorias y <br> distribuciones de probabilidad | - | [Ver diapositivas](https://jgbabativam.github.io/Bioestadistica/3.VariablesAleatorias.html) |
 | Medidas Descriptivas | - | - |
 | Inferencia estadística | | - | - |
 

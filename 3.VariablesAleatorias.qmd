@@ -1,0 +1,1941 @@
+---
+title: "Bioestadística"
+subtitle: "Variables Aleatorias y Distribuciones de Probabilidad"
+author:
+    name: Giovany Babativa-Márquez, PhD
+    email: jgbabativam@unal.edu.co
+format:
+  gbabativa-revealjs:
+    footer: "Diapositivas disponibles en [GitHub](https://github.com/jgbabativam)."
+    logo: "images/UNAL.png"
+incremental: false
+embed-resources: true
+highlight-style: dracula
+execute:
+  echo: false
+  eval: true
+filters:
+  - webr
+revealjs-plugins:
+  - drop
+---
+
+```{r}
+library(pacman)
+p_load(here, ggplot2, dplyr, tidyr)
+```
+
+\newcommand\norm[1]{\left\lVert#1\right\rVert}
+
+# VARIABLES ALEATORIAS {background-color="#0077b6"}
+
+## ¿Qué es una Variable Aleatoria?
+
+### Definición formal
+
+<div style="text-align: justify;">
+
+Una **variable aleatoria** $X$ es una función que asigna un valor numérico a cada resultado de un experimento aleatorio:
+
+$$X : \Omega \longrightarrow \mathbb{R}$$
+
+</div>
+
+::: {.fragment}
+
+::: {.callout-tip}
+
+Cuando realizamos un ensayo de laboratorio, el resultado es incierto antes de hacerlo. La **variable aleatoria** es el mecanismo que convierte ese resultado en un número con el que podemos operar matemáticamente.
+
+:::
+
+:::
+
+---
+
+### Ejemplos en Ciencias Experimentales
+
+</br>
+
+<div style="font-size:0.75em; line-height:1.1;">
+
+| Experimento | Variable aleatoria $X$ | Valores posibles |
+|-------------|----------------------|-----------------|
+| Pesar una muestra en la balanza analítica | Peso (g) | $[0, +\infty)$ |
+| Sembrar una placa de Petri | Número de colonias bacterianas | $0, 1, 2, \ldots$ |
+| Realizar una reacción química | Tiempo de reacción (min) | $(0, +\infty)$ |
+| Aplicar una prueba de control de calidad | Resultado (aprobado/rechazado) | $\{0, 1\}$ |
+| Monitorear un lote de producción | Unidades defectuosas | $0, 1, \ldots, n$ |
+
+</div>
+
+## Tipos de Variables Aleatorias {style="font-size: 90%;"}
+
+::: columns
+
+::: {.column width="50%"}
+
+### Discreta
+
+Toma valores **contables** (finitos o infinito numerable):
+
+$$X \in \{x_1, x_2, x_3, \ldots\}$$
+
+**Ejemplos experimentales:**
+
+- Número de colonias bacterianas en una placa
+- Número de tabletas defectuosas por lote
+- Conteo de eventos de contaminación por semana
+
+:::
+
+::: {.column width="50%"}
+
+### Continua
+
+Toma valores en un **intervalo** de $\mathbb{R}$ (infinito no numerable):
+
+$$X \in (a, b) \subseteq \mathbb{R}$$
+
+**Ejemplos experimentales:**
+
+- Concentración de un analito (mg/L)
+- pH de una disolución
+- Peso de una muestra (g)
+- Tiempo de reacción (horas)
+
+:::
+
+:::
+
+## Ejemplo: Discreta o continua? {style="font-size: 90%;"}
+
+En una campaña de muestreo ambiental se registran varias variables. Clasifiquémoslas:
+
+::: {.fragment}
+- Número de macroinvertebrados capturados en una red de arrastre $\rightarrow$ toma valores $0,1,2,\ldots$ $\Rightarrow$ **discreta**
+:::
+
+::: {.fragment}
+- Concentración de oxígeno disuelto en el agua (mg/L) $\rightarrow$ toma cualquier valor en un intervalo $\Rightarrow$ **continua**
+:::
+
+::: {.fragment}
+- Número de especies vegetales identificadas en una parcela $\rightarrow$ conteo $\Rightarrow$ **discreta**
+:::
+
+::: {.fragment}
+- Profundidad (m) a la que se encuentra una capa rocosa $\rightarrow$ intervalo de $\mathbb{R}$ $\Rightarrow$ **continua**
+:::
+
+## Tu turno: Discreta o continua? {style="font-size: 95%;"}
+
+::: {.callout-warning title="Tu turno"}
+
+Para cada variable, indica si es **discreta** o **continua** y justifica en una frase.
+
+**Ejercicio 1.** Un laboratorio de farmacia registra:
+
+a) El número de comprimidos rotos en una caja de 100.
+b) La concentración de un excipiente en una solución (mg/mL).
+c) El número de pacientes que reportan un efecto adverso en un ensayo clínico.
+
+**Ejercicio 2.** Un geólogo en campo registra:
+
+a) El pH de una muestra de agua subterránea.
+b) El número de fósiles encontrados en un estrato.
+c) La masa (g) de un mineral extraído.
+
+:::
+
+## Solución {style="font-size: 90%;"}
+
+::: {.fragment}
+
+**Ejercicio 1**
+
+a) Discreta (conteo: $0,1,\ldots,100$) $\quad$ b) Continua (intervalo de $\mathbb{R}^+$) $\quad$ c) Discreta (conteo)
+
+:::
+
+::: {.fragment}
+
+**Ejercicio 2**
+
+a) Continua (intervalo de $\mathbb{R}^+$) $\quad$ b) Discreta (conteo) $\quad$ c) Continua (intervalo de $\mathbb{R}^+$)
+
+:::
+
+## Función de Distribución Acumulada (FDA) {style="font-size: 90%;"}
+
+### Definición
+
+Para cualquier variable aleatoria $X$ (discreta o continua), la **función de distribución acumulada** es:
+
+$$\boxed{F(x) = P(X \leq x), \quad x \in \mathbb{R}}$$
+
+::: {.fragment}
+
+### Propiedades
+
+- $0 \leq F(x) \leq 1$ para todo $x$
+- $F$ es **no decreciente**: si $a < b$ entonces $F(a) \leq F(b)$
+- $\displaystyle\lim_{x \to -\infty} F(x) = 0$ y $\displaystyle\lim_{x \to +\infty} F(x) = 1$
+- $P(a < X \leq b) = F(b) - F(a)$
+
+:::
+
+## Ejemplo: FDA de partículas contaminantes {style="font-size: 85%;"}
+
+En un filtro de agua se cuenta el número $X$ de partículas contaminantes retenidas, con función de probabilidad:
+
+| $x$ | 0 | 1 | 2 | 3 | 4 |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| $p(x)$ | 0.10 | 0.30 | 0.35 | 0.15 | 0.10 |
+
+::: {.fragment}
+
+**Construyendo la FDA:**
+
+| $x$ | 0 | 1 | 2 | 3 | 4 |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| $F(x)$ | 0.10 | 0.40 | 0.75 | 0.90 | 1.00 |
+
+:::
+
+::: {.fragment}
+
+$P(X > 2) = 1 - F(2) = 1 - 0.75 = \mathbf{0.25}$
+$P(1 < X \leq 3) = F(3) - F(1) = 0.90 - 0.40 = \mathbf{0.50}$
+
+:::
+
+## Tu turno: Calculando la FDA {style="font-size: 95%;"}
+
+::: {.callout-warning title="Tu turno"}
+
+**Ejercicio 1.** En una parcela de muestreo se registra el número $X$ de suelos que exceden un umbral de contaminación (de 4 evaluados):
+
+| $x$ | 0 | 1 | 2 | 3 | 4 |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| $p(x)$ | 0.10 | 0.30 | 0.35 | 0.15 | 0.10 |
+
+Construye $F(x)$ y calcula $P(X > 2)$ y $P(1 < X \leq 3)$.
+
+**Ejercicio 2.** El número $X$ de brotes florales dañados por granizo en una planta tiene:
+
+| $x$ | 0 | 1 | 2 | 3 |
+|:---:|:---:|:---:|:---:|:---:|
+| $p(x)$ | 0.45 | 0.30 | 0.15 | 0.10 |
+
+Construye $F(x)$ y calcula $P(X \geq 2)$ y $P(X < 3)$.
+
+:::
+
+## Solución {style="font-size: 85%;"}
+
+::: {.fragment}
+
+**Ejercicio 1:** Es la misma distribución del ejemplo anterior $\Rightarrow$ $P(X>2) = 0.25$, $\quad P(1 < X \leq 3) = 0.50$
+
+:::
+
+::: {.fragment}
+
+**Ejercicio 2:**
+
+| $x$ | 0 | 1 | 2 | 3 |
+|:---:|:---:|:---:|:---:|:---:|
+| $F(x)$ | 0.45 | 0.75 | 0.90 | 1.00 |
+
+$$P(X \geq 2) = 1 - F(1) = 1 - 0.75 = \mathbf{0.25} \qquad P(X < 3) = F(2) = \mathbf{0.90}$$
+
+:::
+
+# VARIABLES DISCRETAS {background-color="#0077b6"}
+
+## Función de Probabilidad Puntual (FPP) {style="font-size: 90%;"}
+
+### Definición
+
+Para una variable aleatoria discreta $X$, la **función de probabilidad puntual** se define como:
+
+$$\boxed{p(x) = P(X = x)}$$
+
+::: {.fragment}
+
+### Propiedades
+
+1. $p(x) \geq 0$, $\forall x$
+2. $\displaystyle\sum_{x} p(x) = 1$
+3. $P(X \in A) = \displaystyle\sum_{x \in A} p(x)$
+
+:::
+
+## Ejemplo: Tabletas defectuosas por lote
+
+En una línea de producción farmacéutica se registra el número de **tabletas defectuosas** $X$ detectadas durante un lote de producción de 8 horas:
+
+| $x$ | 0 | 1 | 2 | 3 | 4 |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| $p(x)$ | 0.30 | 0.35 | 0.20 | 0.10 | 0.05 |
+
+::: {.fragment}
+
+**Verificación:**
+
+$$\sum p(x) = 0.30 + 0.35 + 0.20 + 0.10 + 0.05 = 1 \checkmark$$
+
+:::
+
+---
+
+### Cálculo de probabilidades
+
+Con la distribución de tabletas defectuosas:
+
+$$P(X \geq 2) = p(2) + p(3) + p(4) = 0.20 + 0.10 + 0.05 = \mathbf{0.35}$$
+
+::: {.fragment}
+
+$$P(1 \leq X \leq 3) = p(1) + p(2) + p(3) = 0.35 + 0.20 + 0.10 = \mathbf{0.65}$$
+
+:::
+
+::: {.fragment}
+
+$$P(X < 2) = p(0) + p(1) = 0.30 + 0.35 = \mathbf{0.65}$$
+
+:::
+
+## Representación gráfica de la FPP
+
+```{r}
+#| echo: false
+#| fig-align: center
+#| fig-height: 4.2
+#| fig-width: 9
+
+df_ea <- data.frame(x = 0:4,
+                    prob = c(0.30, 0.35, 0.20, 0.10, 0.05))
+
+ggplot(df_ea, aes(x = factor(x), y = prob)) +
+  geom_col(fill = "#1565C0", color = "white", width = 0.55, alpha = 0.85) +
+  geom_text(aes(label = prob), vjust = -0.4, size = 5, fontface = "bold",
+            color = "#1565C0") +
+  scale_y_continuous(limits = c(0, 0.42),
+                     labels = function(x) paste0(x * 100, "%")) +
+  theme_minimal(base_size = 13) +
+  labs(x = "Número de tabletas defectuosas (X)",
+       y = "Probabilidad P(X = x)",
+       title = "Distribución de probabilidad: tabletas defectuosas por lote") +
+  theme(plot.title = element_text(hjust = 0.5, face = "bold"),
+        panel.grid.minor = element_blank(),
+        panel.grid.major.x = element_blank())
+```
+
+## Tu turno: Función de probabilidad puntual {style="font-size: 95%;"}
+
+::: {.callout-warning title="Tu turno"}
+
+**Ejercicio 1.** De 3 semillas sembradas de un lote, el número $X$ de semillas viables tiene función de probabilidad:
+
+| $x$ | 0 | 1 | 2 | 3 |
+|:---:|:---:|:---:|:---:|:---:|
+| $p(x)$ | 0.05 | 0.20 | 0.35 | 0.40 |
+
+Verifica que es una FPP válida y calcula $P(X \geq 2)$ y $P(X \leq 1)$.
+
+**Ejercicio 2.** En una roca se identifica el número $X$ de tipos de minerales presentes:
+
+| $x$ | 0 | 1 | 2 | 3 | 4 |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| $p(x)$ | 0.02 | 0.18 | 0.40 | 0.30 | 0.10 |
+
+Calcula $P(X = 3)$, $P(1 \leq X \leq 3)$ y $P(X > 2)$.
+
+:::
+
+## Solución {style="font-size: 85%;"}
+
+::: {.fragment}
+
+**Ejercicio 1:** $\sum p(x) = 0.05+0.20+0.35+0.40 = 1\ \checkmark$
+
+$$P(X \geq 2) = 0.35 + 0.40 = \mathbf{0.75} \qquad P(X \leq 1) = 0.05 + 0.20 = \mathbf{0.25}$$
+
+:::
+
+::: {.fragment}
+
+**Ejercicio 2:**
+
+$$P(X = 3) = \mathbf{0.30}$$
+
+$$P(1 \leq X \leq 3) = 0.18+0.40+0.30 = \mathbf{0.88}$$
+
+$$P(X > 2) = 0.30+0.10 = \mathbf{0.40}$$
+
+:::
+
+# VARIABLES CONTINUAS {background-color="#0077b6"}
+
+## Función de Densidad de Probabilidad (FDP)
+
+### Definición
+
+Para una variable aleatoria continua $X$, la **función de densidad de probabilidad** $f(x)$ satisface:
+
+$$\boxed{P(a \leq X \leq b) = \int_a^b f(x)\, dx}$$
+
+---
+
+::: {.fragment}
+
+### Propiedades
+
+1. $f(x) \geq 0$ para todo $x$
+2. $\displaystyle\int_{-\infty}^{+\infty} f(x)\, dx = 1$
+3. **Importante:** $P(X = x) = 0$ para cualquier valor puntual
+4. $P(a < X < b) = P(a \leq X \leq b) = F(b) - F(a)$
+
+:::
+
+## Interpretación gráfica
+
+```{r}
+#| echo: false
+#| fig-align: center
+#| fig-height: 6.5
+#| fig-width: 12
+
+x_vals <- seq(0, 20, length.out = 500)
+fx <- dexp(x_vals, rate = 1/5)
+
+df_dens <- data.frame(x = x_vals, fx = fx)
+df_shade <- data.frame(x = x_vals[x_vals >= 3 & x_vals <= 8],
+                       fx = fx[x_vals >= 3 & x_vals <= 8])
+
+ggplot(df_dens, aes(x, fx)) +
+  geom_area(data = df_shade, aes(x = x, y = fx),
+            fill = "#1565C0", alpha = 0.35) +
+  geom_line(color = "#1565C0", linewidth = 1.8) +
+  geom_vline(xintercept = c(3, 8), linetype = "dashed",
+             color = "#C62828", linewidth = 1.0) +
+  annotate("text", x = 5.5, y = 0.035, size = 5.5, fontface = "bold",
+           color = "#1565C0",
+           label = "P(3 ≤ X ≤ 8) = ∫ f(x)dx") +
+  annotate("text", x = 2.6, y = -0.004, label = "3", size = 4.5,
+           color = "#C62828", fontface = "bold") +
+  annotate("text", x = 8.4, y = -0.004, label = "8", size = 4.5,
+           color = "#C62828", fontface = "bold") +
+  scale_y_continuous(limits = c(-0.008, 0.24)) +
+  theme_minimal(base_size = 13) +
+  labs(x = "Tiempo hasta degradación de la muestra (días)",
+       y = "Densidad f(x)",
+       title = "La probabilidad es el área bajo la curva de densidad") +
+  theme(plot.title    = element_text(hjust = 0.5, face = "bold"),
+        panel.grid.minor = element_blank())
+```
+
+## Ejemplo: Tiempo hasta la degradación de una muestra
+
+El tiempo $X$ (en días) hasta que una muestra biológica conservada en refrigeración muestra signos de degradación sigue una distribución con densidad:
+
+$$f(x) = \frac{1}{5} e^{-x/5}, \quad x > 0$$
+
+::: {.fragment}
+
+**¿Cuál es la probabilidad de que se degrade en menos de 3 días?**
+
+$$P(X < 3) = \int_0^3 \frac{1}{5} e^{-x/5}\, dx = 1 - e^{-3/5} \approx 0.451$$
+
+:::
+
+::: {.fragment}
+
+**¿Y entre 5 y 10 días?**
+
+$$P(5 < X < 10) = e^{-1} - e^{-2} \approx 0.368 - 0.135 = 0.233$$
+
+:::
+
+## Tu turno: Función de densidad {style="font-size: 98%;"}
+
+::: {.callout-warning title="Tu turno"}
+
+**Ejercicio 1.** El tiempo adicional $X$ (minutos) que tarda un reactivo en alcanzar la temperatura de trabajo sigue una densidad **uniforme**:
+
+$$f(x) = \frac{1}{10}, \quad 0 < x < 10$$
+
+Calcula $P(2 < X < 5)$ y $P(X > 8)$.
+
+**Ejercicio 2.** El tamaño de grano $X$ (mm) de un sedimento en cierto yacimiento sigue la densidad:
+
+$$f(x) = \frac{x}{8}, \quad 0 < x < 4$$
+
+Verifica que $\int_0^4 f(x)\,dx = 1$ y calcula $P(X < 2)$ y $P(1 < X < 3)$.
+
+:::
+
+## Solución {style="font-size: 80%;"}
+
+::: {.fragment}
+
+**Ejercicio 1:**
+
+$$P(2 < X < 5) = \int_2^5 \frac{1}{10}\,dx = \frac{5-2}{10} = \mathbf{0.30} \qquad P(X > 8) = \int_8^{10} \frac{1}{10}\,dx = \frac{2}{10} = \mathbf{0.20}$$
+
+:::
+
+::: {.fragment}
+
+**Ejercicio 2:** $\displaystyle\int_0^4 \frac{x}{8}\,dx = \left.\frac{x^2}{16}\right|_0^4 = \frac{16}{16} = 1\ \checkmark$
+
+$$P(X<2) = \int_0^2 \frac{x}{8}\,dx = \frac{4}{16} = \mathbf{0.25} \qquad P(1<X<3) = \int_1^3 \frac{x}{8}\,dx = \frac{9-1}{16} = \mathbf{0.50}$$
+
+:::
+
+# VALOR ESPERADO {background-color="#0077b6"}
+
+## Definición: Valor Esperado
+
+El **valor esperado** (o media) de una variable aleatoria $X$ mide su valor promedio en el largo plazo.
+
+::: columns
+
+::: {.column width="50%"}
+
+### Variable discreta
+
+$$\boxed{E[X] = \sum_{x} x \cdot p(x)}$$
+
+:::
+
+::: {.column width="50%"}
+
+### Variable continua
+
+$$\boxed{E[X] = \int_{-\infty}^{+\infty} x \cdot f(x)\, dx}$$
+
+:::
+
+:::
+
+::: {.fragment}
+
+> **Interpretación:** Si observamos el mismo proceso experimental muchas veces, $E[X]$ es el promedio de los resultados que obtendríamos.
+
+:::
+
+## Ejemplo: Tabletas defectuosas
+
+Retomando la distribución de tabletas defectuosas por lote:
+
+| $x$ | 0 | 1 | 2 | 3 | 4 |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| $p(x)$ | 0.30 | 0.35 | 0.20 | 0.10 | 0.05 |
+
+::: {.fragment}
+
+$$E[X] = 0(0.30) + 1(0.35) + 2(0.20) + 3(0.10) + 4(0.05)$$
+
+$$E[X] = 0 + 0.35 + 0.40 + 0.30 + 0.20 = \mathbf{1.25}$$
+
+:::
+
+::: {.fragment}
+
+**Interpretación:** En promedio se producen **1.25 tabletas defectuosas** por lote de producción de 8 horas.
+
+:::
+
+## Ejemplo: Valor esperado de una variable continua {style="font-size: 95%;"}
+
+El tiempo de reacción $X$ (minutos) de una enzima sigue una distribución **uniforme** entre 2 y 6 minutos:
+
+$$f(x) = \frac{1}{4}, \quad 2 < x < 6$$
+
+::: {.fragment}
+
+$$E[X] = \int_{2}^{6} x \cdot \frac{1}{4}\, dx = \frac{1}{4}\left[\frac{x^2}{2}\right]_2^6 = \frac{1}{4}(18 - 2) = \mathbf{4} \text{ minutos}$$
+
+:::
+
+::: {.fragment}
+
+**Interpretación:** Coincide con el punto medio del intervalo, $\frac{2+6}{2} = 4$, como es de esperarse en una distribución uniforme.
+
+:::
+
+## Propiedades del Valor Esperado
+
+Sea $X$, $Y$ variables aleatorias y $a$, $b$ constantes:
+
+1. $E[a] = a$
+2. $E[aX] = a \cdot E[X]$
+3. $E[X + b] = E[X] + b$
+
+::: {.fragment}
+
+4. **Linealidad:** $E[aX + b] = a \cdot E[X] + b$
+5. **Aditividad:** $E[X + Y] = E[X] + E[Y]$ (siempre)
+6. Si $X$ e $Y$ son independientes: $E[XY] = E[X] \cdot E[Y]$
+
+:::
+
+---
+
+### Aplicación experimental: Transformación de escala
+
+La **concentración de un analito** en una muestra tiene $E[C] = 72$ mg/L.
+
+::: {.fragment}
+
+Si medimos en otra escala (por ejemplo, tras una dilución y un ajuste): $C^* = 0.5 \cdot C + 10$:
+
+$$E[C^*] = 0.5 \cdot E[C] + 10 = 0.5 \cdot 72 + 10 = \mathbf{46}$$
+
+:::
+
+::: {.fragment}
+
+Si registramos la **suma** de concentraciones de 3 muestras:
+
+$$E[C_1 + C_2 + C_3] = E[C_1] + E[C_2] + E[C_3] = 72 + 72 + 72 = \mathbf{216}$$
+
+:::
+
+## Tu turno: Valor esperado {style="font-size: 98%;"}
+
+::: {.callout-warning title="Tu turno"}
+
+**Ejercicio 1.** De una camada de 3 crías, el número $X$ que sobrevive tiene:
+
+| $x$ | 0 | 1 | 2 | 3 |
+|:---:|:---:|:---:|:---:|:---:|
+| $p(x)$ | 0.10 | 0.25 | 0.35 | 0.30 |
+
+Calcula $E[X]$.
+
+**Ejercicio 2.** Una variable $X \in (0,1)$ tiene densidad $f(x) = 3x^2$.
+
+Calcula $E[X]$.
+
+:::
+
+## Solución {style="font-size: 85%;"}
+
+::: {.fragment}
+
+**Ejercicio 1:**
+
+$$E[X] = 0(0.10)+1(0.25)+2(0.35)+3(0.30) = 0+0.25+0.70+0.90 = \mathbf{1.85} \text{ crías}$$
+
+:::
+
+::: {.fragment}
+
+**Ejercicio 2:**
+
+$$E[X] = \int_0^1 x \cdot 3x^2\, dx = \int_0^1 3x^3\, dx = \left.\frac{3x^4}{4}\right|_0^1 = \mathbf{0.75}$$
+
+:::
+
+# VARIANZA Y DESVIACIÓN ESTÁNDAR {background-color="#0077b6"}
+
+## Definición: Varianza {style="font-size: 90%;"}
+
+La **varianza** mide la dispersión de $X$ alrededor de su media $\mu = E[X]$:
+
+$$\boxed{Var(X) = E\left[(X - \mu)^2\right]}$$
+
+::: {.fragment}
+
+### Fórmula de cálculo (equivalente y más práctica)
+
+$$\boxed{Var(X) = E[X^2] - (E[X])^2}$$
+
+:::
+
+::: {.fragment}
+
+### Desviación estándar
+
+$$\sigma_X = \sqrt{Var(X)}$$
+
+La desviación estándar tiene las **mismas unidades** que $X$, lo que facilita su interpretación experimental.
+
+:::
+
+## Ejemplo: Varianza de tabletas defectuosas
+
+| $x$ | $p(x)$ | $x^2$ | $x^2 \cdot p(x)$ |
+|:---:|:---:|:---:|:---:|
+| 0 | 0.30 | 0 | 0.000 |
+| 1 | 0.35 | 1 | 0.350 |
+| 2 | 0.20 | 4 | 0.800 |
+| 3 | 0.10 | 9 | 0.900 |
+| 4 | 0.05 | 16 | 0.800 |
+
+::: {.fragment}
+
+$$E[X^2] = 2.850 \quad \Rightarrow \quad Var(X) = 2.850 - (1.25)^2 = 2.850 - 1.5625 = \mathbf{1.2875}$$
+
+$$\sigma_X = \sqrt{1.2875} \approx \mathbf{1.13} \text{ tabletas defectuosas}$$
+
+:::
+
+## Ejemplo: Varianza de una variable continua {style="font-size: 95%;"}
+
+Retomando el tiempo de reacción enzimática $X \sim \text{Unif}(2,6)$, con $f(x) = \frac{1}{4}$ y $E[X] = 4$:
+
+::: {.fragment}
+
+$$E[X^2] = \int_{2}^{6} x^2 \cdot \frac{1}{4}\, dx = \frac{1}{4}\left[\frac{x^3}{3}\right]_2^6 = \frac{1}{4}\left(\frac{216-8}{3}\right) = \mathbf{17.33}$$
+
+:::
+
+::: {.fragment}
+
+$$Var(X) = E[X^2] - (E[X])^2 = 17.33 - 4^2 = \mathbf{1.33}$$ 
+$$\sigma_X = \sqrt{1.33} \approx \mathbf{1.15} \text{ min}$$
+
+:::
+
+## Propiedades de la Varianza {style="font-size: 90%;"}
+
+Sean $X$, $Y$ variables aleatorias, $a$, $b$ constantes:
+
+1. $Var(b) = 0$
+2. $Var(X + b) = Var(X)$
+3. $Var(aX) = a^2 \cdot Var(X)$
+4. **Lineal:** $Var(aX + b) = a^2 \cdot Var(X)$
+
+::: {.fragment}
+
+5. Si $X$ e $Y$ son **independientes**:
+$$Var(X + Y) = Var(X) + Var(Y)$$
+
+:::
+
+::: {.fragment}
+
+> **Nota:** En general, $Var(X + Y) = Var(X) + Var(Y) + 2\,Cov(X,Y)$
+
+:::
+
+## Tu turno: Varianza {style="font-size: 98%;"}
+
+::: {.callout-warning title="Tu turno"}
+
+**Ejercicio 1.** Retomando la variable "número de crías que sobreviven" ($E[X]=1.85$):
+
+| $x$ | 0 | 1 | 2 | 3 |
+|:---:|:---:|:---:|:---:|:---:|
+| $p(x)$ | 0.10 | 0.25 | 0.35 | 0.30 |
+
+Calcula $Var(X)$ y $\sigma_X$.
+
+**Ejercicio 2.** Retomando $X \in (0,1)$ con $f(x) = 3x^2$ ($E[X]=0.75$), calcula $Var(X)$ y $\sigma_X$.
+
+:::
+
+## Solución {style="font-size: 85%;"}
+
+::: {.fragment}
+
+**Ejercicio 1:** $E[X^2] = 0^2(0.10)+1^2(0.25)+2^2(0.35)+3^2(0.30) = 0.25+1.40+2.70 = 4.35$
+
+$$Var(X) = 4.35 - (1.85)^2 = 4.35 - 3.4225 = \mathbf{0.9275} \qquad \sigma_X \approx \mathbf{0.96} \text{ crías}$$
+
+:::
+
+::: {.fragment}
+
+**Ejercicio 2:** $\displaystyle E[X^2] = \int_0^1 x^2\cdot 3x^2\,dx = \int_0^1 3x^4\,dx = \left.\frac{3x^5}{5}\right|_0^1 = 0.6$
+
+$$Var(X) = 0.6 - (0.75)^2 = 0.6 - 0.5625 = \mathbf{0.0375} \qquad \sigma_X \approx \mathbf{0.19}$$
+
+:::
+
+# COVARIANZA Y CORRELACIÓN {background-color="#0077b6"}
+
+## Definición: Covarianza {style="font-size: 90%;"}
+
+La **covarianza** mide la relación lineal entre dos variables aleatorias $X$ e $Y$:
+
+$$\boxed{Cov(X,Y) = E\left[(X - \mu_X)(Y - \mu_Y)\right] = E[XY] - E[X]\cdot E[Y]}$$
+
+::: {.fragment}
+
+| Valor de $Cov(X,Y)$ | Interpretación |
+|:---:|:---|
+| $> 0$ | Cuando $X$ aumenta, $Y$ tiende a **aumentar** |
+| $< 0$ | Cuando $X$ aumenta, $Y$ tiende a **disminuir** |
+| $= 0$ | No hay relación lineal (puede haber relación no lineal) |
+
+:::
+
+## Correlación de Pearson
+
+La covarianza depende de las unidades. El **coeficiente de correlación** estandariza:
+
+$$\boxed{\rho_{XY} = \frac{Cov(X,Y)}{\sigma_X \cdot \sigma_Y}, \quad -1 \leq \rho \leq 1}$$
+
+::: {.fragment}
+
+| $\rho$ | Interpretación |
+|:---:|:---|
+| $\approx 1$ | Relación lineal positiva fuerte |
+| $\approx -1$ | Relación lineal negativa fuerte |
+| $\approx 0$ | Sin relación lineal |
+
+:::
+
+## Ejemplo: Cálculo manual con pocos datos {style="font-size: 78%;"}
+
+Se mide la temperatura del agua $X$ (°C) y la frecuencia respiratoria $Y$ (resp/min) de un pez en 5 acuarios:
+
+| $X$ | 18 | 20 | 22 | 24 | 26 |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| $Y$ | 45 | 50 | 54 | 60 | 65 |
+
+::: {.fragment}
+
+$\bar{X} = 22 \qquad \bar{Y} = 54.8$
+
+| $x-\bar{X}$ | -4 | -2 | 0 | 2 | 4 |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| $y-\bar{Y}$ | -9.8 | -4.8 | -0.8 | 5.2 | 10.2 |
+| producto | 39.2 | 9.6 | 0 | 10.4 | 40.8 |
+
+:::
+
+## Solución del ejemplo {style="font-size: 82%;"}
+
+::: {.fragment}
+
+$$\sum (x-\bar{X})(y-\bar{Y}) = 39.2+9.6+0+10.4+40.8 = 100$$
+
+$$Cov(X,Y) = \frac{100}{5} = \mathbf{20}$$
+
+:::
+
+::: {.fragment}
+
+$$\sigma_X = \sqrt{\frac{(-4)^2+(-2)^2+0^2+2^2+4^2}{5}} = \sqrt{8} \approx 2.83 \qquad \sigma_Y = \sqrt{50.16} \approx 7.08$$
+
+$$\rho_{XY} = \frac{20}{2.83 \times 7.08} \approx \mathbf{0.998}$$
+
+:::
+
+::: {.fragment}
+
+**Interpretación:** Relación lineal positiva casi perfecta: a mayor temperatura, mayor frecuencia respiratoria.
+
+:::
+
+## Verificación en R
+
+```{r}
+#| echo: true
+#| eval: true
+
+Temp <- c(18, 20, 22, 24, 26)
+FrecResp <- c(45, 50, 54, 60, 65)
+
+# cov() y cor() en R usan la fórmula muestral (dividen por n-1)
+cov(Temp, FrecResp)
+cor(Temp, FrecResp)
+```
+
+::: {.fragment}
+
+> `cov()` da 25 (no 20) porque R divide por $n-1=4$ en vez de $n=5$. La **correlación** no se ve afectada, pues el factor se cancela.
+
+:::
+
+## Ejemplo: Dosis de fertilizante y altura de la planta
+
+```{r}
+#| echo: false
+#| fig-align: center
+#| fig-height: 7.0
+#| fig-width: 12
+
+set.seed(42)
+n <- 80
+dosis  <- rnorm(n, mean = 27, sd = 4.5)
+altura <- 90 + 1.4 * dosis + rnorm(n, 0, 8)
+df_cov <- data.frame(dosis = dosis, altura = altura)
+
+ggplot(df_cov, aes(x = dosis, y = altura)) +
+  geom_point(color = "#1565C0", alpha = 0.65, size = 2.5) +
+  geom_smooth(method = "lm", color = "#C62828", se = TRUE,
+              fill = "#FFCDD2", linewidth = 1.5) +
+  theme_minimal(base_size = 12) +
+  labs(x = "Dosis de fertilizante (g/planta)",
+       y = "Altura de la planta (cm)",
+       title = "Correlación positiva: dosis de fertilizante y altura de la planta",
+       subtitle = paste0("ρ = ",
+                         round(cor(dosis, altura), 3),
+                         "  (a mayor dosis, mayor altura)")) +
+  theme(plot.title    = element_text(hjust = 0.5, face = "bold"),
+        plot.subtitle = element_text(hjust = 0.5, color = "#C62828"),
+        panel.grid.minor = element_blank())
+```
+
+## Tu turno: Covarianza y correlación {style="font-size: 95%;"}
+
+::: {.callout-warning title="Tu turno"}
+
+**Ejercicio 1.** Se mide la distancia $X$ (km) a una fuente de vertimiento y la concentración de nitratos $Y$ (mg/L) en 5 puntos del río:
+
+| $X$ | 1 | 2 | 3 | 4 | 5 |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| $Y$ | 40 | 32 | 25 | 18 | 10 |
+
+Calcula (a mano) $Cov(X,Y)$ y $\rho_{XY}$. Verifica con `cov()`/`cor()` en R.
+
+**Ejercicio 2.** Se mide la dosis $X$ (mg) de un fármaco y el tiempo de reacción $Y$ (seg) de un paciente en 5 ensayos:
+
+| $X$ | 2 | 4 | 6 | 8 | 10 |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| $Y$ | 30 | 26 | 20 | 15 | 9 |
+
+Calcula (a mano) $Cov(X,Y)$ y $\rho_{XY}$.
+
+:::
+
+## Solución: Ejercicio 1 {style="font-size: 82%;"}
+
+::: {.fragment}
+
+$\bar{X}=3, \ \bar{Y}=25$. Desviaciones $x-\bar{X}$: $-2,-1,0,1,2$; $\ y-\bar{Y}$: $15,7,0,-7,-15$
+
+$$\sum(x-\bar{X})(y-\bar{Y}) = -30-7+0-7-30 = -74 \quad\Rightarrow\quad Cov(X,Y) = \frac{-74}{5} = \mathbf{-14.8}$$
+
+:::
+
+::: {.fragment}
+
+$$\sigma_X = \sqrt{2} \approx 1.41 \qquad \sigma_Y \approx 10.47 \qquad \rho_{XY} = \frac{-14.8}{1.41 \times 10.47} \approx \mathbf{-1.00}$$
+
+Relación lineal **negativa casi perfecta**: a mayor distancia, menor concentración de nitratos.
+
+:::
+
+```{r}
+#| echo: true
+#| eval: true
+Dist <- c(1,2,3,4,5); Nitratos <- c(40,32,25,18,10)
+cov(Dist, Nitratos); cor(Dist, Nitratos)
+```
+
+## Solución: Ejercicio 2 {style="font-size: 82%;"}
+
+::: {.fragment}
+
+$\bar{X}=6, \ \bar{Y}=20$. Desviaciones $x-\bar{X}$: $-4,-2,0,2,4$; $\ y-\bar{Y}$: $10,6,0,-5,-11$
+
+$$\sum(x-\bar{X})(y-\bar{Y}) = -40-12+0-10-44 = -106 \quad\Rightarrow\quad Cov(X,Y) = \frac{-106}{5} = \mathbf{-21.2}$$
+
+:::
+
+::: {.fragment}
+
+$$\sigma_X = \sqrt{8} \approx 2.83 \qquad \sigma_Y \approx 7.51 \qquad \rho_{XY} = \frac{-21.2}{2.83 \times 7.51} \approx \mathbf{-0.998}$$
+
+Relación lineal negativa fuerte: a mayor dosis, menor tiempo de reacción.
+
+:::
+
+```{r}
+#| echo: true
+#| eval: true
+Dosis <- c(2,4,6,8,10); Tiempo <- c(30,26,20,15,9)
+cov(Dosis, Tiempo); cor(Dosis, Tiempo)
+```
+
+# DISTRIBUCIONES DISCRETAS {background-color="#0077b6"}
+
+## Distribución Bernoulli {style="font-size: 90%;"}
+
+### Definición
+
+Una variable aleatoria $X$ sigue una distribución **Bernoulli** con parámetro $p$ si el experimento tiene exactamente **dos resultados posibles**: éxito ($X=1$) o fracaso ($X=0$):
+
+$$X \sim \text{Ber}(p)$$
+
+::: {.fragment}
+
+### Función de probabilidad
+
+$$p(x) = p^x (1-p)^{1-x}, \quad x \in \{0, 1\}$$
+
+| | Fracaso ($X=0$) | Éxito ($X=1$) |
+|:---|:---:|:---:|
+| $p(x)$ | $1-p$ | $p$ |
+
+:::
+
+---
+
+### Parámetros
+
+$$E[X] = p \qquad Var(X) = p(1-p)$$
+
+::: {.fragment}
+
+### Ejemplos en Ciencias Experimentales
+
+- Un cultivo celular **responde** ($X=1$) o **no responde** ($X=0$) a un tratamiento experimental, con $p = 0.80$
+- Una tableta presenta un **defecto de peso** ($X=1$), con $p = 0.05$
+- Una prueba de laboratorio resulta **positiva** ($X=1$), con $p$ igual a la sensibilidad
+- Una muestra de agua **supera el límite de turbidez** ($X=1$), con $p = 0.12$
+
+:::
+
+## Código R: Distribución Bernoulli
+
+</br>
+
+En R, la Bernoulli es un caso especial de la Binomial con `size = 1`:
+
+```{r}
+#| echo: true
+#| eval: true
+
+# P(X = 1): el cultivo responde al tratamiento, p = 0.80
+dbinom(x = 1, size = 1, prob = 0.80)
+
+# P(X = 0): el cultivo NO responde
+dbinom(x = 0, size = 1, prob = 0.80)
+
+# Valor esperado y varianza (p = 0.80)
+p <- 0.80
+cat("E[X] =", p, "\nVar(X) =", p * (1 - p))
+```
+
+## Tu turno: Distribución Bernoulli {style="font-size: 95%;"}
+
+::: {.callout-warning title="Tu turno"}
+
+**Ejercicio 1.** Una muestra de agua da positivo para *E. coli* con probabilidad $p=0.15$. Sea $X=1$ si es positiva. Calcula $P(X=1)$, $P(X=0)$ y $Var(X)$.
+
+**Ejercicio 2.** Una semilla germina con probabilidad $p=0.65$. Sea $X=1$ si germina. Calcula $P(X=0)$, $E[X]$ y $Var(X)$.
+
+:::
+
+## Solución {style="font-size: 88%;"}
+
+::: {.fragment}
+
+**Ejercicio 1:** $P(X=1) = \mathbf{0.15}, \quad P(X=0) = \mathbf{0.85}, \quad Var(X) = 0.15(0.85) = \mathbf{0.1275}$
+
+:::
+
+::: {.fragment}
+
+**Ejercicio 2:** $P(X=0) = \mathbf{0.35}, \quad E[X] = \mathbf{0.65}, \quad Var(X) = 0.65(0.35) = \mathbf{0.2275}$
+
+:::
+
+## Distribución Binomial
+
+### Definición
+
+Si se realizan $n$ ensayos de Bernoulli **independientes**, cada uno con probabilidad de éxito $p$, la variable aleatoria $X$ = número de éxitos sigue una distribución **Binomial**:
+
+$$X \sim \text{Bin}(n, p)$$
+
+::: {.fragment}
+
+### Función de probabilidad
+
+$$\boxed{p(x) = \binom{n}{x} p^x (1-p)^{n-x}, \quad x = 0, 1, 2, \ldots, n}$$
+
+:::
+
+---
+
+### Parámetros
+
+$$\boxed{E[X] = np \qquad Var(X) = np(1-p)}$$
+
+::: {.fragment}
+
+### Condiciones de aplicación
+
+- $n$ ensayos **fijos** e independientes
+- Cada ensayo tiene solo dos resultados (éxito / fracaso)
+- La probabilidad de éxito $p$ es **constante** en cada ensayo
+
+:::
+
+--- 
+
+::: {.fragment}
+
+### Ejemplo experimental
+
+De **15 lotes** de un medicamento, cada uno tiene probabilidad de pasar el control de calidad de $p = 0.75$, independientemente de los demás. Sea $X$ el número de lotes que pasan el control.
+
+$$X \sim \text{Bin}(15,\; 0.75)$$
+
+Calcule la probabilidad de que exactamente 12 lotes pasen el control. Calcule $E(X)$, $Var(X)$ y $\sigma_X$. Interprete.
+
+:::
+
+---
+
+### Solución
+
+</br></br>
+
+$$P(X = 12) = \binom{15}{12}(0.75)^{12}(0.25)^3 = 455 \cdot (0.75)^{12} \cdot (0.25)^3 \approx 0.225$$
+
+::: {.fragment}
+
+$$E[X] = 15 \times 0.75 = 11.25 \text{ lotes}$$
+
+$$\sigma_X = \sqrt{15 \times 0.75 \times 0.25} = \sqrt{2.8125} \approx 1.68 \text{ lotes}$$
+
+:::
+
+## Código R: Distribución Binomial
+
+</br>
+
+```{r}
+#| echo: true
+#| eval: true
+
+# X ~ Bin(15, 0.75): lotes que pasan el control de calidad
+# P(X = 12): exactamente 12 lotes pasan el control
+dbinom(x = 12, size = 15, prob = 0.75)
+
+# P(X <= 10): a lo sumo 10 lotes pasan
+pbinom(q = 10, size = 15, prob = 0.75)
+
+# P(X >= 13): al menos 13 lotes pasan
+1 - pbinom(q = 12, size = 15, prob = 0.75)
+
+# Percentil 90 (mínimo k tal que P(X <= k) >= 0.90)
+qbinom(p = 0.90, size = 15, prob = 0.75)
+```
+
+## Visualización: Distribución Binomial
+
+```{r}
+#| echo: false
+#| fig-align: center
+#| fig-height: 7.2
+#| fig-width: 12
+
+df_bin <- data.frame(x = 0:15,
+                     prob = dbinom(0:15, size = 15, prob = 0.75))
+
+ggplot(df_bin, aes(x = factor(x), y = prob,
+                   fill = x >= 12)) +
+  geom_col(color = "white", width = 0.65, alpha = 0.85) +
+  geom_text(aes(label = ifelse(prob > 0.01,
+                               round(prob, 3), "")),
+            vjust = -0.4, size = 3.5, fontface = "bold") +
+  scale_fill_manual(values = c("#90CAF9", "#1565C0"),
+                    labels = c("X < 12", "X ≥ 12"),
+                    name = "") +
+  scale_y_continuous(limits = c(0, 0.28)) +
+  theme_minimal(base_size = 12) +
+  labs(x = "Número de lotes que pasan el control (X)",
+       y = "P(X = x)",
+       title = "Bin(15, 0.75): Lotes que pasan el control de calidad",
+       subtitle = "Área azul oscura = P(X ≥ 12) ≈ 0.461") +
+  theme(plot.title    = element_text(hjust = 0.5, face = "bold"),
+        plot.subtitle = element_text(hjust = 0.5),
+        panel.grid.minor = element_blank(),
+        panel.grid.major.x = element_blank(),
+        legend.position = "top")
+```
+
+## Tu turno: Distribución Binomial {style="font-size: 98%;"}
+
+::: {.callout-warning title="Tu turno"}
+
+**Ejercicio 1.** Se analizan **10 muestras de suelo** de forma independiente, cada una con probabilidad $p=0.30$ de exceder un umbral de metales pesados. Sea $X$ = número de muestras que exceden el umbral.
+
+Calcula $P(X=3)$, $P(X\leq 2)$, $E[X]$ y $Var(X)$.
+
+**Ejercicio 2.** De **12 plantas** de una especie, cada una florece esta temporada con probabilidad $p=0.60$, independientemente. Sea $X$ = número de plantas que florecen.
+
+Calcula $P(X=8)$ y $P(X \geq 10)$.
+
+:::
+
+## Solución {style="font-size: 85%;"}
+
+::: {.fragment}
+
+**Ejercicio 1:** $X \sim \text{Bin}(10, 0.30)$
+
+$$P(X=3) \approx \mathbf{0.267} \qquad P(X\leq 2) \approx \mathbf{0.383} \qquad E[X]=3 \qquad Var(X)=2.1$$
+
+:::
+
+::: {.fragment}
+
+**Ejercicio 2:** $X \sim \text{Bin}(12, 0.60)$
+
+$$P(X=8) \approx \mathbf{0.213} \qquad P(X \geq 10) \approx \mathbf{0.083}$$
+
+:::
+
+```{r}
+#| echo: true
+#| eval: true
+dbinom(3, 10, 0.30); pbinom(2, 10, 0.30)
+dbinom(8, 12, 0.60); 1 - pbinom(9, 12, 0.60)
+```
+
+
+## Distribución Hipergeométrica
+
+### Definición
+
+Describe el número de éxitos al extraer $n$ elementos **sin reposición** de una población finita de $N$ elementos, de los cuales $K$ son del tipo de interés.
+
+$$X \sim \text{Hiper}(N, K, n)$$
+
+::: {.fragment}
+
+### Función de probabilidad
+
+$$\boxed{p(x) = \frac{\binom{K}{x}\binom{N-K}{n-x}}{\binom{N}{n}}, \quad x = \max(0, n+K-N), \ldots, \min(n, K)}$$
+
+:::
+
+---
+
+### Parámetros
+
+</br></br>
+
+$$E[X] = n \cdot \frac{K}{N} \qquad Var(X) = n \cdot \frac{K}{N} \cdot \frac{N-K}{N} \cdot \frac{N-n}{N-1}$$
+
+::: {.fragment}
+
+> El factor $\dfrac{N-n}{N-1}$ se llama **factor de corrección por población finita** y refleja que al no haber reposición, la varianza es menor que en la Binomial.
+
+:::
+
+---
+
+### Ejemplo experimental: Selección de muestras para reanálisis
+
+Un lote contiene **20 muestras**, de las cuales **8 están contaminadas**. Se seleccionan al azar **6 muestras** para un análisis confirmatorio.
+
+Sea $X$ = número de muestras contaminadas seleccionadas.
+
+$$X \sim \text{Hiper}(N=20,\; K=8,\; n=6)$$
+
+::: {.fragment}
+
+$$P(X = 2) = \frac{\binom{8}{2}\binom{12}{4}}{\binom{20}{6}} = \frac{28 \times 495}{38760} \approx 0.357$$
+
+:::
+
+::: {.fragment}
+
+$$E[X] = 6 \cdot \frac{8}{20} = 2.4 \quad \text{muestras contaminadas esperadas}$$
+
+:::
+
+## Código R: Distribución Hipergeométrica
+
+</br>
+
+```{r}
+#| echo: true
+#| eval: true
+
+# X ~ Hiper(N=20, K=8, n=6): muestras contaminadas seleccionadas
+# dhyper(x, m, n, k): m=éxitos, n=fracasos, k=extraídos
+
+# P(X = 2): exactamente 2 muestras contaminadas seleccionadas
+dhyper(x = 2, m = 8, n = 12, k = 6)
+
+# P(X <= 3): a lo sumo 3 muestras contaminadas
+phyper(q = 3, m = 8, n = 12, k = 6)
+
+# P(X >= 4): al menos 4 muestras contaminadas
+1 - phyper(q = 3, m = 8, n = 12, k = 6)
+
+# Valor esperado
+6 * 8/20
+```
+
+## Tu turno: Distribución Hipergeométrica {style="font-size: 98%;"}
+
+::: {.callout-warning title="Tu turno"}
+
+**Ejercicio 1.** De **15 muestras de roca**, **5 contienen cuarzo**. Se seleccionan **4 al azar sin reposición**. Sea $X$ = número de muestras con cuarzo seleccionadas.
+
+Calcula $P(X=2)$ y $E[X]$.
+
+**Ejercicio 2.** En una placa con **25 colonias bacterianas**, **10 son resistentes** a un antibiótico. Se seleccionan **5 colonias** para analizar. Sea $X$ = número de colonias resistentes seleccionadas.
+
+Calcula $P(X=3)$ y $P(X \geq 1)$.
+
+:::
+
+## Solución {style="font-size: 85%;"}
+
+::: {.fragment}
+
+**Ejercicio 1:** $X \sim \text{Hiper}(N=15, K=5, n=4)$
+
+$$P(X=2) \approx \mathbf{0.330} \qquad E[X] = 4 \cdot \frac{5}{15} \approx \mathbf{1.33}$$
+
+:::
+
+::: {.fragment}
+
+**Ejercicio 2:** $X \sim \text{Hiper}(N=25, K=10, n=5)$
+
+$$P(X=3) \approx \mathbf{0.237} \qquad P(X \geq 1) = 1 - P(X=0) \approx \mathbf{0.943}$$
+
+:::
+
+```{r}
+#| echo: true
+#| eval: true
+dhyper(x = 2, m = 5, n = 10, k = 4)
+dhyper(x = 3, m = 10, n = 15, k = 5)
+1 - dhyper(x = 0, m = 10, n = 15, k = 5)
+```
+
+## Distribución de Poisson
+
+### Definición
+
+Modela el número de **eventos** que ocurren en un intervalo de tiempo o espacio determinado, cuando los eventos ocurren a tasa constante e independientemente entre sí.
+
+$$X \sim \text{Poisson}(\lambda)$$
+
+::: {.fragment}
+
+### Función de probabilidad
+
+$$\boxed{p(x) = \frac{e^{-\lambda}\, \lambda^x}{x!}, \quad x = 0, 1, 2, \ldots}$$
+
+:::
+
+---
+
+### Parámetros
+
+$$\boxed{E[X] = \lambda \qquad Var(X) = \lambda}$$
+
+> Una característica única: **media = varianza = $\lambda$**.
+
+::: {.fragment}
+
+### Condiciones de aplicación en ciencias experimentales
+
+- Número de **colonias bacterianas** por placa de cultivo
+- Número de **partículas contaminantes** por muestra de agua
+- Casos de una **mutación rara** en una población de organismos por generación
+- Número de **defectos** por lote de producción
+- Llamadas al **servicio de mantenimiento de equipos** por noche
+
+:::
+
+---
+
+### Ejemplo: Colonias bacterianas por placa
+
+En un laboratorio de microbiología, el promedio de colonias bacterianas que crecen por placa de cultivo es de **$\lambda = 4$ colonias**. Sea $X$ el número de colonias en una placa.
+
+$$X \sim \text{Poisson}(4)$$
+
+::: {.fragment}
+
+$$P(X = 6) = \frac{e^{-4} \cdot 4^6}{6!} = \frac{0.0183 \times 4096}{720} \approx 0.104$$
+
+:::
+
+::: {.fragment}
+
+$$P(X \leq 2) = \sum_{x=0}^{2} \frac{e^{-4} \cdot 4^x}{x!} = e^{-4}(1 + 4 + 8) = 0.238$$
+
+:::
+
+## Código R: Distribución de Poisson
+
+</br>
+
+```{r}
+#| echo: true
+#| eval: true
+
+# X ~ Poi(4): colonias bacterianas por placa
+# P(X = 6): exactamente 6 colonias
+dpois(x = 6, lambda = 4)
+
+# P(X <= 2): a lo sumo 2 colonias (placa poco contaminada)
+ppois(q = 2, lambda = 4)
+
+# P(X >= 7): 7 o más colonias (placa muy contaminada)
+1 - ppois(q = 6, lambda = 4)
+
+# Percentil 95: valor que no se supera el 95% del tiempo
+qpois(p = 0.95, lambda = 4)
+```
+
+## Visualización: Comparación de distribuciones Poisson
+
+```{r}
+#| echo: false
+#| fig-align: center
+#| fig-height: 7.2
+#| fig-width: 12
+
+lambdas <- c(1, 3, 6)
+x_range <- 0:15
+
+df_poi <- purrr::map_dfr(lambdas, function(l) {
+  data.frame(x = x_range,
+             prob = dpois(x_range, lambda = l),
+             lambda = paste0("λ = ", l))
+})
+
+ggplot(df_poi, aes(x = factor(x), y = prob, fill = lambda)) +
+  geom_col(position = "dodge", color = "white",
+           width = 0.7, alpha = 0.85) +
+  scale_fill_manual(values = c("#42A5F5", "#1565C0", "#0D47A1"),
+                    name = "Tasa media\npor placa") +
+  scale_y_continuous(labels = function(x) paste0(round(x * 100, 0), "%")) +
+  theme_minimal(base_size = 12) +
+  labs(x = "Número de colonias (X)",
+       y = "P(X = x)",
+       title = "Distribución de Poisson para distintas tasas de crecimiento bacteriano") +
+  theme(plot.title    = element_text(hjust = 0.5, face = "bold"),
+        panel.grid.minor = element_blank(),
+        panel.grid.major.x = element_blank(),
+        legend.position = "right")
+```
+
+## Tu turno: Distribución de Poisson {style="font-size: 98%;"}
+
+::: {.callout-warning title="Tu turno"}
+
+**Ejercicio 1.** En cierta población de organismos ocurren en promedio $\lambda = 3$ mutaciones de un gen por generación. Sea $X$ el número de mutaciones en una generación.
+
+Calcula $P(X=5)$ y $P(X\leq 1)$.
+
+**Ejercicio 2.** En una muestra de agua se detectan en promedio $\lambda = 6$ partículas contaminantes. Sea $X$ el número de partículas detectadas.
+
+Calcula $P(X=4)$ y $P(X\geq 8)$.
+
+:::
+
+## Solución {style="font-size: 85%;"}
+
+::: {.fragment}
+
+**Ejercicio 1:** $X \sim \text{Poisson}(3)$
+
+$$P(X=5) \approx \mathbf{0.101} \qquad P(X\leq 1) \approx \mathbf{0.199}$$
+
+:::
+
+::: {.fragment}
+
+**Ejercicio 2:** $X \sim \text{Poisson}(6)$
+
+$$P(X=4) \approx \mathbf{0.134} \qquad P(X\geq 8) \approx \mathbf{0.256}$$
+
+:::
+
+```{r}
+#| echo: true
+#| eval: true
+dpois(5, 3); ppois(1, 3)
+dpois(4, 6); 1 - ppois(7, 6)
+```
+
+# DISTRIBUCIONES CONTINUAS {background-color="#0077b6"}
+
+## Distribución Exponencial {style="font-size: 90%;"}
+
+### Definición
+
+Modela el **tiempo o espacio hasta que ocurre un evento**, cuando los eventos ocurren a una tasa constante $\lambda$ (está estrechamente ligada a la distribución de Poisson).
+
+$$X \sim \text{Exp}(\lambda)$$
+
+::: {.fragment}
+
+### Función de densidad y FDA
+
+$$\boxed{f(x) = \lambda e^{-\lambda x}, \quad x > 0} \qquad F(x) = 1 - e^{-\lambda x}$$
+
+:::
+
+## Parámetros y propiedad clave {style="font-size: 95%;"}
+
+$$\boxed{E[X] = \frac{1}{\lambda} \qquad Var(X) = \frac{1}{\lambda^2}}$$
+
+::: {.fragment}
+
+### Ejemplos en Ciencias Experimentales
+
+- Tiempo hasta la **degradación** de una muestra biológica
+- Tiempo entre **llegadas** de organismos a una trampa de muestreo
+- **Vida útil** de un reactivo una vez abierto
+- Tiempo entre **eventos geológicos** menores (sismos, emisiones)
+
+:::
+
+
+## Ejemplo: Llegada de organismos a una trampa {style="font-size: 88%;"}
+
+El tiempo $X$ (horas) entre llegadas de organismos a una trampa de muestreo sigue $X \sim \text{Exp}(\lambda)$ con una media de 4 horas, es decir $\lambda = 1/4$.
+
+::: {.fragment}
+
+$$E[X] = 4 \text{ horas} \qquad Var(X) = 16 \text{ horas}^2$$
+
+:::
+
+::: {.fragment}
+
+**¿Probabilidad de esperar más de 6 horas?**
+
+$$P(X > 6) = e^{-\lambda \cdot 6} = e^{-1.5} \approx \mathbf{0.223}$$
+
+:::
+
+::: {.fragment}
+
+**¿Probabilidad de que llegue antes de 2 horas?**
+
+$$P(X < 2) = 1 - e^{-\lambda \cdot 2} = 1 - e^{-0.5} \approx \mathbf{0.393}$$
+
+:::
+
+## Código R: Distribución Exponencial
+
+```{r}
+#| echo: true
+#| eval: true
+
+# X ~ Exp(lambda = 1/4): tiempo (h) entre llegadas de organismos
+
+# P(X > 6)
+1 - pexp(q = 6, rate = 1/4)
+
+# P(X < 2)
+pexp(q = 2, rate = 1/4)
+
+# Valor esperado y varianza
+lambda <- 1/4
+cat("E[X] =", 1/lambda, "\nVar(X) =", 1/lambda^2)
+```
+
+## Tu turno: Distribución Exponencial {style="font-size: 98%;"}
+
+::: {.callout-warning title="Tu turno"}
+
+**Ejercicio 1.** La vida útil $X$ (días) de un reactivo abierto en el laboratorio sigue $X \sim \text{Exp}(\lambda)$ con media de **30 días**.
+
+Calcula $P(X < 10)$ y $P(X > 45)$.
+
+**Ejercicio 2.** El tiempo $X$ (meses) entre sismos menores en una falla geológica sigue $X \sim \text{Exp}(\lambda)$ con media de **8 meses**.
+
+Calcula $P(X > 12)$ y $P(4 < X < 10)$.
+
+:::
+
+## Solución {style="font-size: 85%;"}
+
+::: {.fragment}
+
+**Ejercicio 1:** $\lambda = 1/30$
+
+$$P(X<10) = 1-e^{-10/30} \approx \mathbf{0.283} \qquad P(X>45) = e^{-45/30} \approx \mathbf{0.223}$$
+
+:::
+
+::: {.fragment}
+
+**Ejercicio 2:** $\lambda = 1/8$
+
+$$P(X>12) = e^{-12/8} \approx \mathbf{0.223} \qquad P(4<X<10) = e^{-4/8} - e^{-10/8} \approx \mathbf{0.320}$$
+
+:::
+
+```{r}
+#| echo: true
+#| eval: true
+1 - pexp(10, rate = 1/30); 1 - pexp(45, rate = 1/30)
+1 - pexp(12, rate = 1/8); pexp(10, rate = 1/8) - pexp(4, rate = 1/8)
+```
+
+## Distribución Normal
+
+### Definición
+
+La distribución **Normal** (o gaussiana) es la distribución continua más importante en estadística. Una variable $X$ sigue una distribución Normal con media $\mu$ y varianza $\sigma^2$:
+
+$$X \sim N(\mu, \sigma^2)$$
+
+::: {.fragment}
+
+### Función de densidad
+
+$$\boxed{f(x) = \frac{1}{\sigma\sqrt{2\pi}}\; e^{-\frac{(x-\mu)^2}{2\sigma^2}}, \quad x \in \mathbb{R}}$$
+
+:::
+
+## Propiedades de la Distribución Normal
+
+::: columns
+
+::: {.column width="55%"}
+
+- **Simétrica** respecto a $\mu$
+- **Unimodal** con moda = mediana = $\mu$
+- La curva es asintótica al eje X
+- $E[X] = \mu$, $Var(X) = \sigma^2$
+- El parámetro $\sigma$ controla la **dispersión**
+
+:::
+
+::: {.column width="45%"}
+
+```{r}
+#| echo: false
+#| fig-height: 5.5
+#| fig-width: 5
+
+x_n <- seq(50, 150, length.out = 500)
+df_norms <- data.frame(
+  x    = rep(x_n, 3),
+  fx   = c(dnorm(x_n, 100, 5),
+           dnorm(x_n, 100, 10),
+           dnorm(x_n, 100, 20)),
+  sigma = rep(c("σ = 5", "σ = 10", "σ = 20"), each = 500)
+)
+
+ggplot(df_norms, aes(x, fx, color = sigma)) +
+  geom_line(linewidth = 1.5) +
+  scale_color_manual(values = c("#0D47A1","#1565C0","#90CAF9"),
+                     name = "") +
+  theme_minimal(base_size = 11) +
+  labs(x = "x", y = "f(x)",
+       title = "Normal: efecto de σ (μ = 100)") +
+  theme(plot.title    = element_text(hjust = 0.5, face = "bold"),
+        legend.position = "top",
+        panel.grid.minor = element_blank())
+```
+
+:::
+
+:::
+
+## Regla 68 — 95 — 99.7
+
+```{r}
+#| echo: false
+#| fig-align: center
+#| fig-height: 4.5
+#| fig-width: 10
+
+mu_n <- 0; sd_n <- 1
+xv <- seq(-3.8, 3.8, length.out = 600)
+fv <- dnorm(xv, mu_n, sd_n)
+df_nn <- data.frame(x = xv, fx = fv)
+
+shade_region <- function(lo, hi, color, alpha = 0.5) {
+  xs <- xv[xv >= lo & xv <= hi]
+  fxs <- dnorm(xs, mu_n, sd_n)
+  geom_area(data = data.frame(x = xs, fx = fxs),
+            aes(x = x, y = fx), fill = color, alpha = alpha)
+}
+
+ggplot(df_nn, aes(x, fx)) +
+  shade_region(-3, 3,  "#BBDEFB", 0.5) +
+  shade_region(-2, 2,  "#64B5F6", 0.5) +
+  shade_region(-1, 1,  "#1565C0", 0.6) +
+  geom_line(linewidth = 1.8, color = "#0D47A1") +
+  geom_vline(xintercept = c(-1,1), linetype="dashed",
+             color="#1565C0", linewidth=0.8) +
+  geom_vline(xintercept = c(-2,2), linetype="dashed",
+             color="#42A5F5", linewidth=0.8) +
+  geom_vline(xintercept = c(-3,3), linetype="dashed",
+             color="#90CAF9", linewidth=0.8) +
+  annotate("text", x=0, y=0.17, label="68%", size=5,
+           fontface="bold", color="white") +
+  annotate("text", x=0, y=0.08, label="95%", size=4.5,
+           fontface="bold", color="#1565C0") +
+  annotate("text", x=0, y=0.03, label="99.7%", size=4,
+           fontface="bold", color="#42A5F5") +
+  annotate("text", x=c(-1,1), y=-0.018,
+           label=c("μ-σ","μ+σ"), size=3.8) +
+  annotate("text", x=c(-2,2), y=-0.018,
+           label=c("μ-2σ","μ+2σ"), size=3.8) +
+  scale_y_continuous(limits=c(-0.025, 0.44)) +
+  theme_minimal(base_size=12) +
+  labs(x="", y="", title="Regla empírica: distribución Normal") +
+  theme(plot.title=element_text(hjust=0.5, face="bold"),
+        panel.grid=element_blank(),
+        axis.text.y=element_blank())
+```
+
+$$P(\mu - \sigma \leq X \leq \mu + \sigma) \approx 0.68 \qquad P(\mu - 2\sigma \leq X \leq \mu + 2\sigma) \approx 0.95$$
+
+## Ejemplo: Concentración de un principio activo {style="font-size: 85%;"}
+
+La **concentración de un principio activo** (mg) en un lote de tabletas sigue una distribución aproximadamente normal:
+
+$$\text{Concentración} \sim N(120,\; 15^2) \text{ mg}$$
+
+::: {.fragment}
+
+**¿Qué proporción de lotes tiene una concentración entre 105 y 135 mg?**
+
+$$P(105 \leq C \leq 135) = P(120 - 15 \leq C \leq 120 + 15) \approx 0.68$$
+
+:::
+
+::: {.fragment}
+
+**¿Cuál es la probabilidad de que un lote exceda el límite superior de especificación (C > 140 mg)?**
+
+$$P(C > 140) = 1 - P(C \leq 140)$$
+
+*Usaremos `pnorm` en R para calcularlo.*
+
+:::
+
+## Código R: Distribución Normal
+
+```{r}
+#| echo: true
+#| eval: true
+
+# Concentración ~ N(120, 15^2) mg
+
+# P(Concentración < 130): lote por debajo de 130 mg
+pnorm(q = 130, mean = 120, sd = 15)
+
+# P(Concentración > 140): lote fuera de especificación (> 140 mg)
+1 - pnorm(q = 140, mean = 120, sd = 15)
+
+# P(105 < Concentración < 135): rango dentro de especificación (± 1 desv. estándar)
+pnorm(135, 120, 15) - pnorm(105, 120, 15)
+
+# Percentil 95 de la concentración (valor de corte)
+qnorm(p = 0.95, mean = 120, sd = 15)
+```
+
+## Distribución Normal Estándar {style="font-size: 85%;"}
+
+### Estandarización
+
+Si $X \sim N(\mu, \sigma^2)$, la variable **estandarizada** sigue una Normal Estándar:
+
+$$\boxed{Z = \frac{X - \mu}{\sigma} \sim N(0, 1)}$$
+
+::: {.fragment}
+
+> La estandarización permite comparar valores de **diferentes escalas** y usar una única tabla (o función R).
+
+:::
+
+::: {.fragment}
+
+### Propiedades de $Z \sim N(0,1)$
+
+- $E[Z] = 0$, $Var(Z) = 1$
+- $f(z) = \dfrac{1}{\sqrt{2\pi}} e^{-z^2/2}$
+- Simétrica: $P(Z \leq -z) = P(Z \geq z) = 1 - \Phi(z)$
+
+:::
+
+## Cuantiles y Percentiles
+
+La función $\Phi(z) = P(Z \leq z)$ se implementa con `pnorm` en R.
+
+::: columns
+
+::: {.column width="55%"}
+
+### Valores críticos más usados
+
+</br>
+
+| Nivel | $z_{\alpha/2}$ |
+|:---:|:---:|
+| 90% | $z_{0.05} = 1.645$ |
+| 95% | $z_{0.025} = 1.960$ |
+| 99% | $z_{0.005} = 2.576$ |
+
+:::
+
+::: {.column width="45%"}
+
+### En R
+
+```{r}
+#| echo: true
+#| eval: true
+# Percentil 97.5
+qnorm(0.975)
+# Percentil 99.5
+qnorm(0.995)
+# P(Z < 1.96)
+pnorm(1.96)
+```
+
+:::
+
+:::
+
+## Código R: Normal Estándar y Estandarización
+
+
+```{r}
+#| echo: true
+#| eval: true
+
+# P(-1.96 < Z < 1.96)
+pnorm(1.96) - pnorm(-1.96)
+
+# Estandarizar: Concentración = 145 mg (mu=120, sigma=15)
+z <- (145 - 120) / 15
+cat("Z =", round(z, 3))
+cat("\nP(Concentración > 145) = P(Z >", round(z, 3), ") =",
+    round(1 - pnorm(z), 4))
+
+# Rango de referencia al 95%
+cat("\nIC 95%: [",
+    round(qnorm(0.025, 120, 15), 1), ",",
+    round(qnorm(0.975, 120, 15), 1), "] mg")
+```
+
+## Ejemplo: Concentración de plomo en agua potable
+
+```{r}
+#| echo: false
+#| fig-align: center
+#| fig-height: 6.5
+#| fig-width: 11
+
+xg <- seq(60, 180, length.out = 500)
+fg <- dnorm(xg, mean = 100, sd = 15)
+df_gluc <- data.frame(x = xg, fx = fg)
+
+df_shd <- df_gluc[df_gluc$x <= 126, ]
+df_dm  <- df_gluc[df_gluc$x > 126, ]
+
+ggplot(df_gluc, aes(x, fx)) +
+  geom_area(data = df_shd, aes(x, fx), fill = "#A5D6A7", alpha = 0.7) +
+  geom_area(data = df_dm,  aes(x, fx), fill = "#EF9A9A", alpha = 0.7) +
+  geom_line(linewidth = 1.8, color = "#1565C0") +
+  geom_vline(xintercept = 126, linetype = "dashed",
+             color = "#C62828", linewidth = 1.2) +
+  annotate("text", x = 95, y = 0.012, label = "Dentro del límite\n(Pb < 126)",
+           size = 4.5, fontface = "bold", color = "#2E7D32") +
+  annotate("text", x = 145, y = 0.006, label = "Excede el límite\n(Pb ≥ 126)",
+           size = 4.5, fontface = "bold", color = "#C62828") +
+  annotate("text", x = 128, y = 0.027, label = "126 µg/L",
+           size = 4, color = "#C62828", fontface = "italic") +
+  theme_minimal(base_size = 13) +
+  labs(x = "Concentración de plomo (µg/L)",
+       y = "Densidad f(x)",
+       title = "Plomo en agua potable ~ N(100, 15²)",
+       subtitle = paste0("P(Plomo ≥ 126) = ",
+                         round(1 - pnorm(126, 100, 15), 4))) +
+  theme(plot.title    = element_text(hjust = 0.5, face = "bold"),
+        plot.subtitle = element_text(hjust = 0.5, color = "#C62828"),
+        panel.grid.minor = element_blank())
+```
+
+---
+
+### Código R del ejemplo de plomo en agua
+
+```{r}
+#| echo: true
+#| eval: true
+
+# Concentración de plomo en agua potable ~ N(100, 15^2) µg/L
+
+# P(Plomo >= 126): probabilidad de exceder el límite regulatorio
+1 - pnorm(q = 126, mean = 100, sd = 15)
+
+# Valor de corte para alerta temprana (percentil 80)
+qnorm(p = 0.80, mean = 100, sd = 15)
+
+# Simular 500 muestras y contar cuántas superan 126
+set.seed(2024)
+plomo <- rnorm(n = 500, mean = 100, sd = 15)
+mean(plomo >= 126)
+```
+
+## Tu turno: Distribución Normal {style="font-size: 98%;"}
+
+::: {.callout-warning title="Tu turno"}
+
+**Ejercicio 1.** La altura $X$ (cm) de una especie de planta sigue $X \sim N(50, 8^2)$.
+
+Calcula $P(X > 60)$ y $P(40 < X < 55)$.
+
+**Ejercicio 2.** El pH $X$ de muestras de suelo en una región sigue $X \sim N(6.5, 0.4^2)$.
+
+Calcula $P(X < 6)$ y el percentil 90 de $X$.
+
+:::
+
+## Solución {style="font-size: 85%;"}
+
+::: {.fragment}
+
+**Ejercicio 1:**
+
+$$P(X>60) = 1-\Phi\left(\frac{60-50}{8}\right) = 1-\Phi(1.25) \approx \mathbf{0.106}$$
+
+$$P(40<X<55) = \Phi(0.625) - \Phi(-1.25) \approx \mathbf{0.628}$$
+
+:::
+
+::: {.fragment}
+
+**Ejercicio 2:**
+
+$$P(X<6) = \Phi\left(\frac{6-6.5}{0.4}\right) = \Phi(-1.25) \approx \mathbf{0.106}$$
+
+$$\text{Percentil 90} = 6.5 + 1.2816 \times 0.4 \approx \mathbf{7.01}$$
+
+:::
+
+```{r}
+#| echo: true
+#| eval: true
+1 - pnorm(60, 50, 8); pnorm(55, 50, 8) - pnorm(40, 50, 8)
+pnorm(6, 6.5, 0.4); qnorm(0.90, 6.5, 0.4)
+```
+
+# GRACIAS! {background-color="#ddf3ff"}
+
+
+# Citación y derechos de autor
+
+Este material ha sido creado por [Giovany Babativa-Márquez](https://github.com/jgbabativam) y es de libre distribución bajo la licencia [Creative Commons Attribution-ShareAlike 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+
+Cualquier copia parcial o total de este material, debe citar la fuente como:
+
+> Babativa-Márquez, J.G. *Diapositivas del curso de Bioestadística*. URL: https://jgbabativam.github.io/EstadFundSalud/
