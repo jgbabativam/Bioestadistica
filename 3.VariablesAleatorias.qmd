@@ -25,6 +25,13 @@ library(pacman)
 p_load(here, ggplot2, dplyr, tidyr)
 ```
 
+```{=html}
+<style>
+/* Logo más pequeño para que no tape la primera línea de texto */
+.reveal .slide-logo { max-height: 11% !important; }
+</style>
+```
+
 \newcommand\norm[1]{\left\lVert#1\right\rVert}
 
 # VARIABLES ALEATORIAS {background-color="#0077b6"}
@@ -218,7 +225,7 @@ $P(1 < X \leq 3) = F(3) - F(1) = 0.90 - 0.40 = \mathbf{0.50}$
 
 | $x$ | 0 | 1 | 2 | 3 | 4 |
 |:---:|:---:|:---:|:---:|:---:|:---:|
-| $p(x)$ | 0.10 | 0.30 | 0.35 | 0.15 | 0.10 |
+| $p(x)$ | 0.20 | 0.35 | 0.25 | 0.15 | 0.05 |
 
 Construye $F(x)$ y calcula $P(X > 2)$ y $P(1 < X \leq 3)$.
 
@@ -232,11 +239,19 @@ Construye $F(x)$ y calcula $P(X \geq 2)$ y $P(X < 3)$.
 
 :::
 
-## Solución {style="font-size: 85%;"}
+## Solución {style="font-size: 72%;"}
 
 ::: {.fragment}
 
-**Ejercicio 1:** Es la misma distribución del ejemplo anterior $\Rightarrow$ $P(X>2) = 0.25$, $\quad P(1 < X \leq 3) = 0.50$
+**Ejercicio 1:**
+
+| $x$ | 0 | 1 | 2 | 3 | 4 |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| $F(x)$ | 0.20 | 0.55 | 0.80 | 0.95 | 1.00 |
+
+$$P(X > 2) = 1 - F(2) = 1 - 0.80 = \mathbf{0.20}$$
+
+$$P(1 < X \leq 3) = F(3) - F(1) = 0.95 - 0.55 = \mathbf{0.40}$$
 
 :::
 
@@ -292,6 +307,8 @@ $$\sum p(x) = 0.30 + 0.35 + 0.20 + 0.10 + 0.05 = 1 \checkmark$$
 
 ### Cálculo de probabilidades
 
+::: {style="font-size: 85%;"}
+
 Con la distribución de tabletas defectuosas:
 
 $$P(X \geq 2) = p(2) + p(3) + p(4) = 0.20 + 0.10 + 0.05 = \mathbf{0.35}$$
@@ -305,6 +322,8 @@ $$P(1 \leq X \leq 3) = p(1) + p(2) + p(3) = 0.35 + 0.20 + 0.10 = \mathbf{0.65}$$
 ::: {.fragment}
 
 $$P(X < 2) = p(0) + p(1) = 0.30 + 0.35 = \mathbf{0.65}$$
+
+:::
 
 :::
 
@@ -409,8 +428,8 @@ $$\boxed{P(a \leq X \leq b) = \int_a^b f(x)\, dx}$$
 #| fig-height: 6.5
 #| fig-width: 12
 
-x_vals <- seq(0, 20, length.out = 500)
-fx <- dexp(x_vals, rate = 1/5)
+x_vals <- seq(0, 10, length.out = 500)
+fx <- (10 - x_vals) / 50
 
 df_dens <- data.frame(x = x_vals, fx = fx)
 df_shade <- data.frame(x = x_vals[x_vals >= 3 & x_vals <= 8],
@@ -422,9 +441,10 @@ ggplot(df_dens, aes(x, fx)) +
   geom_line(color = "#1565C0", linewidth = 1.8) +
   geom_vline(xintercept = c(3, 8), linetype = "dashed",
              color = "#C62828", linewidth = 1.0) +
-  annotate("text", x = 5.5, y = 0.035, size = 5.5, fontface = "bold",
+  annotate("text", x = 7, y = 0.13, size = 5.5, fontface = "bold",
            color = "#1565C0",
-           label = "P(3 ≤ X ≤ 8) = ∫ f(x)dx") +
+           label = "P({3 <= X} <= 8) == 0.45",
+           parse = TRUE) +
   annotate("text", x = 2.6, y = -0.004, label = "3", size = 4.5,
            color = "#C62828", fontface = "bold") +
   annotate("text", x = 8.4, y = -0.004, label = "8", size = 4.5,
@@ -438,17 +458,17 @@ ggplot(df_dens, aes(x, fx)) +
         panel.grid.minor = element_blank())
 ```
 
-## Ejemplo: Tiempo hasta la degradación de una muestra
+## Ejemplo: Degradación de una muestra {style="font-size: 78%;"}
 
-El tiempo $X$ (en días) hasta que una muestra biológica conservada en refrigeración muestra signos de degradación sigue una distribución con densidad:
+El tiempo $X$ (días) hasta que una muestra biológica refrigerada muestra signos de degradación tiene densidad:
 
-$$f(x) = \frac{1}{5} e^{-x/5}, \quad x > 0$$
+$$f(x) = \frac{10 - x}{50}, \quad 0 < x < 10 \qquad \text{Primitiva: } \int (10 - x)\,dx = 10x - \frac{x^2}{2}$$
 
 ::: {.fragment}
 
-**¿Cuál es la probabilidad de que se degrade en menos de 3 días?**
+**¿Probabilidad de que se degrade en menos de 3 días?**
 
-$$P(X < 3) = \int_0^3 \frac{1}{5} e^{-x/5}\, dx = 1 - e^{-3/5} \approx 0.451$$
+$$P(X < 3) = \frac{1}{50}\left[10x - \frac{x^2}{2}\right]_0^3 = \frac{30 - 4.5}{50} = \mathbf{0.51}$$
 
 :::
 
@@ -456,7 +476,7 @@ $$P(X < 3) = \int_0^3 \frac{1}{5} e^{-x/5}\, dx = 1 - e^{-3/5} \approx 0.451$$
 
 **¿Y entre 5 y 10 días?**
 
-$$P(5 < X < 10) = e^{-1} - e^{-2} \approx 0.368 - 0.135 = 0.233$$
+$$P(5 < X < 10) = \frac{1}{50}\left[10x - \frac{x^2}{2}\right]_5^{10} = \frac{50 - 37.5}{50} = \mathbf{0.25}$$
 
 :::
 
@@ -484,7 +504,9 @@ Verifica que $\int_0^4 f(x)\,dx = 1$ y calcula $P(X < 2)$ y $P(1 < X < 3)$.
 
 **Ejercicio 1:**
 
-$$P(2 < X < 5) = \int_2^5 \frac{1}{10}\,dx = \frac{5-2}{10} = \mathbf{0.30} \qquad P(X > 8) = \int_8^{10} \frac{1}{10}\,dx = \frac{2}{10} = \mathbf{0.20}$$
+$$P(2 < X < 5) = \int_2^5 \frac{1}{10}\,dx = \frac{5-2}{10} = \mathbf{0.30}$$
+
+$$P(X > 8) = \int_8^{10} \frac{1}{10}\,dx = \frac{2}{10} = \mathbf{0.20}$$
 
 :::
 
@@ -492,7 +514,9 @@ $$P(2 < X < 5) = \int_2^5 \frac{1}{10}\,dx = \frac{5-2}{10} = \mathbf{0.30} \qqu
 
 **Ejercicio 2:** $\displaystyle\int_0^4 \frac{x}{8}\,dx = \left.\frac{x^2}{16}\right|_0^4 = \frac{16}{16} = 1\ \checkmark$
 
-$$P(X<2) = \int_0^2 \frac{x}{8}\,dx = \frac{4}{16} = \mathbf{0.25} \qquad P(1<X<3) = \int_1^3 \frac{x}{8}\,dx = \frac{9-1}{16} = \mathbf{0.50}$$
+$$P(X<2) = \int_0^2 \frac{x}{8}\,dx = \frac{4}{16} = \mathbf{0.25}$$
+
+$$P(1<X<3) = \int_1^3 \frac{x}{8}\,dx = \frac{9-1}{16} = \mathbf{0.50}$$
 
 :::
 
@@ -588,6 +612,8 @@ Sea $X$, $Y$ variables aleatorias y $a$, $b$ constantes:
 
 ### Aplicación experimental: Transformación de escala
 
+::: {style="font-size: 85%;"}
+
 La **concentración de un analito** en una muestra tiene $E[C] = 72$ mg/L.
 
 ::: {.fragment}
@@ -603,6 +629,8 @@ $$E[C^*] = 0.5 \cdot E[C] + 10 = 0.5 \cdot 72 + 10 = \mathbf{46}$$
 Si registramos la **suma** de concentraciones de 3 muestras:
 
 $$E[C_1 + C_2 + C_3] = E[C_1] + E[C_2] + E[C_3] = 72 + 72 + 72 = \mathbf{216}$$
+
+:::
 
 :::
 
@@ -624,13 +652,15 @@ Calcula $E[X]$.
 
 :::
 
-## Solución {style="font-size: 85%;"}
+## Solución {style="font-size: 75%;"}
 
 ::: {.fragment}
 
 **Ejercicio 1:**
 
-$$E[X] = 0(0.10)+1(0.25)+2(0.35)+3(0.30) = 0+0.25+0.70+0.90 = \mathbf{1.85} \text{ crías}$$
+$$E[X] = 0(0.10)+1(0.25)+2(0.35)+3(0.30)$$
+
+$$E[X] = 0+0.25+0.70+0.90 = \mathbf{1.85} \text{ crías}$$
 
 :::
 
@@ -668,7 +698,7 @@ La desviación estándar tiene las **mismas unidades** que $X$, lo que facilita 
 
 :::
 
-## Ejemplo: Varianza de tabletas defectuosas
+## Ejemplo: Varianza de tabletas defectuosas {style="font-size: 85%;"}
 
 | $x$ | $p(x)$ | $x^2$ | $x^2 \cdot p(x)$ |
 |:---:|:---:|:---:|:---:|
@@ -680,7 +710,9 @@ La desviación estándar tiene las **mismas unidades** que $X$, lo que facilita 
 
 ::: {.fragment}
 
-$$E[X^2] = 2.850 \quad \Rightarrow \quad Var(X) = 2.850 - (1.25)^2 = 2.850 - 1.5625 = \mathbf{1.2875}$$
+$$E[X^2] = 2.850$$
+
+$$Var(X) = 2.850 - (1.25)^2 = 2.850 - 1.5625 = \mathbf{1.2875}$$
 
 $$\sigma_X = \sqrt{1.2875} \approx \mathbf{1.13} \text{ tabletas defectuosas}$$
 
@@ -741,13 +773,15 @@ Calcula $Var(X)$ y $\sigma_X$.
 
 :::
 
-## Solución {style="font-size: 85%;"}
+## Solución {style="font-size: 75%;"}
 
 ::: {.fragment}
 
 **Ejercicio 1:** $E[X^2] = 0^2(0.10)+1^2(0.25)+2^2(0.35)+3^2(0.30) = 0.25+1.40+2.70 = 4.35$
 
-$$Var(X) = 4.35 - (1.85)^2 = 4.35 - 3.4225 = \mathbf{0.9275} \qquad \sigma_X \approx \mathbf{0.96} \text{ crías}$$
+$$Var(X) = 4.35 - (1.85)^2 = 4.35 - 3.4225 = \mathbf{0.9275}$$
+
+$$\sigma_X \approx \mathbf{0.96} \text{ crías}$$
 
 :::
 
@@ -755,7 +789,9 @@ $$Var(X) = 4.35 - (1.85)^2 = 4.35 - 3.4225 = \mathbf{0.9275} \qquad \sigma_X \ap
 
 **Ejercicio 2:** $\displaystyle E[X^2] = \int_0^1 x^2\cdot 3x^2\,dx = \int_0^1 3x^4\,dx = \left.\frac{3x^5}{5}\right|_0^1 = 0.6$
 
-$$Var(X) = 0.6 - (0.75)^2 = 0.6 - 0.5625 = \mathbf{0.0375} \qquad \sigma_X \approx \mathbf{0.19}$$
+$$Var(X) = 0.6 - (0.75)^2 = 0.6 - 0.5625 = \mathbf{0.0375}$$
+
+$$\sigma_X \approx \mathbf{0.19}$$
 
 :::
 
@@ -812,7 +848,7 @@ $\bar{X} = 22 \qquad \bar{Y} = 54.8$
 
 :::
 
-## Solución del ejemplo {style="font-size: 82%;"}
+## Solución del ejemplo {style="font-size: 72%;"}
 
 ::: {.fragment}
 
@@ -878,9 +914,8 @@ ggplot(df_cov, aes(x = dosis, y = altura)) +
   labs(x = "Dosis de fertilizante (g/planta)",
        y = "Altura de la planta (cm)",
        title = "Correlación positiva: dosis de fertilizante y altura de la planta",
-       subtitle = paste0("ρ = ",
-                         round(cor(dosis, altura), 3),
-                         "  (a mayor dosis, mayor altura)")) +
+       subtitle = bquote(rho == .(round(cor(dosis, altura), 3)) ~
+                           "  (a mayor dosis, mayor altura)")) +
   theme(plot.title    = element_text(hjust = 0.5, face = "bold"),
         plot.subtitle = element_text(hjust = 0.5, color = "#C62828"),
         panel.grid.minor = element_blank())
@@ -908,19 +943,23 @@ Calcula (a mano) $Cov(X,Y)$ y $\rho_{XY}$.
 
 :::
 
-## Solución: Ejercicio 1 {style="font-size: 82%;"}
+## Solución: Ejercicio 1 {style="font-size: 70%;"}
 
 ::: {.fragment}
 
 $\bar{X}=3, \ \bar{Y}=25$. Desviaciones $x-\bar{X}$: $-2,-1,0,1,2$; $\ y-\bar{Y}$: $15,7,0,-7,-15$
 
-$$\sum(x-\bar{X})(y-\bar{Y}) = -30-7+0-7-30 = -74 \quad\Rightarrow\quad Cov(X,Y) = \frac{-74}{5} = \mathbf{-14.8}$$
+$$\sum(x-\bar{X})(y-\bar{Y}) = -30-7+0-7-30 = -74$$
+
+$$Cov(X,Y) = \frac{-74}{5} = \mathbf{-14.8}$$
 
 :::
 
 ::: {.fragment}
 
-$$\sigma_X = \sqrt{2} \approx 1.41 \qquad \sigma_Y \approx 10.47 \qquad \rho_{XY} = \frac{-14.8}{1.41 \times 10.47} \approx \mathbf{-1.00}$$
+$$\sigma_X = \sqrt{2} \approx 1.41 \qquad \sigma_Y \approx 10.47$$
+
+$$\rho_{XY} = \frac{-14.8}{1.41 \times 10.47} \approx \mathbf{-1.00}$$
 
 Relación lineal **negativa casi perfecta**: a mayor distancia, menor concentración de nitratos.
 
@@ -933,19 +972,23 @@ Dist <- c(1,2,3,4,5); Nitratos <- c(40,32,25,18,10)
 cov(Dist, Nitratos); cor(Dist, Nitratos)
 ```
 
-## Solución: Ejercicio 2 {style="font-size: 82%;"}
+## Solución: Ejercicio 2 {style="font-size: 70%;"}
 
 ::: {.fragment}
 
 $\bar{X}=6, \ \bar{Y}=20$. Desviaciones $x-\bar{X}$: $-4,-2,0,2,4$; $\ y-\bar{Y}$: $10,6,0,-5,-11$
 
-$$\sum(x-\bar{X})(y-\bar{Y}) = -40-12+0-10-44 = -106 \quad\Rightarrow\quad Cov(X,Y) = \frac{-106}{5} = \mathbf{-21.2}$$
+$$\sum(x-\bar{X})(y-\bar{Y}) = -40-12+0-10-44 = -106$$
+
+$$Cov(X,Y) = \frac{-106}{5} = \mathbf{-21.2}$$
 
 :::
 
 ::: {.fragment}
 
-$$\sigma_X = \sqrt{8} \approx 2.83 \qquad \sigma_Y \approx 7.51 \qquad \rho_{XY} = \frac{-21.2}{2.83 \times 7.51} \approx \mathbf{-0.998}$$
+$$\sigma_X = \sqrt{8} \approx 2.83 \qquad \sigma_Y \approx 7.51$$
+
+$$\rho_{XY} = \frac{-21.2}{2.83 \times 7.51} \approx \mathbf{-0.998}$$
 
 Relación lineal negativa fuerte: a mayor dosis, menor tiempo de reacción.
 
@@ -1028,7 +1071,7 @@ cat("E[X] =", p, "\nVar(X) =", p * (1 - p))
 
 :::
 
-## Solución {style="font-size: 88%;"}
+## Solución {style="font-size: 76%;"}
 
 ::: {.fragment}
 
@@ -1092,7 +1135,7 @@ Calcule la probabilidad de que exactamente 12 lotes pasen el control. Calcule $E
 
 ### Solución
 
-</br></br>
+::: {style="font-size: 85%;"}
 
 $$P(X = 12) = \binom{15}{12}(0.75)^{12}(0.25)^3 = 455 \cdot (0.75)^{12} \cdot (0.25)^3 \approx 0.225$$
 
@@ -1100,7 +1143,11 @@ $$P(X = 12) = \binom{15}{12}(0.75)^{12}(0.25)^3 = 455 \cdot (0.75)^{12} \cdot (0
 
 $$E[X] = 15 \times 0.75 = 11.25 \text{ lotes}$$
 
+$$Var(X) = 15 \times 0.75 \times 0.25 = 2.8125 \text{ lotes}^2$$
+
 $$\sigma_X = \sqrt{15 \times 0.75 \times 0.25} = \sqrt{2.8125} \approx 1.68 \text{ lotes}$$
+
+:::
 
 :::
 
@@ -1144,14 +1191,14 @@ ggplot(df_bin, aes(x = factor(x), y = prob,
                                round(prob, 3), "")),
             vjust = -0.4, size = 3.5, fontface = "bold") +
   scale_fill_manual(values = c("#90CAF9", "#1565C0"),
-                    labels = c("X < 12", "X ≥ 12"),
+                    labels = c(expression(X < 12), expression(X >= 12)),
                     name = "") +
   scale_y_continuous(limits = c(0, 0.28)) +
   theme_minimal(base_size = 12) +
   labs(x = "Número de lotes que pasan el control (X)",
        y = "P(X = x)",
        title = "Bin(15, 0.75): Lotes que pasan el control de calidad",
-       subtitle = "Área azul oscura = P(X ≥ 12) ≈ 0.461") +
+       subtitle = quote("Área azul oscura = " ~ P(X >= 12) %~~% 0.461)) +
   theme(plot.title    = element_text(hjust = 0.5, face = "bold"),
         plot.subtitle = element_text(hjust = 0.5),
         panel.grid.minor = element_blank(),
@@ -1179,7 +1226,9 @@ Calcula $P(X=8)$ y $P(X \geq 10)$.
 
 **Ejercicio 1:** $X \sim \text{Bin}(10, 0.30)$
 
-$$P(X=3) \approx \mathbf{0.267} \qquad P(X\leq 2) \approx \mathbf{0.383} \qquad E[X]=3 \qquad Var(X)=2.1$$
+$$P(X=3) \approx \mathbf{0.267} \qquad P(X\leq 2) \approx \mathbf{0.383}$$
+
+$$E[X]=3 \qquad Var(X)=2.1$$
 
 :::
 
@@ -1199,7 +1248,7 @@ dbinom(8, 12, 0.60); 1 - pbinom(9, 12, 0.60)
 ```
 
 
-## Distribución Hipergeométrica
+## Distribución Hipergeométrica {style="font-size: 88%;"}
 
 ### Definición
 
@@ -1335,6 +1384,8 @@ $$\boxed{p(x) = \frac{e^{-\lambda}\, \lambda^x}{x!}, \quad x = 0, 1, 2, \ldots}$
 
 ### Parámetros
 
+::: {style="font-size: 85%;"}
+
 $$\boxed{E[X] = \lambda \qquad Var(X) = \lambda}$$
 
 > Una característica única: **media = varianza = $\lambda$**.
@@ -1348,6 +1399,8 @@ $$\boxed{E[X] = \lambda \qquad Var(X) = \lambda}$$
 - Casos de una **mutación rara** en una población de organismos por generación
 - Número de **defectos** por lote de producción
 - Llamadas al **servicio de mantenimiento de equipos** por noche
+
+:::
 
 :::
 
@@ -1393,7 +1446,7 @@ ppois(q = 2, lambda = 4)
 qpois(p = 0.95, lambda = 4)
 ```
 
-## Visualización: Comparación de distribuciones Poisson
+## Visualización: Comparación de Poisson
 
 ```{r}
 #| echo: false
@@ -1407,13 +1460,15 @@ x_range <- 0:15
 df_poi <- purrr::map_dfr(lambdas, function(l) {
   data.frame(x = x_range,
              prob = dpois(x_range, lambda = l),
-             lambda = paste0("λ = ", l))
+             lambda = factor(l))
 })
 
 ggplot(df_poi, aes(x = factor(x), y = prob, fill = lambda)) +
   geom_col(position = "dodge", color = "white",
            width = 0.7, alpha = 0.85) +
   scale_fill_manual(values = c("#42A5F5", "#1565C0", "#0D47A1"),
+                    labels = c(expression(lambda == 1), expression(lambda == 3),
+                               expression(lambda == 6)),
                     name = "Tasa media\npor placa") +
   scale_y_continuous(labels = function(x) paste0(round(x * 100, 0), "%")) +
   theme_minimal(base_size = 12) +
@@ -1483,7 +1538,7 @@ $$\boxed{f(x) = \lambda e^{-\lambda x}, \quad x > 0} \qquad F(x) = 1 - e^{-\lamb
 
 :::
 
-## Parámetros y propiedad clave {style="font-size: 95%;"}
+## Parámetros {style="font-size: 95%;"}
 
 $$\boxed{E[X] = \frac{1}{\lambda} \qquad Var(X) = \frac{1}{\lambda^2}}$$
 
@@ -1525,6 +1580,26 @@ $$P(X < 2) = 1 - e^{-\lambda \cdot 2} = 1 - e^{-0.5} \approx \mathbf{0.393}$$
 
 :::
 
+## Propiedad clave: pérdida de memoria {style="font-size: 80%;"}
+
+Si $X \sim \text{Exp}(\lambda)$, para cualesquiera $s, t > 0$:
+
+$$\boxed{P(X > s + t \mid X > s) = P(X > t)}$$
+
+::: {.fragment}
+
+**Ejemplo:** en la trampa ya pasaron 2 horas sin llegadas. ¿Probabilidad de esperar **más de 6 horas adicionales**?
+
+$$P(X > 8 \mid X > 2) = \frac{P(X > 8)}{P(X > 2)} = \frac{e^{-8/4}}{e^{-2/4}} = e^{-6/4} \approx \mathbf{0.223} = P(X > 6)$$
+
+:::
+
+::: {.fragment}
+
+> El tiempo que ya transcurrió **no cambia** la probabilidad de esperar un tiempo adicional: la distribución exponencial "no recuerda" el pasado.
+
+:::
+
 ## Código R: Distribución Exponencial
 
 ```{r}
@@ -1558,7 +1633,7 @@ Calcula $P(X > 12)$ y $P(4 < X < 10)$.
 
 :::
 
-## Solución {style="font-size: 85%;"}
+## Solución {style="font-size: 75%;"}
 
 ::: {.fragment}
 
@@ -1626,16 +1701,18 @@ df_norms <- data.frame(
   fx   = c(dnorm(x_n, 100, 5),
            dnorm(x_n, 100, 10),
            dnorm(x_n, 100, 20)),
-  sigma = rep(c("σ = 5", "σ = 10", "σ = 20"), each = 500)
+  sigma = factor(rep(c(5, 10, 20), each = 500))
 )
 
 ggplot(df_norms, aes(x, fx, color = sigma)) +
   geom_line(linewidth = 1.5) +
   scale_color_manual(values = c("#0D47A1","#1565C0","#90CAF9"),
+                     labels = c(expression(sigma == 5), expression(sigma == 10),
+                                expression(sigma == 20)),
                      name = "") +
   theme_minimal(base_size = 11) +
   labs(x = "x", y = "f(x)",
-       title = "Normal: efecto de σ (μ = 100)") +
+       title = quote("Normal: efecto de" ~ sigma ~ (mu == 100))) +
   theme(plot.title    = element_text(hjust = 0.5, face = "bold"),
         legend.position = "top",
         panel.grid.minor = element_blank())
@@ -1683,9 +1760,9 @@ ggplot(df_nn, aes(x, fx)) +
   annotate("text", x=0, y=0.03, label="99.7%", size=4,
            fontface="bold", color="#42A5F5") +
   annotate("text", x=c(-1,1), y=-0.018,
-           label=c("μ-σ","μ+σ"), size=3.8) +
+           label=c("mu - sigma","mu + sigma"), parse=TRUE, size=3.8) +
   annotate("text", x=c(-2,2), y=-0.018,
-           label=c("μ-2σ","μ+2σ"), size=3.8) +
+           label=c("mu - 2*sigma","mu + 2*sigma"), parse=TRUE, size=3.8) +
   scale_y_continuous(limits=c(-0.025, 0.44)) +
   theme_minimal(base_size=12) +
   labs(x="", y="", title="Regla empírica: distribución Normal") +
@@ -1694,7 +1771,11 @@ ggplot(df_nn, aes(x, fx)) +
         axis.text.y=element_blank())
 ```
 
+::: {style="font-size: 80%;"}
+
 $$P(\mu - \sigma \leq X \leq \mu + \sigma) \approx 0.68 \qquad P(\mu - 2\sigma \leq X \leq \mu + 2\sigma) \approx 0.95$$
+
+:::
 
 ## Ejemplo: Concentración de un principio activo {style="font-size: 85%;"}
 
@@ -1741,7 +1822,7 @@ pnorm(135, 120, 15) - pnorm(105, 120, 15)
 qnorm(p = 0.95, mean = 120, sd = 15)
 ```
 
-## Distribución Normal Estándar {style="font-size: 85%;"}
+## Distribución Normal Estándar {style="font-size: 74%;"}
 
 ### Estandarización
 
@@ -1820,8 +1901,8 @@ cat("Z =", round(z, 3))
 cat("\nP(Concentración > 145) = P(Z >", round(z, 3), ") =",
     round(1 - pnorm(z), 4))
 
-# Rango de referencia al 95%
-cat("\nIC 95%: [",
+# Rango de referencia: intervalo que contiene el 95% central de los lotes
+cat("\nIntervalo central del 95%: [",
     round(qnorm(0.025, 120, 15), 1), ",",
     round(qnorm(0.975, 120, 15), 1), "] mg")
 ```
@@ -1834,31 +1915,31 @@ cat("\nIC 95%: [",
 #| fig-height: 6.5
 #| fig-width: 11
 
-xg <- seq(60, 180, length.out = 500)
-fg <- dnorm(xg, mean = 100, sd = 15)
-df_gluc <- data.frame(x = xg, fx = fg)
+xg <- seq(0, 14, length.out = 500)
+fg <- dnorm(xg, mean = 6, sd = 2)
+df_pb <- data.frame(x = xg, fx = fg)
 
-df_shd <- df_gluc[df_gluc$x <= 126, ]
-df_dm  <- df_gluc[df_gluc$x > 126, ]
+df_shd <- df_pb[df_pb$x <= 10, ]
+df_exc <- df_pb[df_pb$x > 10, ]
 
-ggplot(df_gluc, aes(x, fx)) +
+ggplot(df_pb, aes(x, fx)) +
   geom_area(data = df_shd, aes(x, fx), fill = "#A5D6A7", alpha = 0.7) +
-  geom_area(data = df_dm,  aes(x, fx), fill = "#EF9A9A", alpha = 0.7) +
+  geom_area(data = df_exc, aes(x, fx), fill = "#EF9A9A", alpha = 0.7) +
   geom_line(linewidth = 1.8, color = "#1565C0") +
-  geom_vline(xintercept = 126, linetype = "dashed",
+  geom_vline(xintercept = 10, linetype = "dashed",
              color = "#C62828", linewidth = 1.2) +
-  annotate("text", x = 95, y = 0.012, label = "Dentro del límite\n(Pb < 126)",
+  annotate("text", x = 5.5, y = 0.08, label = "Dentro del límite\n(Pb < 10)",
            size = 4.5, fontface = "bold", color = "#2E7D32") +
-  annotate("text", x = 145, y = 0.006, label = "Excede el límite\n(Pb ≥ 126)",
+  annotate("text", x = 12.3, y = 0.04, label = "Excede el límite\n(Pb > 10)",
            size = 4.5, fontface = "bold", color = "#C62828") +
-  annotate("text", x = 128, y = 0.027, label = "126 µg/L",
+  annotate("text", x = 10.9, y = 0.17, label = "10 µg/L (OMS)",
            size = 4, color = "#C62828", fontface = "italic") +
   theme_minimal(base_size = 13) +
   labs(x = "Concentración de plomo (µg/L)",
        y = "Densidad f(x)",
-       title = "Plomo en agua potable ~ N(100, 15²)",
-       subtitle = paste0("P(Plomo ≥ 126) = ",
-                         round(1 - pnorm(126, 100, 15), 4))) +
+       title = "Plomo en agua potable ~ N(6, 2²)",
+       subtitle = paste0("P(Plomo > 10) = ",
+                         round(1 - pnorm(10, 6, 2), 4))) +
   theme(plot.title    = element_text(hjust = 0.5, face = "bold"),
         plot.subtitle = element_text(hjust = 0.5, color = "#C62828"),
         panel.grid.minor = element_blank())
@@ -1872,18 +1953,19 @@ ggplot(df_gluc, aes(x, fx)) +
 #| echo: true
 #| eval: true
 
-# Concentración de plomo en agua potable ~ N(100, 15^2) µg/L
+# Concentración de plomo en agua potable ~ N(6, 2^2) µg/L
+# Límite de la OMS: 10 µg/L
 
-# P(Plomo >= 126): probabilidad de exceder el límite regulatorio
-1 - pnorm(q = 126, mean = 100, sd = 15)
+# P(Plomo >= 10): probabilidad de exceder el límite regulatorio
+1 - pnorm(q = 10, mean = 6, sd = 2)
 
 # Valor de corte para alerta temprana (percentil 80)
-qnorm(p = 0.80, mean = 100, sd = 15)
+qnorm(p = 0.80, mean = 6, sd = 2)
 
-# Simular 500 muestras y contar cuántas superan 126
+# Simular 500 muestras y calcular la proporción que supera 10
 set.seed(2024)
-plomo <- rnorm(n = 500, mean = 100, sd = 15)
-mean(plomo >= 126)
+plomo <- rnorm(n = 500, mean = 6, sd = 2)
+mean(plomo >= 10)
 ```
 
 ## Tu turno: Distribución Normal {style="font-size: 98%;"}
@@ -1900,7 +1982,7 @@ Calcula $P(X < 6)$ y el percentil 90 de $X$.
 
 :::
 
-## Solución {style="font-size: 85%;"}
+## Solución {style="font-size: 70%;"}
 
 ::: {.fragment}
 
