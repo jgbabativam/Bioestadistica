@@ -1,0 +1,649 @@
+"departamento","municipio","area_sembrada","area_cosechada","produccion","rendimiento"
+"Antioquia","Medellín",355.71,317.88,279.73,0.88
+"Antioquia","Abejorral",3049.41,2521.38,4992.33,1.98
+"Antioquia","Abriaquí",109.22,94.2,202.53,2.15
+"Antioquia","Alejandría",521.43,436.27,667.49,1.53
+"Antioquia","Amagá",469.77,381.48,694.29,1.82
+"Antioquia","Amalfi",1601.84,1331.99,1105.55,0.83
+"Antioquia","Andes",10689.28,8094.23,20073.69,2.48
+"Antioquia","Angelópolis",209.13,174.69,206.13,1.18
+"Antioquia","Angostura",809.2,674.07,465.11,0.69
+"Antioquia","Anorí",283.45,244.43,288.43,1.18
+"Antioquia","Santa Fé de Antioquia",1919.52,1699.4,2124.25,1.25
+"Antioquia","Anzá",1969.78,1638.89,2015.83,1.23
+"Antioquia","Apartadó",12,0,0,0
+"Antioquia","Argelia",930.69,815.87,1403.3,1.72
+"Antioquia","Armenia",528.2,444.6,529.07,1.19
+"Antioquia","Barbosa",775.17,702.08,835.48,1.19
+"Antioquia","Bello",115.82,104.05,113.41,1.09
+"Antioquia","Betania",6587.53,4583.28,8433.24,1.84
+"Antioquia","Betulia",6260.63,4791.57,10685.2,2.23
+"Antioquia","Ciudad Bolívar",8922.05,6586.65,9221.31,1.4
+"Antioquia","Briceño",584.93,499.68,554.64,1.11
+"Antioquia","Buriticá",839.42,757.84,1220.12,1.61
+"Antioquia","Caicedo",1993.63,1650.7,2129.4,1.29
+"Antioquia","Caldas",113.53,94.48,175.73,1.86
+"Antioquia","Campamento",207.64,180.01,190.81,1.06
+"Antioquia","Cañasgordas",1681.36,1504,2015.36,1.34
+"Antioquia","Caracolí",10.6,10.6,3.71,0.35
+"Antioquia","Caramanta",722.81,596.83,650.54,1.09
+"Antioquia","El Carmen de Viboral",117.57,103.96,112.28,1.08
+"Antioquia","Carolina",6.77,6.11,9.04,1.48
+"Antioquia","Cisneros",88.64,88.12,86.36,0.98
+"Antioquia","Cocorná",373.04,321.78,405.44,1.26
+"Antioquia","Concepción",99.75,91.21,74.79,0.82
+"Antioquia","Concordia",6283.07,4681.55,7630.93,1.63
+"Antioquia","Copacabana",71.66,59.95,65.35,1.09
+"Antioquia","Dabeiba",1514.18,1288.26,2267.34,1.76
+"Antioquia","Donmatías",180.81,161.36,153.29,0.95
+"Antioquia","Ebéjico",1513.97,1357.7,1914.36,1.41
+"Antioquia","Envigado",11.41,8.38,4.61,0.55
+"Antioquia","Fredonia",2004.2,1440.21,2117.11,1.47
+"Antioquia","Frontino",470.1,403.68,678.18,1.68
+"Antioquia","Giraldo",696.52,644.61,528.58,0.82
+"Antioquia","Girardota",163.79,146.92,273.27,1.86
+"Antioquia","Gómez Plata",604.05,481.75,597.37,1.24
+"Antioquia","Granada",214.58,191.88,232.17,1.21
+"Antioquia","Guadalupe",403.78,358.6,631.14,1.76
+"Antioquia","Guatapé",9.6,7.34,5.36,0.73
+"Antioquia","Heliconia",743.75,648.48,985.69,1.52
+"Antioquia","Hispania",1008.62,754.8,1026.53,1.36
+"Antioquia","Itagüí",17.66,15.62,31.71,2.03
+"Antioquia","Ituango",2385.65,2150.33,2451.38,1.14
+"Antioquia","Jardín",2172.1,1731.94,3221.41,1.86
+"Antioquia","Jericó",1183.22,969.52,1202.2,1.24
+"Antioquia","La Ceja",394.97,340.96,518.26,1.52
+"Antioquia","La Estrella",37.97,35.11,65.3,1.86
+"Antioquia","La Pintada",1.5,0,0,0
+"Antioquia","Liborina",1404.02,1200.93,1525.18,1.27
+"Antioquia","Maceo",65.09,56.55,84.26,1.49
+"Antioquia","Marinilla",26.06,22.5,28.35,1.26
+"Antioquia","Montebello",1429.44,1165.14,699.08,0.6
+"Antioquia","Nariño",1049.24,922.78,913.55,0.99
+"Antioquia","Olaya",365.48,320.08,368.09,1.15
+"Antioquia","Peñol",129.54,110.39,179.94,1.63
+"Antioquia","Peque",1246.79,1042.15,864.98,0.83
+"Antioquia","Pueblorrico",1737.49,1317.63,1791.98,1.36
+"Antioquia","Remedios",7.93,7.69,1.61,0.21
+"Antioquia","Retiro",182.61,154.05,341.99,2.22
+"Antioquia","Sabanalarga",1618.1,1392.76,2075.21,1.49
+"Antioquia","Sabaneta",23.3,21.27,27.86,1.31
+"Antioquia","Salgar",7973.69,6137.99,8286.29,1.35
+"Antioquia","San Andrés de Cuerquía",882.54,769.16,830.69,1.08
+"Antioquia","San Carlos",644,549.73,1253.38,2.28
+"Antioquia","San Francisco",160.29,130.95,210.83,1.61
+"Antioquia","San Jerónimo",552.33,471.57,608.33,1.29
+"Antioquia","San Luis",134.75,117.95,233.54,1.98
+"Antioquia","San Rafael",436.12,372.05,461.34,1.24
+"Antioquia","San Roque",913.46,775.4,953.74,1.23
+"Antioquia","San Vicente Ferrer",48.51,35.08,35.08,1
+"Antioquia","Santa Bárbara",1715.13,1388.5,694.25,0.5
+"Antioquia","Santa Rosa de Osos",603.31,523.12,680.06,1.3
+"Antioquia","Santo Domingo",747.31,661.73,727.9,1.1
+"Antioquia","Sonsón",2086.73,1713.42,3067.02,1.79
+"Antioquia","Sopetrán",998.97,884.16,963.73,1.09
+"Antioquia","Támesis",1404.43,1203.45,2310.62,1.92
+"Antioquia","Tarso",917.53,597.63,1255.02,2.1
+"Antioquia","Titiribí",409.1,355.14,529.16,1.49
+"Antioquia","Toledo",1130.62,940.87,1270.17,1.35
+"Antioquia","Uramita",413.86,338.75,392.95,1.16
+"Antioquia","Urrao",1054.02,903.45,1562.97,1.73
+"Antioquia","Valdivia",39.11,34.92,50.63,1.45
+"Antioquia","Valparaíso",425.53,354.07,548.81,1.55
+"Antioquia","Vegachí",319.31,275.08,217.31,0.79
+"Antioquia","Venecia",579.69,432.75,696.73,1.61
+"Antioquia","Yalí",199.41,184.16,103.13,0.56
+"Antioquia","Yarumal",259.03,222.2,351.08,1.58
+"Antioquia","Yolombó",1062.77,876.77,1551.88,1.77
+"Bolívar","Morales",76.37,71.45,51.44,0.72
+"Bolívar","San Jacinto",89,59,59,1
+"Bolívar","San Martín de Loba",2,0,0,0
+"Bolívar","Santa Rosa del Sur",1509.59,1175.25,1057.73,0.9
+"Boyacá","Almeida",73.54,71.52,85.82,1.2
+"Boyacá","Aquitania",87.5,42.5,19.12,0.45
+"Boyacá","Berbeo",414.11,368.48,350.06,0.95
+"Boyacá","Briceño",169.27,142.62,158.31,1.11
+"Boyacá","Buenavista",351.37,316.6,262.78,0.83
+"Boyacá","Campohermoso",233.12,188.65,222.61,1.18
+"Boyacá","Chinavita",71.69,64.47,54.8,0.85
+"Boyacá","Chita",30,5,5,1
+"Boyacá","Chitaraque",416.64,354.97,475.66,1.34
+"Boyacá","Coper",277.52,247.63,245.15,0.99
+"Boyacá","Cubará",6,1,0.7,0.7
+"Boyacá","Chivor",3.4,3.3,2.64,0.8
+"Boyacá","Gachantivá",10,0,0,0
+"Boyacá","Garagoa",150.35,132.14,146.68,1.11
+"Boyacá","Guacamayas",82,62,18.6,0.3
+"Boyacá","Guateque",60.77,56.32,69.84,1.24
+"Boyacá","Guayatá",166.48,154.84,156.39,1.01
+"Boyacá","Labranzagrande",115.27,105.31,137.96,1.31
+"Boyacá","La Capilla",79.97,78.97,63.18,0.8
+"Boyacá","La Victoria",129.75,121.15,146.59,1.21
+"Boyacá","Macanal",108.74,99.16,40.66,0.41
+"Boyacá","Maripí",240.35,215.25,221.71,1.03
+"Boyacá","Miraflores",660.15,597.08,567.23,0.95
+"Boyacá","Mongua",72.5,68.5,89.05,1.3
+"Boyacá","Moniquirá",1442.01,1212.98,1140.2,0.94
+"Boyacá","Muzo",46.82,44.86,60.56,1.35
+"Boyacá","Otanche",141.09,136.85,91.69,0.67
+"Boyacá","Pachavita",134.02,123.48,75.32,0.61
+"Boyacá","Páez",364.93,305.7,314.87,1.03
+"Boyacá","Pajarito",46.55,43.26,53.64,1.24
+"Boyacá","Pauna",238.74,212.61,250.88,1.18
+"Boyacá","Paya",206.03,195.6,99.76,0.51
+"Boyacá","Pisba",192.29,164.58,65.83,0.4
+"Boyacá","Puerto Boyacá",22,8,10.4,1.3
+"Boyacá","Quípama",127.58,121.11,138.07,1.14
+"Boyacá","Rondón",165.88,154.9,147.16,0.95
+"Boyacá","San Eduardo",299.34,264.93,423.89,1.6
+"Boyacá","San José de Pare",853.1,774.39,557.56,0.72
+"Boyacá","San Luis de Gaceno",2.3,2.3,1.56,0.68
+"Boyacá","San Mateo",135,125,75,0.6
+"Boyacá","San Pablo de Borbur",209.86,184.9,147.92,0.8
+"Boyacá","Santana",554.07,501.92,240.92,0.48
+"Boyacá","Santa María",6.17,5.84,5.26,0.9
+"Boyacá","Santa Sofía",12,11,7.59,0.69
+"Boyacá","Somondoco",53.12,51.8,30.04,0.58
+"Boyacá","Sutatenza",40.2,35.2,21.12,0.6
+"Boyacá","Tenza",38,36,50.4,1.4
+"Boyacá","Togüí",585.92,477.43,639.76,1.34
+"Boyacá","Tununguá",62.66,53.54,28.91,0.54
+"Boyacá","Úmbita",48,40,29.2,0.73
+"Boyacá","Zetaquira",1063.06,983.53,1032.71,1.05
+"Caldas","Manizales",4778.01,3416.6,7619.02,2.23
+"Caldas","Aguadas",3994.28,2986.83,4062.09,1.36
+"Caldas","Anserma",5305.04,3937.98,3898.6,0.99
+"Caldas","Aranzazu",1453.65,1141.33,1540.8,1.35
+"Caldas","Belalcázar",2505.16,1796.41,2532.94,1.41
+"Caldas","Chinchiná",3666.96,2351.82,2775.15,1.18
+"Caldas","Filadelfia",1893.21,1444.29,2007.56,1.39
+"Caldas","La Merced",952.46,733.19,967.81,1.32
+"Caldas","Manzanares",2869.74,2241.78,5133.68,2.29
+"Caldas","Marmato",360.34,283.99,281.15,0.99
+"Caldas","Marquetalia",2747.15,2199.53,2595.45,1.18
+"Caldas","Marulanda",166.86,137.12,134.38,0.98
+"Caldas","Neira",2637.09,1879.01,3739.23,1.99
+"Caldas","Pácora",3068.95,2231.35,2945.38,1.32
+"Caldas","Palestina",2490.93,1497.24,1107.96,0.74
+"Caldas","Pensilvania",3504.11,2951.34,3275.99,1.11
+"Caldas","Riosucio",2733.13,2156.61,1876.25,0.87
+"Caldas","Risaralda",2566.64,1770.85,2957.32,1.67
+"Caldas","Salamina",2234.82,1753.45,2314.55,1.32
+"Caldas","Samaná",2864.99,2371.16,2584.56,1.09
+"Caldas","San José",1584.6,1143.2,617.33,0.54
+"Caldas","Supía",1351.45,1048.89,1164.27,1.11
+"Caldas","Victoria",103.57,79.7,118.75,1.49
+"Caldas","Villamaría",1470.5,1127.44,1104.89,0.98
+"Caldas","Viterbo",333.99,246.92,543.22,2.2
+"Caquetá","Florencia",1104.47,897.91,1158.3,1.29
+"Caquetá","Belén de Los Andaquíes",100,25,25,1
+"Caquetá","Curillo",3,0,0,0
+"Caquetá","El Doncello",165.21,154.9,117.72,0.76
+"Caquetá","El Paujíl",204.15,179.24,186.41,1.04
+"Caquetá","La Montañita",106.81,93.94,108.97,1.16
+"Caquetá","Morelia",5,0,0,0
+"Caquetá","Puerto Rico",1090.29,923.9,1256.5,1.36
+"Caquetá","San Vicente del Caguán",1169.7,927.98,324.79,0.35
+"Cauca","Popayán",3366.15,2812.65,3234.55,1.15
+"Cauca","Almaguer",1239.64,1026.22,913.34,0.89
+"Cauca","Argelia",1419.72,1118.26,1789.22,1.6
+"Cauca","Balboa",3443.52,2872.98,1781.25,0.62
+"Cauca","Bolívar",2819.93,2326.87,2885.32,1.24
+"Cauca","Buenos Aires",2005.63,1652.87,2165.26,1.31
+"Cauca","Cajibío",7475.54,6128.23,5331.56,0.87
+"Cauca","Caldono",5334.95,4184.72,4979.82,1.19
+"Cauca","Caloto",1897.65,1630.22,2950.7,1.81
+"Cauca","Corinto",1812.07,1602.58,2580.15,1.61
+"Cauca","El Tambo",8303.63,6765.58,9201.19,1.36
+"Cauca","Florencia",1071.32,901.39,883.36,0.98
+"Cauca","Inzá",5599.45,4632.35,6809.55,1.47
+"Cauca","Jambaló",1181.6,978.66,714.42,0.73
+"Cauca","La Sierra",1881.96,1463.42,2443.91,1.67
+"Cauca","La Vega",3303.2,2684.21,2657.37,0.99
+"Cauca","Mercaderes",948.77,783.28,924.27,1.18
+"Cauca","Miranda",679.15,625.26,656.52,1.05
+"Cauca","Morales",6802.17,5574.57,9086.55,1.63
+"Cauca","Páez",6071.39,4933.03,6462.27,1.31
+"Cauca","Patía",1776.05,1460.19,1956.65,1.34
+"Cauca","Piendamó - Tunía",7589.48,5724.31,8872.68,1.55
+"Cauca","Puracé",373.99,293.5,284.7,0.97
+"Cauca","Rosas",1269.34,1017.14,1332.45,1.31
+"Cauca","San Sebastián",429.17,348.94,453.62,1.3
+"Cauca","Santander de Quilichao",3669.88,3073.15,4517.53,1.47
+"Cauca","Santa Rosa",45,40,36,0.9
+"Cauca","Silvia",3.94,3.63,4.5,1.24
+"Cauca","Sotará Paispamba",881.75,685.52,1117.4,1.63
+"Cauca","Suárez",2983.96,2370.13,3365.58,1.42
+"Cauca","Sucre",1641.28,1362.82,1853.44,1.36
+"Cauca","Timbío",4127.65,3356.23,3490.48,1.04
+"Cauca","Toribío",2243.24,2063.9,2022.62,0.98
+"Cauca","Totoró",927.24,763.89,702.78,0.92
+"Cesar","Valledupar",2702.34,2381.72,2310.27,0.97
+"Cesar","Aguachica",933.62,725.85,856.5,1.18
+"Cesar","Agustín Codazzi",4980.31,4274.12,4060.41,0.95
+"Cesar","Becerril",802.61,612.95,435.19,0.71
+"Cesar","Chimichagua",116.38,108.91,138.32,1.27
+"Cesar","Chiriguaná",73.7,72.37,40.53,0.56
+"Cesar","Curumaní",426.89,408.61,261.51,0.64
+"Cesar","El Copey",897.25,756.42,680.78,0.9
+"Cesar","González",131.24,106.96,172.21,1.61
+"Cesar","La Gloria",67.31,64.95,118.86,1.83
+"Cesar","La Jagua de Ibirico",2537.88,1975.29,2133.31,1.08
+"Cesar","Manaure Balcón del Cesar",825.83,717.93,459.48,0.64
+"Cesar","Pailitas",327.86,281.48,225.18,0.8
+"Cesar","Pelaya",9.4,8.51,2.47,0.29
+"Cesar","Pueblo Bello",5014.06,4275.34,3292.01,0.77
+"Cesar","Río de Oro",242.79,173.17,232.05,1.34
+"Cesar","La Paz",4565.08,3942.26,3429.77,0.87
+"Cesar","San Alberto",24.44,24.44,24.2,0.99
+"Cesar","San Martín",24.33,20.82,12.7,0.61
+"Córdoba","Planeta Rica",0.9,0,0,0
+"Cundinamarca","Agua de Dios",1,1,0.5,0.5
+"Cundinamarca","Albán",328.16,280.62,260.98,0.93
+"Cundinamarca","Anapoima",51.39,44.52,67.23,1.51
+"Cundinamarca","Anolaima",605.78,533.58,586.94,1.1
+"Cundinamarca","Arbeláez",394.39,355.8,291.76,0.82
+"Cundinamarca","Beltrán",55.69,52.88,49.18,0.93
+"Cundinamarca","Bituima",437.24,387.18,216.82,0.56
+"Cundinamarca","Cabrera",18.71,15.98,19.82,1.24
+"Cundinamarca","Cachipay",552.72,498.84,678.42,1.36
+"Cundinamarca","Caparrapí",538.2,438.22,403.16,0.92
+"Cundinamarca","Cáqueza",90.69,81.36,105.77,1.3
+"Cundinamarca","Chaguaní",780.29,635.53,686.37,1.08
+"Cundinamarca","Choachí",37.72,36.22,30.06,0.83
+"Cundinamarca","El Colegio",938.11,824.83,1327.98,1.61
+"Cundinamarca","El Peñón",491.31,387.62,469.02,1.21
+"Cundinamarca","Fómeque",145.26,128.05,162.62,1.27
+"Cundinamarca","Fosca",32.96,32.22,34.8,1.08
+"Cundinamarca","Fusagasugá",580,525.36,430.8,0.82
+"Cundinamarca","Gachalá",77.59,64.04,75.57,1.18
+"Cundinamarca","Gachetá",228.43,211.38,304.39,1.44
+"Cundinamarca","Gama",63.21,55.08,53.98,0.98
+"Cundinamarca","Guaduas",960.43,789.52,979,1.24
+"Cundinamarca","Guayabal de Síquima",665.62,548.8,680.51,1.24
+"Cundinamarca","Guayabetal",301.19,266.67,330.67,1.24
+"Cundinamarca","Gutiérrez",50.7,44.57,55.27,1.24
+"Cundinamarca","Jerusalén",102.4,87.43,94.42,1.08
+"Cundinamarca","Junín",107.72,97.67,96.69,0.99
+"Cundinamarca","La Mesa",662.95,572.16,600.77,1.05
+"Cundinamarca","La Palma",901.34,699.39,643.44,0.92
+"Cundinamarca","La Peña",130.63,96.69,51.25,0.53
+"Cundinamarca","La Vega",469.01,384.37,334.4,0.87
+"Cundinamarca","Machetá",117.65,107.95,124.14,1.15
+"Cundinamarca","Manta",171.7,166.51,113.23,0.68
+"Cundinamarca","Medina",120.62,99.71,135.61,1.36
+"Cundinamarca","Nilo",382.36,297.95,330.72,1.11
+"Cundinamarca","Nimaima",41.52,33.12,43.06,1.3
+"Cundinamarca","Nocaima",44.58,37.83,23.83,0.63
+"Cundinamarca","Venecia",340.42,312.52,221.89,0.71
+"Cundinamarca","Pacho",933.2,745.7,1357.17,1.82
+"Cundinamarca","Paime",609.98,480.17,475.37,0.99
+"Cundinamarca","Pandi",178.14,160.15,289.87,1.81
+"Cundinamarca","Paratebueno",8.82,7.84,6.66,0.85
+"Cundinamarca","Pasca",16.67,16.25,13,0.8
+"Cundinamarca","Pulí",580.45,537.86,484.07,0.9
+"Cundinamarca","Quebradanegra",73.64,55.92,54.24,0.97
+"Cundinamarca","Quetame",124.96,113.28,90.62,0.8
+"Cundinamarca","Quipile",1085.82,949.36,1205.69,1.27
+"Cundinamarca","Apulo",24.49,18.87,9.81,0.52
+"Cundinamarca","San Antonio del Tequendama",336.12,298.42,370.04,1.24
+"Cundinamarca","San Bernardo",210.15,182.96,274.44,1.5
+"Cundinamarca","San Cayetano",453.66,357.55,665.04,1.86
+"Cundinamarca","San Francisco",428.65,354.14,502.88,1.42
+"Cundinamarca","San Juan de Rioseco",1561.35,1370.04,1233.04,0.9
+"Cundinamarca","Sasaima",730.82,621.53,1156.05,1.86
+"Cundinamarca","Silvania",406.59,351.2,695.38,1.98
+"Cundinamarca","Supatá",812.86,699.78,692.78,0.99
+"Cundinamarca","Tena",327.42,294.89,347.97,1.18
+"Cundinamarca","Tibacuy",623.92,571.8,508.9,0.89
+"Cundinamarca","Tibirita",166.75,148.5,271.76,1.83
+"Cundinamarca","Tocaima",60.55,57.96,92.74,1.6
+"Cundinamarca","Topaipí",544.71,449.13,341.34,0.76
+"Cundinamarca","Ubalá",111.68,104,108.16,1.04
+"Cundinamarca","Ubaque",89.18,85.6,137.82,1.61
+"Cundinamarca","Vergara",1267.23,954.79,763.83,0.8
+"Cundinamarca","Vianí",896.57,744.02,1011.87,1.36
+"Cundinamarca","Villagómez",133.16,114.5,222.13,1.94
+"Cundinamarca","Villeta",127.02,112.06,86.29,0.77
+"Cundinamarca","Viotá",2616.29,2148.31,2255.73,1.05
+"Cundinamarca","Yacopí",565.42,469.23,605.31,1.29
+"Cundinamarca","Zipacón",94.86,87.38,96.99,1.11
+"Chocó","El Carmen de Atrato",158.94,144.16,178.76,1.24
+"Huila","Neiva",4746.67,3838.33,5719.11,1.49
+"Huila","Acevedo",14319.14,11031.77,15665.11,1.42
+"Huila","Agrado",1408.83,1068.76,1506.95,1.41
+"Huila","Aipe",1226.94,1012.3,1356.48,1.34
+"Huila","Algeciras",6392.16,4904.82,5346.25,1.09
+"Huila","Altamira",114.64,75.28,137.76,1.83
+"Huila","Baraya",847.08,691.25,974.66,1.41
+"Huila","Campoalegre",2065.09,1535.4,1013.36,0.66
+"Huila","Colombia",1924.12,1567.59,2351.38,1.5
+"Huila","Elías",1205.92,926.94,1121.6,1.21
+"Huila","Garzón",9413.79,7424.09,9725.56,1.31
+"Huila","Gigante",5252.59,3930.35,7389.06,1.88
+"Huila","Guadalupe",4768,3758.85,3946.79,1.05
+"Huila","Hobo",937.33,677.7,1009.77,1.49
+"Huila","Íquira",2688.2,2180.94,2682.56,1.23
+"Huila","Isnos",5121.46,4006.08,2123.22,0.53
+"Huila","La Argentina",2606.41,2061.77,2865.86,1.39
+"Huila","La Plata",11549.74,9040.67,14193.85,1.57
+"Huila","Nátaga",1964.37,1510.05,2204.67,1.46
+"Huila","Oporapa",3007.82,2363.7,2481.88,1.05
+"Huila","Paicol",1722.4,1292.68,620.49,0.48
+"Huila","Palermo",2566.98,2041.16,2592.27,1.27
+"Huila","Palestina",4613.13,3739.1,6169.52,1.65
+"Huila","Pital",4672.93,3500.45,5145.66,1.47
+"Huila","Pitalito",17789.59,13762.68,25048.08,1.82
+"Huila","Rivera",764.7,601.8,1263.78,2.1
+"Huila","Saladoblanco",3552.27,2741.11,3727.91,1.36
+"Huila","San Agustín",5903.28,4620.47,6653.48,1.44
+"Huila","Santa María",2958.69,2394.83,4765.71,1.99
+"Huila","Suaza",7846.35,5910.87,9220.96,1.56
+"Huila","Tarqui",3473.32,2635.13,3320.26,1.26
+"Huila","Tesalia",672.6,532.74,633.96,1.19
+"Huila","Tello",3369.81,2675.95,3344.94,1.25
+"Huila","Teruel",2823.36,2150.46,1139.74,0.53
+"Huila","Timaná",4787.57,3401.28,4285.61,1.26
+"La Guajira","Riohacha",99.96,83.77,113.93,1.36
+"La Guajira","Barrancas",422.78,376.86,177.12,0.47
+"La Guajira","Dibulla",101.56,100.93,121.12,1.2
+"La Guajira","El Molino",136.71,125.13,123.88,0.99
+"La Guajira","Fonseca",272.58,214.17,197.04,0.92
+"La Guajira","Hatonuevo",48.91,43.31,26.85,0.62
+"La Guajira","La Jagua del Pilar",241.67,197.95,294.95,1.49
+"La Guajira","San Juan del Cesar",281.75,238.87,207.82,0.87
+"La Guajira","Urumita",700.77,628.33,515.23,0.82
+"La Guajira","Villanueva",474.43,424.7,416.21,0.98
+"Magdalena","Santa Marta",3241.74,2770.98,1884.27,0.68
+"Magdalena","Aracataca",1111.94,903.14,876.05,0.97
+"Magdalena","Ciénaga",10620.63,8825.82,5825.04,0.66
+"Magdalena","Fundación",1968.72,1550.56,1426.52,0.92
+"Meta","Villavicencio",60.58,51.72,50.69,0.98
+"Meta","Acacías",87.15,70.1,63.09,0.9
+"Meta","Cubarral",301.47,275.4,145.96,0.53
+"Meta","Cumaral",5.23,5.23,3.87,0.74
+"Meta","El Castillo",192.83,167.43,83.72,0.5
+"Meta","El Dorado",172.2,134.46,134.46,1
+"Meta","Mesetas",1385.11,983.39,1701.26,1.73
+"Meta","Uribe",189.6,152.89,129.96,0.85
+"Meta","Lejanías",367.34,244.31,329.82,1.35
+"Meta","Restrepo",13.5,13.08,12.95,0.99
+"Meta","San Juan de Arama",141.63,80.67,64.54,0.8
+"Meta","San Juanito",3.5,1,1.5,1.5
+"Meta","Vistahermosa",254.23,164.06,142.73,0.87
+"Nariño","Pasto",247.8,200.2,372.37,1.86
+"Nariño","Albán",1848.99,1536.66,1613.49,1.05
+"Nariño","Ancuya",403.24,329.1,325.81,0.99
+"Nariño","Arboleda",1676.24,1410.2,1664.04,1.18
+"Nariño","Belén",143.33,126,139.86,1.11
+"Nariño","Buesaco",3394.62,2741.24,3234.66,1.18
+"Nariño","Colón",2098.69,1598.32,2765.09,1.73
+"Nariño","Consacá",1702.56,1401.25,1653.48,1.18
+"Nariño","Cumbal",37,37,22.2,0.6
+"Nariño","Cumbitara",66.44,60.74,47.98,0.79
+"Nariño","Chachagüí",435.17,363.22,268.78,0.74
+"Nariño","El Peñol",585.44,484.78,567.19,1.17
+"Nariño","El Rosario",674.75,549.63,439.7,0.8
+"Nariño","El Tablón de Gómez",2022.37,1629.65,1955.58,1.2
+"Nariño","El Tambo",727.6,614.39,761.84,1.24
+"Nariño","Funes",270.12,206.05,228.72,1.11
+"Nariño","Guaitarilla",143.41,117.4,99.79,0.85
+"Nariño","Iles",6.62,5.96,9.12,1.53
+"Nariño","Imués",11.31,8.96,6.18,0.69
+"Nariño","La Cruz",294,239.31,296.74,1.24
+"Nariño","La Florida",1115.53,930.01,1023.01,1.1
+"Nariño","La Llanada",79.75,65.34,64.69,0.99
+"Nariño","La Unión",4280.36,3268.68,3530.17,1.08
+"Nariño","Leiva",720.81,580.91,563.48,0.97
+"Nariño","Linares",608.9,463.52,588.67,1.27
+"Nariño","Los Andes",473.36,354.73,315.71,0.89
+"Nariño","Mallama",48.56,43.02,27.1,0.63
+"Nariño","Policarpa",282.78,191.29,212.33,1.11
+"Nariño","Providencia",114.04,98.91,134.52,1.36
+"Nariño","Ricaurte",2.35,1.42,0.88,0.62
+"Nariño","Samaniego",1424.8,1140.51,1151.92,1.01
+"Nariño","Sandoná",1236.45,973.98,818.14,0.84
+"Nariño","San Bernardo",394.5,324.95,360.69,1.11
+"Nariño","San Lorenzo",3466.13,2798.54,3050.41,1.09
+"Nariño","San Pablo",1277.12,1026.99,1273.47,1.24
+"Nariño","San Pedro de Cartago",748.48,634.55,552.06,0.87
+"Nariño","Santacruz",166.29,138.02,157.34,1.14
+"Nariño","Taminango",1714.41,1336.97,1484.04,1.11
+"Nariño","Tangua",158.82,109.53,119.39,1.09
+"Nariño","Túquerres",76.28,62.48,21.87,0.35
+"Nariño","Yacuanquer",550.99,464.81,469.46,1.01
+"Norte de Santander","San José de Cúcuta",24.09,23.21,21.82,0.94
+"Norte de Santander","Ábrego",509.16,397.39,309.96,0.78
+"Norte de Santander","Arboledas",1672.28,1482.99,1186.39,0.8
+"Norte de Santander","Bochalema",535.31,453.72,417.42,0.92
+"Norte de Santander","Bucarasica",1058.36,917.57,587.24,0.64
+"Norte de Santander","Cácota",2.24,2.24,4.86,2.17
+"Norte de Santander","Cáchira",892.67,748.66,651.33,0.87
+"Norte de Santander","Chinácota",514.65,413.48,566.47,1.37
+"Norte de Santander","Chitagá",193.92,163.88,206.49,1.26
+"Norte de Santander","Convención",1328.83,1003.54,1083.82,1.08
+"Norte de Santander","Cucutilla",1475.13,1274.27,1503.64,1.18
+"Norte de Santander","Durania",661.57,582.37,541.6,0.93
+"Norte de Santander","El Carmen",1177.77,816.82,408.41,0.5
+"Norte de Santander","El Tarra",20.72,5.4,5.51,1.02
+"Norte de Santander","El Zulia",695.23,605.95,939.22,1.55
+"Norte de Santander","Gramalote",1083.67,952.23,761.78,0.8
+"Norte de Santander","Hacarí",962,685.9,651.6,0.95
+"Norte de Santander","Herrán",179.24,155.67,140.1,0.9
+"Norte de Santander","Labateca",1028.88,918.22,808.03,0.88
+"Norte de Santander","La Esperanza",301.04,253.88,396.05,1.56
+"Norte de Santander","La Playa",266.92,169.03,143.68,0.85
+"Norte de Santander","Los Patios",180.87,137.94,177.94,1.29
+"Norte de Santander","Lourdes",1100.65,925.05,1054.56,1.14
+"Norte de Santander","Ocaña",960.07,780.4,1069.15,1.37
+"Norte de Santander","Pamplona",54.17,43.86,25.88,0.59
+"Norte de Santander","Pamplonita",444.68,378.23,204.24,0.54
+"Norte de Santander","Ragonvalia",461.64,402.72,438.96,1.09
+"Norte de Santander","Salazar",1530.77,1260.77,1122.09,0.89
+"Norte de Santander","San Calixto",1390.9,984.5,1220.78,1.24
+"Norte de Santander","San Cayetano",72.43,65.1,64.45,0.99
+"Norte de Santander","Santiago",279.1,241.12,214.6,0.89
+"Norte de Santander","Sardinata",1134.31,960.1,1094.51,1.14
+"Norte de Santander","Teorama",237.07,166.99,198.72,1.19
+"Norte de Santander","Tibú",5.77,2.98,2.95,0.99
+"Norte de Santander","Toledo",1686.99,1436.81,1652.33,1.15
+"Norte de Santander","Villa Caro",414.04,332.48,189.51,0.57
+"Norte de Santander","Villa del Rosario",102.53,87.65,47.33,0.54
+"Quindío","Armenia",1526.41,1129.8,1525.23,1.35
+"Quindío","Buenavista",706.24,531.45,935.35,1.76
+"Quindío","Calarcá",2794.31,2075.72,2906.01,1.4
+"Quindío","Circasia",1370.01,1080.22,1285.46,1.19
+"Quindío","Córdoba",1371.29,1081.58,1341.16,1.24
+"Quindío","Filandia",1536.66,1219.43,1377.96,1.13
+"Quindío","Génova",2948.74,2311.05,2865.7,1.24
+"Quindío","La Tebaida",443.94,292.76,392.3,1.34
+"Quindío","Montenegro",1109.9,776.63,963.02,1.24
+"Quindío","Pijao",1472.73,1212.82,1649.44,1.36
+"Quindío","Quimbaya",2193.53,1603.15,2805.51,1.75
+"Quindío","Salento",455.79,375.26,465.32,1.24
+"Risaralda","Pereira",3009.82,2168.27,2471.83,1.14
+"Risaralda","Apía",4119.13,3226.13,6387.74,1.98
+"Risaralda","Balboa",1912.69,1337.78,1618.71,1.21
+"Risaralda","Belén de Umbría",6752.16,4885.75,6302.62,1.29
+"Risaralda","Dosquebradas",894.45,733.58,1056.36,1.44
+"Risaralda","Guática",2287.43,1906.65,3298.5,1.73
+"Risaralda","La Celia",3435.02,2526.29,3435.75,1.36
+"Risaralda","La Virginia",33.66,30.86,49.68,1.61
+"Risaralda","Marsella",3056.45,2152.35,3163.95,1.47
+"Risaralda","Mistrató",1737.13,1321.45,1334.66,1.01
+"Risaralda","Pueblo Rico",584.92,462.85,532.28,1.15
+"Risaralda","Quinchía",3113.86,2554.52,3371.97,1.32
+"Risaralda","Santa Rosa de Cabal",4373.48,3502.51,4763.41,1.36
+"Risaralda","Santuario",5546.18,3941.62,3429.21,0.87
+"Santander","Bucaramanga",575.18,500.36,670.48,1.34
+"Santander","Aguada",121.86,105.07,104.02,0.99
+"Santander","Albania",305.75,261.71,115.15,0.44
+"Santander","Aratoca",1789.36,1516.57,1744.06,1.15
+"Santander","Barbosa",558.19,464.09,389.84,0.84
+"Santander","Barichara",516.54,421.05,656.84,1.56
+"Santander","Betulia",342.95,305.28,378.55,1.24
+"Santander","Bolívar",140.85,122.47,109,0.89
+"Santander","Cabrera",12.17,9.76,14.93,1.53
+"Santander","California",21,0,0,0
+"Santander","Capitanejo",18.25,11.38,11.15,0.98
+"Santander","Cepitá",119.23,88.13,86.37,0.98
+"Santander","Charalá",1348.85,1055.95,1362.18,1.29
+"Santander","Charta",138.43,121.89,132.86,1.09
+"Santander","Chima",998.71,836.16,777.63,0.93
+"Santander","Chipatá",119.8,104.04,60.34,0.58
+"Santander","Confines",2766.42,2169.49,1800.68,0.83
+"Santander","Contratación",319.8,277.21,291.07,1.05
+"Santander","Coromoro",1706.88,1337.71,1685.51,1.26
+"Santander","Curití",2292.54,1931.1,2529.74,1.31
+"Santander","El Carmen de Chucurí",581.01,469.04,806.75,1.72
+"Santander","El Guacamayo",49.09,37.42,16.09,0.43
+"Santander","El Peñón",6.21,3.21,3.21,1
+"Santander","El Playón",1115,897.72,1310.67,1.46
+"Santander","Encino",439.15,367.84,463.48,1.26
+"Santander","Enciso",100.13,82.85,72.08,0.87
+"Santander","Florián",374.14,327.69,216.28,0.66
+"Santander","Floridablanca",561.69,454.23,449.69,0.99
+"Santander","Galán",801.36,715.38,744,1.04
+"Santander","Gámbita",137.57,110.43,91.66,0.83
+"Santander","Girón",76.44,64.95,31.18,0.48
+"Santander","Guaca",128.41,111.96,124.28,1.11
+"Santander","Guadalupe",1290.66,1100.76,1783.23,1.62
+"Santander","Guapotá",369.99,299.93,326.92,1.09
+"Santander","Guavatá",422.18,349.53,234.19,0.67
+"Santander","Güepsa",145.74,120.72,140.04,1.16
+"Santander","Hato",631.36,549.45,478.02,0.87
+"Santander","Jesús María",379.55,326.06,515.17,1.58
+"Santander","Jordán",73.06,69.04,87.68,1.27
+"Santander","La Belleza",178.37,161.52,182.52,1.13
+"Santander","Landázuri",15.95,15.95,11.48,0.72
+"Santander","La Paz",35.16,32.57,34.52,1.06
+"Santander","Lebrija",41.74,40.01,59.61,1.49
+"Santander","Los Santos",122.34,119.63,155.52,1.3
+"Santander","Macaravita",5,0,0,0
+"Santander","Málaga",20.5,15.1,16.61,1.1
+"Santander","Matanza",1177.45,998,1267.46,1.27
+"Santander","Mogotes",1938.87,1472.84,1737.95,1.18
+"Santander","Molagavita",140.23,125.37,124.12,0.99
+"Santander","Ocamonte",1542.64,1247.31,1746.23,1.4
+"Santander","Oiba",1888.5,1519.19,1488.81,0.98
+"Santander","Onzaga",155.01,126.04,46.63,0.37
+"Santander","Palmas del Socorro",940.29,723.44,940.47,1.3
+"Santander","Páramo",2611.17,2055.47,2034.92,0.99
+"Santander","Piedecuesta",977.29,792.48,673.61,0.85
+"Santander","Pinchote",1915.12,1544.93,1066,0.69
+"Santander","Puente Nacional",1124.98,922.39,1189.88,1.29
+"Santander","Rionegro",1183.8,1020.76,1388.23,1.36
+"Santander","San Andrés",853.51,732.11,600.33,0.82
+"Santander","San Benito",195.22,170.21,204.25,1.2
+"Santander","San Gil",2855.13,2312.83,2867.91,1.24
+"Santander","San Joaquín",115.74,74.46,46.17,0.62
+"Santander","San José de Miranda",38.91,35.04,21.72,0.62
+"Santander","San Miguel",75.86,71.53,64.38,0.9
+"Santander","San Vicente de Chucurí",1929.29,1581.35,1628.79,1.03
+"Santander","Santa Bárbara",280.12,257.08,241.66,0.94
+"Santander","Santa Helena del Opón",4.39,4.39,6.19,1.41
+"Santander","Simacota",841.99,739.38,658.05,0.89
+"Santander","Socorro",4472.26,3468.65,3642.08,1.05
+"Santander","Suaita",1137.58,925.21,925.21,1
+"Santander","Sucre",189.11,164.56,120.13,0.73
+"Santander","Suratá",175.56,144.75,141.85,0.98
+"Santander","Tona",479.36,406.34,491.67,1.21
+"Santander","Valle de San José",2919.58,2352.58,2893.67,1.23
+"Santander","Vélez",323.09,263.85,221.63,0.84
+"Santander","Villanueva",123.56,84.01,101.65,1.21
+"Santander","Zapatoca",808.37,710.08,880.5,1.24
+"Sucre","Chalán",4,4,1,0.25
+"Tolima","Ibagué",9135.73,7498.54,8098.42,1.08
+"Tolima","Alpujarra",1336.59,1126.11,1126.11,1
+"Tolima","Alvarado",887.75,694.92,903.4,1.3
+"Tolima","Anzoátegui",3915.6,3291.39,3752.18,1.14
+"Tolima","Armero",141.74,131.47,139.36,1.06
+"Tolima","Ataco",9533.76,7731.27,6571.58,0.85
+"Tolima","Cajamarca",1447.92,1158.66,579.33,0.5
+"Tolima","Casabianca",2009.12,1697.02,593.96,0.35
+"Tolima","Chaparral",6822.22,5391.91,4690.96,0.87
+"Tolima","Coyaima",53.47,50.5,29.29,0.58
+"Tolima","Cunday",1200.45,951.96,961.48,1.01
+"Tolima","Dolores",3246.91,2560.91,2586.52,1.01
+"Tolima","Falan",1028.97,837.19,954.4,1.14
+"Tolima","Fresno",5592.72,4591.92,4454.16,0.97
+"Tolima","Herveo",1220.19,1007.03,775.41,0.77
+"Tolima","Icononzo",1511.61,1320.04,1900.86,1.44
+"Tolima","Lérida",174.93,148.12,167.38,1.13
+"Tolima","Líbano",7177.57,5770.61,5712.9,0.99
+"Tolima","San Sebastián de Mariquita",379.11,333.12,419.73,1.26
+"Tolima","Melgar",166.5,145.97,159.11,1.09
+"Tolima","Murillo",75.42,62.07,55.24,0.89
+"Tolima","Natagaima",111.9,96.88,102.69,1.06
+"Tolima","Ortega",5125.79,4197.85,4869.51,1.16
+"Tolima","Palocabildo",2174.4,1749.65,2169.57,1.24
+"Tolima","Planadas",13860.71,11103.74,14656.94,1.32
+"Tolima","Prado",789.12,647.28,783.21,1.21
+"Tolima","Purificación",269.29,205.79,253.12,1.23
+"Tolima","Rioblanco",6938.99,5754.42,5581.79,0.97
+"Tolima","Roncesvalles",356.5,295.51,41.37,0.14
+"Tolima","Rovira",7359.18,6032.15,6936.97,1.15
+"Tolima","San Antonio",3795.66,3134.42,3322.49,1.06
+"Tolima","San Luis",259.38,219.66,221.86,1.01
+"Tolima","Santa Isabel",949.63,737.85,1018.23,1.38
+"Tolima","Suárez",2.03,2.03,1.48,0.73
+"Tolima","Valle de San Juan",1205.54,965.76,1564.53,1.62
+"Tolima","Venadillo",1037.69,892.65,1222.93,1.37
+"Tolima","Villahermosa",3293.51,2774.71,1914.55,0.69
+"Tolima","Villarrica",1304.2,1076.31,936.39,0.87
+"Valle del Cauca","Santiago de Cali",635.34,583.06,699.67,1.2
+"Valle del Cauca","Alcalá",1198.14,843.21,935.96,1.11
+"Valle del Cauca","Andalucía",190.08,163.4,50.65,0.31
+"Valle del Cauca","Ansermanuevo",3807.62,3071.24,3501.21,1.14
+"Valle del Cauca","Argelia",1558.15,1335.07,1735.59,1.3
+"Valle del Cauca","Bolívar",1269.18,1055.74,1055.74,1
+"Valle del Cauca","Guadalajara de Buga",443.6,417.28,671.82,1.61
+"Valle del Cauca","Bugalagrande",1434.84,1128.83,1433.61,1.27
+"Valle del Cauca","Caicedonia",3583.03,2821.4,874.63,0.31
+"Valle del Cauca","Calima",339.23,293.28,522.04,1.78
+"Valle del Cauca","Cartago",305.76,266.05,396.41,1.49
+"Valle del Cauca","Dagua",870.31,783.43,963.62,1.23
+"Valle del Cauca","El Águila",4959.64,3914.83,4619.5,1.18
+"Valle del Cauca","El Cairo",2723.04,2307.23,1407.41,0.61
+"Valle del Cauca","El Cerrito",78.37,66.8,140.28,2.1
+"Valle del Cauca","El Dovio",554.23,500.76,721.09,1.44
+"Valle del Cauca","Florida",1336.11,1162.43,1220.55,1.05
+"Valle del Cauca","Ginebra",807.57,694.81,875.46,1.26
+"Valle del Cauca","Guacarí",553.54,493.09,532.54,1.08
+"Valle del Cauca","Jamundí",1218.2,918.25,1230.46,1.34
+"Valle del Cauca","La Cumbre",592.56,524.14,843.87,1.61
+"Valle del Cauca","La Unión",416.98,366.73,300.72,0.82
+"Valle del Cauca","La Victoria",542.98,423.86,470.48,1.11
+"Valle del Cauca","Obando",895.84,784.3,949,1.21
+"Valle del Cauca","Palmira",181.3,145.32,225.25,1.55
+"Valle del Cauca","Pradera",222.37,167.61,269.85,1.61
+"Valle del Cauca","Restrepo",506.49,401.38,509.75,1.27
+"Valle del Cauca","Riofrío",2219.55,1810.79,1575.39,0.87
+"Valle del Cauca","Roldanillo",620.43,510.43,689.08,1.35
+"Valle del Cauca","San Pedro",470.2,403.24,108.87,0.27
+"Valle del Cauca","Sevilla",5203.28,4026.76,7972.98,1.98
+"Valle del Cauca","Toro",1100,887.08,292.74,0.33
+"Valle del Cauca","Trujillo",3674.84,2843.89,3213.6,1.13
+"Valle del Cauca","Tuluá",3277.99,2707.42,3384.28,1.25
+"Valle del Cauca","Ulloa",620.39,516.46,98.13,0.19
+"Valle del Cauca","Versalles",912.81,782.29,946.57,1.21
+"Valle del Cauca","Vijes",531.79,466.85,527.54,1.13
+"Valle del Cauca","Yotoco",834.76,660.91,872.4,1.32
+"Valle del Cauca","Yumbo",241.31,208.64,83.46,0.4
+"Arauca","Tame",86.56,62.08,45.94,0.74
+"Casanare","Yopal",105,85,77.35,0.91
+"Casanare","Chámeza",82,35,41.3,1.18
+"Casanare","La Salina",47.58,32.79,73.12,2.23
+"Casanare","Monterrey",83.08,63.8,39.56,0.62
+"Casanare","Nunchía",212.27,155.19,138.12,0.89
+"Casanare","Recetor",27,21,21,1
+"Casanare","Sabanalarga",13,3,1.08,0.36
+"Casanare","Sácama",190.95,152.6,338.77,2.22
+"Casanare","Támara",1651.85,1397.95,1230.2,0.88
+"Casanare","Tauramena",47.73,15.8,19.59,1.24
+"Putumayo","Mocoa",153.45,136.17,129.36,0.95
+"Putumayo","Orito",7,5,3,0.6
+"Putumayo","Puerto Asís",9,2,2,1
+"Putumayo","Puerto Leguízamo",10,0,0,0
+"Putumayo","San Miguel",19,13,11.7,0.9
+"Putumayo","Villagarzón",16,11,15.4,1.4

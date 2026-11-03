@@ -1,0 +1,1007 @@
+"departamento","municipio","irca","nivel_riesgo","irca_urbano","irca_rural"
+"Bogotá, D.C.","Bogotá, D.C.",3.6,"Sin riesgo",1.1,14.8
+"Bolívar","Cartagena de Indias",2.8,"Sin riesgo",2.9,2.4
+"Bolívar","Achí",22.8,"Riesgo medio",22.8,NA
+"Bolívar","Altos del Rosario",66.8,"Alto riesgo",66.8,NA
+"Bolívar","Arenal",13.8,"Bajo riesgo",13.8,NA
+"Bolívar","Arjona",0,"Sin riesgo",0,NA
+"Bolívar","Arroyohondo",11.3,"Bajo riesgo",18.8,6.3
+"Bolívar","Barranco de Loba",36.8,"Alto riesgo",41.3,32.3
+"Bolívar","Calamar",12.1,"Bajo riesgo",12.1,NA
+"Bolívar","Cantagallo",0,"Sin riesgo",0,NA
+"Bolívar","Cicuco",11.7,"Bajo riesgo",11.7,NA
+"Bolívar","Córdoba",15.3,"Riesgo medio",15.3,NA
+"Bolívar","Clemencia",34.9,"Riesgo medio",34.9,NA
+"Bolívar","El Carmen de Bolívar",0,"Sin riesgo",0,NA
+"Bolívar","El Guamo",38.9,"Alto riesgo",41.2,0
+"Bolívar","Hatillo de Loba",74.2,"Alto riesgo",74.2,NA
+"Bolívar","Magangué",6.9,"Bajo riesgo",3,13.9
+"Bolívar","Mahates",15.6,"Riesgo medio",9.8,29.8
+"Bolívar","Margarita",74.1,"Alto riesgo",74.1,NA
+"Bolívar","María La Baja",0.6,"Sin riesgo",0,1.2
+"Bolívar","Montecristo",10.8,"Bajo riesgo",10.6,12.5
+"Bolívar","Santa Cruz de Mompox",12.1,"Bajo riesgo",12.1,NA
+"Bolívar","Morales",5.5,"Bajo riesgo",5.5,NA
+"Bolívar","Norosí",14,"Bajo riesgo",14,NA
+"Bolívar","Pinillos",8.8,"Bajo riesgo",8.8,NA
+"Bolívar","Regidor",12.6,"Bajo riesgo",12.6,NA
+"Bolívar","San Cristóbal",18,"Riesgo medio",18,NA
+"Bolívar","San Estanislao",12.6,"Bajo riesgo",12.6,NA
+"Bolívar","San Fernando",42.3,"Alto riesgo",42.3,NA
+"Bolívar","San Juan Nepomuceno",33.3,"Riesgo medio",NA,33.3
+"Bolívar","San Pablo",1.8,"Sin riesgo",1.8,NA
+"Bolívar","Santa Catalina",36,"Alto riesgo",36,NA
+"Bolívar","Santa Rosa",21.9,"Riesgo medio",21.9,NA
+"Bolívar","Santa Rosa del Sur",0,"Sin riesgo",0,NA
+"Bolívar","Simití",0.2,"Sin riesgo",0.2,NA
+"Bolívar","Soplaviento",1,"Sin riesgo",1,NA
+"Bolívar","Talaigua Nuevo",26.6,"Riesgo medio",26.6,NA
+"Bolívar","Tiquisio",56.6,"Alto riesgo",56.6,NA
+"Bolívar","Turbaco",0,"Sin riesgo",0,NA
+"Bolívar","Turbana",0,"Sin riesgo",0,0
+"Bolívar","Villanueva",15.4,"Riesgo medio",33.3,0
+"Bolívar","Zambrano",15,"Riesgo medio",11.2,26.6
+"Boyacá","Tunja",2.9,"Sin riesgo",0.8,10.9
+"Boyacá","Almeida",16.5,"Riesgo medio",3.1,32.5
+"Boyacá","Aquitania",8.5,"Bajo riesgo",9.1,6.2
+"Boyacá","Arcabuco",2.5,"Sin riesgo",2.5,NA
+"Boyacá","Belén",0,"Sin riesgo",0,NA
+"Boyacá","Berbeo",40.7,"Alto riesgo",29.2,69.4
+"Boyacá","Betéitiva",1.3,"Sin riesgo",1.3,NA
+"Boyacá","Boavita",0,"Sin riesgo",0,NA
+"Boyacá","Boyacá",8.2,"Bajo riesgo",8.2,NA
+"Boyacá","Briceño",27.3,"Riesgo medio",1.5,72.3
+"Boyacá","Buenavista",0,"Sin riesgo",0,NA
+"Boyacá","Busbanzá",6.1,"Bajo riesgo",6.1,NA
+"Boyacá","Caldas",50.6,"Alto riesgo",31.6,94.9
+"Boyacá","Campohermoso",14.4,"Riesgo medio",17.5,8.3
+"Boyacá","Cerinza",9.7,"Bajo riesgo",9.7,NA
+"Boyacá","Chinavita",8.8,"Bajo riesgo",8.8,NA
+"Boyacá","Chiquinquirá",4.6,"Sin riesgo",4.6,NA
+"Boyacá","Chiscas",5,"Sin riesgo",5,NA
+"Boyacá","Chita",16,"Riesgo medio",9.8,23.7
+"Boyacá","Chitaraque",5.1,"Bajo riesgo",2.8,10.7
+"Boyacá","Chivatá",3.6,"Sin riesgo",0,9.1
+"Boyacá","Ciénega",7,"Bajo riesgo",7,NA
+"Boyacá","Cómbita",1,"Sin riesgo",1,NA
+"Boyacá","Coper",11.7,"Bajo riesgo",1.2,74.4
+"Boyacá","Corrales",29,"Riesgo medio",22.6,38
+"Boyacá","Covarachía",1.3,"Sin riesgo",1.3,NA
+"Boyacá","Cubará",24.2,"Riesgo medio",0.1,43.9
+"Boyacá","Cucaita",16,"Riesgo medio",13.6,24.3
+"Boyacá","Cuítiva",7.1,"Bajo riesgo",6.4,9.3
+"Boyacá","Chíquiza",7.2,"Bajo riesgo",NA,7.2
+"Boyacá","Chivor",5.8,"Bajo riesgo",5.8,NA
+"Boyacá","Duitama",1.3,"Sin riesgo",1.4,0.4
+"Boyacá","El Cocuy",0.2,"Sin riesgo",0.2,0
+"Boyacá","El Espino",5.3,"Bajo riesgo",5.3,NA
+"Boyacá","Firavitoba",4.5,"Sin riesgo",4.5,NA
+"Boyacá","Floresta",7.2,"Bajo riesgo",4.5,12.6
+"Boyacá","Gachantivá",4.4,"Sin riesgo",4.4,NA
+"Boyacá","Gámeza",19.5,"Riesgo medio",19.5,NA
+"Boyacá","Garagoa",6.7,"Bajo riesgo",7.8,0
+"Boyacá","Guacamayas",3.7,"Sin riesgo",3.7,NA
+"Boyacá","Guateque",8.6,"Bajo riesgo",8.6,NA
+"Boyacá","Guayatá",10.7,"Bajo riesgo",12.3,0
+"Boyacá","Güicán de La Sierra",0,"Sin riesgo",0,NA
+"Boyacá","Iza",0,"Sin riesgo",0,NA
+"Boyacá","Jenesano",6.9,"Bajo riesgo",6.9,NA
+"Boyacá","Jericó",19.1,"Riesgo medio",19.1,NA
+"Boyacá","Labranzagrande",36.3,"Alto riesgo",19.3,56.7
+"Boyacá","La Capilla",10.8,"Bajo riesgo",10.8,NA
+"Boyacá","La Victoria",10.1,"Bajo riesgo",8.9,12.1
+"Boyacá","La Uvita",28.3,"Riesgo medio",28.3,NA
+"Boyacá","Villa de Leyva",2.9,"Sin riesgo",0.4,7.2
+"Boyacá","Macanal",8.1,"Bajo riesgo",8.1,NA
+"Boyacá","Maripí",3,"Sin riesgo",0,6.6
+"Boyacá","Miraflores",1.8,"Sin riesgo",1.8,NA
+"Boyacá","Mongua",42.8,"Alto riesgo",42.8,NA
+"Boyacá","Monguí",32.7,"Riesgo medio",32.7,NA
+"Boyacá","Moniquirá",1.4,"Sin riesgo",1.4,NA
+"Boyacá","Motavita",13.6,"Bajo riesgo",14.4,12.1
+"Boyacá","Muzo",27.3,"Riesgo medio",0,58.5
+"Boyacá","Nobsa",2.5,"Sin riesgo",0,4.4
+"Boyacá","Nuevo Colón",0.2,"Sin riesgo",0.2,NA
+"Boyacá","Oicatá",13.2,"Bajo riesgo",0,39.7
+"Boyacá","Otanche",11.7,"Bajo riesgo",11.7,NA
+"Boyacá","Pachavita",26.2,"Riesgo medio",8.8,87.2
+"Boyacá","Páez",0,"Sin riesgo",0,NA
+"Boyacá","Paipa",2.7,"Sin riesgo",1.7,6.5
+"Boyacá","Pajarito",10.4,"Bajo riesgo",7.3,14
+"Boyacá","Panqueba",0,"Sin riesgo",0,NA
+"Boyacá","Pauna",37.9,"Alto riesgo",7.3,81.5
+"Boyacá","Paya",7.7,"Bajo riesgo",7,8.5
+"Boyacá","Paz de Río",6.4,"Bajo riesgo",6.4,NA
+"Boyacá","Pesca",21.7,"Riesgo medio",21.7,NA
+"Boyacá","Pisba",14.8,"Riesgo medio",14.1,15.4
+"Boyacá","Puerto Boyacá",9.6,"Bajo riesgo",9.6,NA
+"Boyacá","Quípama",6.7,"Bajo riesgo",7.2,6.3
+"Boyacá","Ramiriquí",0.7,"Sin riesgo",0.6,0.8
+"Boyacá","Ráquira",14.3,"Riesgo medio",16.2,10.6
+"Boyacá","Rondón",5.4,"Bajo riesgo",5.4,NA
+"Boyacá","Saboyá",5.7,"Bajo riesgo",5.7,NA
+"Boyacá","Sáchica",11,"Bajo riesgo",11.6,8.7
+"Boyacá","Samacá",1.9,"Sin riesgo",1.9,NA
+"Boyacá","San Eduardo",37.4,"Alto riesgo",0,81
+"Boyacá","San José de Pare",8,"Bajo riesgo",8,NA
+"Boyacá","San Luis de Gaceno",2.3,"Sin riesgo",2.3,NA
+"Boyacá","San Mateo",24.7,"Riesgo medio",24.7,NA
+"Boyacá","San Miguel de Sema",4.4,"Sin riesgo",1.2,10
+"Boyacá","San Pablo de Borbur",3.4,"Sin riesgo",4.1,0
+"Boyacá","Santana",6.6,"Bajo riesgo",6.6,NA
+"Boyacá","Santa María",5,"Sin riesgo",6.7,0
+"Boyacá","Santa Rosa de Viterbo",9.2,"Bajo riesgo",12,4.2
+"Boyacá","Santa Sofía",1.6,"Sin riesgo",1.6,NA
+"Boyacá","Sativanorte",1.1,"Sin riesgo",1.1,NA
+"Boyacá","Sativasur",7.9,"Bajo riesgo",8.4,7.2
+"Boyacá","Siachoque",6.2,"Bajo riesgo",2.1,14.5
+"Boyacá","Soatá",1.2,"Sin riesgo",1.2,NA
+"Boyacá","Socotá",2.4,"Sin riesgo",2.4,NA
+"Boyacá","Socha",23.7,"Riesgo medio",23.7,NA
+"Boyacá","Sogamoso",0.3,"Sin riesgo",0.3,1.2
+"Boyacá","Somondoco",0,"Sin riesgo",0,NA
+"Boyacá","Sora",24.5,"Riesgo medio",17.2,30.1
+"Boyacá","Sotaquirá",0,"Sin riesgo",0,NA
+"Boyacá","Soracá",5.8,"Bajo riesgo",0.7,23.6
+"Boyacá","Susacón",17,"Riesgo medio",17,NA
+"Boyacá","Sutamarchán",32.4,"Riesgo medio",8.5,86.4
+"Boyacá","Sutatenza",8.9,"Bajo riesgo",3.3,28.4
+"Boyacá","Tasco",1.6,"Sin riesgo",1.6,NA
+"Boyacá","Tenza",14.1,"Riesgo medio",14.1,NA
+"Boyacá","Tibasosa",2.1,"Sin riesgo",2.1,NA
+"Boyacá","Tipacoque",25.2,"Riesgo medio",7.5,69.3
+"Boyacá","Toca",15.1,"Riesgo medio",15.1,NA
+"Boyacá","Togüí",6.7,"Bajo riesgo",6.7,NA
+"Boyacá","Tópaga",26,"Riesgo medio",17.1,40.8
+"Boyacá","Tota",10.5,"Bajo riesgo",4.8,22
+"Boyacá","Tununguá",21,"Riesgo medio",21,NA
+"Boyacá","Tuta",2.2,"Sin riesgo",2.2,NA
+"Boyacá","Tutazá",24.7,"Riesgo medio",4.3,45.2
+"Boyacá","Ventaquemada",0,"Sin riesgo",0,NA
+"Boyacá","Viracachá",45.2,"Alto riesgo",25.6,60
+"Boyacá","Zetaquira",19.3,"Riesgo medio",19.3,NA
+"Caldas","Manizales",11.7,"Bajo riesgo",0,62.9
+"Caldas","Aguadas",0,"Sin riesgo",0,NA
+"Caldas","Anserma",3.5,"Sin riesgo",1.7,29
+"Caldas","Aranzazu",7.2,"Bajo riesgo",0,78.7
+"Caldas","Belalcázar",0,"Sin riesgo",0,NA
+"Caldas","Chinchiná",2.4,"Sin riesgo",0,64.5
+"Caldas","Filadelfia",1.8,"Sin riesgo",0,38.7
+"Caldas","La Dorada",3.7,"Sin riesgo",1.8,7.6
+"Caldas","La Merced",13.2,"Bajo riesgo",0,85.5
+"Caldas","Manzanares",3.2,"Sin riesgo",0.1,71
+"Caldas","Marmato",0,"Sin riesgo",0,NA
+"Caldas","Marquetalia",1,"Sin riesgo",1,NA
+"Caldas","Marulanda",0,"Sin riesgo",0,NA
+"Caldas","Neira",2.8,"Sin riesgo",0,6.8
+"Caldas","Norcasia",4.4,"Sin riesgo",4.4,NA
+"Caldas","Pácora",5.7,"Bajo riesgo",0,71
+"Caldas","Palestina",24,"Riesgo medio",1.5,56.4
+"Caldas","Pensilvania",13.3,"Bajo riesgo",0,63.3
+"Caldas","Riosucio",21.7,"Riesgo medio",0,72.9
+"Caldas","Risaralda",14,"Bajo riesgo",0,64.5
+"Caldas","Salamina",16,"Riesgo medio",0.5,66.9
+"Caldas","Samaná",13.9,"Bajo riesgo",1.8,71.6
+"Caldas","San José",29,"Riesgo medio",0,67.6
+"Caldas","Supía",14.1,"Riesgo medio",3.4,73.7
+"Caldas","Victoria",29.8,"Riesgo medio",0,35.1
+"Caldas","Villamaría",22.9,"Riesgo medio",0.6,54.8
+"Caldas","Viterbo",25.7,"Riesgo medio",0.1,74.4
+"Caquetá","Florencia",0.9,"Sin riesgo",0.9,NA
+"Caquetá","Albania",4.3,"Sin riesgo",4.3,NA
+"Caquetá","Belén de Los Andaquíes",2.4,"Sin riesgo",2.4,NA
+"Caquetá","Cartagena del Chairá",1.4,"Sin riesgo",1.4,NA
+"Caquetá","Curillo",2.1,"Sin riesgo",2.1,NA
+"Caquetá","El Doncello",4.3,"Sin riesgo",4.3,NA
+"Caquetá","El Paujíl",2.2,"Sin riesgo",2.2,NA
+"Caquetá","La Montañita",4.3,"Sin riesgo",4.3,NA
+"Caquetá","Milán",0,"Sin riesgo",0,NA
+"Caquetá","Morelia",58.8,"Alto riesgo",58.8,NA
+"Caquetá","Puerto Rico",7.9,"Bajo riesgo",7.9,NA
+"Caquetá","San José del Fragua",5.2,"Bajo riesgo",5.2,NA
+"Caquetá","San Vicente del Caguán",4.8,"Sin riesgo",4.8,NA
+"Caquetá","Solano",13.8,"Bajo riesgo",13.8,NA
+"Caquetá","Solita",10.5,"Bajo riesgo",10.5,NA
+"Caquetá","Valparaíso",3.7,"Sin riesgo",3.7,NA
+"Cauca","Almaguer",0,"Sin riesgo",0,0
+"Cauca","Buenos Aires",0,"Sin riesgo",0,NA
+"Cauca","Cajibío",0,"Sin riesgo",NA,0
+"Cauca","Caldono",23.6,"Riesgo medio",9.3,33.1
+"Cauca","Caloto",0,"Sin riesgo",0,NA
+"Cauca","Corinto",0,"Sin riesgo",0,NA
+"Cauca","El Tambo",0,"Sin riesgo",0,0
+"Cauca","Guachené",0,"Sin riesgo",0,0
+"Cauca","Guapi",9.3,"Bajo riesgo",18.6,0
+"Cauca","Inzá",5.5,"Bajo riesgo",0,24.8
+"Cauca","La Sierra",1.6,"Sin riesgo",1.6,NA
+"Cauca","La Vega",0,"Sin riesgo",0,NA
+"Cauca","Mercaderes",0,"Sin riesgo",0,NA
+"Cauca","Miranda",6.3,"Bajo riesgo",6.3,NA
+"Cauca","Morales",2.1,"Sin riesgo",2.1,NA
+"Cauca","Padilla",14.2,"Riesgo medio",0,24.8
+"Cauca","Patía",0,"Sin riesgo",0,NA
+"Cauca","Piamonte",12.4,"Bajo riesgo",12.4,NA
+"Cauca","Piendamó - Tunía",0,"Sin riesgo",0,0
+"Cauca","Puerto Tejada",1.4,"Sin riesgo",0.1,4
+"Cauca","Puracé",5.3,"Bajo riesgo",0,12.3
+"Cauca","Rosas",8.3,"Bajo riesgo",8.3,NA
+"Cauca","Santander de Quilichao",1.3,"Sin riesgo",2.3,0
+"Cauca","Santa Rosa",0.3,"Sin riesgo",0.3,NA
+"Cauca","Silvia",4.7,"Sin riesgo",4.7,NA
+"Cauca","Sotará Paispamba",3.1,"Sin riesgo",3.1,NA
+"Cauca","Suárez",2.3,"Sin riesgo",2.3,NA
+"Cauca","Sucre",0,"Sin riesgo",0,NA
+"Cauca","Timbío",4.3,"Sin riesgo",5.6,3.2
+"Cauca","Timbiquí",18.6,"Riesgo medio",18.6,NA
+"Cauca","Toribío",0,"Sin riesgo",0,NA
+"Cauca","Totoró",0.5,"Sin riesgo",0.5,NA
+"Cauca","Villa Rica",0.3,"Sin riesgo",0,0.4
+"Cesar","Valledupar",2.4,"Sin riesgo",2.4,NA
+"Cesar","Aguachica",1.7,"Sin riesgo",1.7,0
+"Cesar","Agustín Codazzi",0.6,"Sin riesgo",0.6,NA
+"Cesar","Astrea",72,"Alto riesgo",76.8,39.8
+"Cesar","Becerril",34.7,"Riesgo medio",40,22.1
+"Cesar","Bosconia",77.2,"Alto riesgo",78.6,43.2
+"Cesar","Chimichagua",68.1,"Alto riesgo",68.1,NA
+"Cesar","Chiriguaná",47.7,"Alto riesgo",47.7,NA
+"Cesar","Curumaní",2.2,"Sin riesgo",2.2,NA
+"Cesar","El Copey",20.6,"Riesgo medio",20.6,NA
+"Cesar","Gamarra",31.4,"Riesgo medio",29.6,36.1
+"Cesar","González",3.2,"Sin riesgo",3.2,NA
+"Cesar","La Gloria",8.7,"Bajo riesgo",8.7,NA
+"Cesar","La Jagua de Ibirico",6.3,"Bajo riesgo",6.3,NA
+"Cesar","Manaure Balcón del Cesar",64.3,"Alto riesgo",64.3,NA
+"Cesar","Pailitas",12.1,"Bajo riesgo",12.1,NA
+"Cesar","Pelaya",1.1,"Sin riesgo",1.1,NA
+"Cesar","Pueblo Bello",24.1,"Riesgo medio",24.1,NA
+"Cesar","Río de Oro",12.4,"Bajo riesgo",12.4,NA
+"Cesar","La Paz",15.8,"Riesgo medio",15.8,NA
+"Cesar","San Alberto",1,"Sin riesgo",1.1,0
+"Cesar","San Diego",13.9,"Bajo riesgo",13.9,NA
+"Cesar","San Martín",1.6,"Sin riesgo",1.6,NA
+"Cesar","Tamalameque",7,"Bajo riesgo",7,NA
+"Córdoba","Ayapel",21.7,"Riesgo medio",21.7,NA
+"Córdoba","Cereté",0,"Sin riesgo",0,NA
+"Córdoba","Chimá",0,"Sin riesgo",0,NA
+"Córdoba","Chinú",0,"Sin riesgo",0,NA
+"Córdoba","Ciénaga de Oro",26.6,"Riesgo medio",26.6,NA
+"Córdoba","La Apartada",0,"Sin riesgo",0,NA
+"Córdoba","Lorica",0,"Sin riesgo",0,NA
+"Córdoba","Momil",0,"Sin riesgo",0,NA
+"Córdoba","Montelíbano",0,"Sin riesgo",0,NA
+"Córdoba","Moñitos",0,"Sin riesgo",0,NA
+"Córdoba","Planeta Rica",0,"Sin riesgo",0,NA
+"Córdoba","Pueblo Nuevo",21.7,"Riesgo medio",21.7,NA
+"Córdoba","Puerto Escondido",79,"Alto riesgo",79,NA
+"Córdoba","Puerto Libertador",0,"Sin riesgo",0,NA
+"Córdoba","Purísima de La Concepción",21.7,"Riesgo medio",21.7,NA
+"Córdoba","Sahagún",0,"Sin riesgo",0,NA
+"Córdoba","San Andrés de Sotavento",21.7,"Riesgo medio",21.7,NA
+"Córdoba","San Antero",21.7,"Riesgo medio",21.7,21.7
+"Córdoba","San Bernardo del Viento",32.6,"Riesgo medio",32.6,NA
+"Córdoba","San Carlos",0,"Sin riesgo",0,NA
+"Córdoba","San Pelayo",10.9,"Bajo riesgo",10.9,NA
+"Córdoba","Tierralta",54.9,"Alto riesgo",54.9,NA
+"Cundinamarca","Agua de Dios",1,"Sin riesgo",0,3
+"Cundinamarca","Albán",9.3,"Bajo riesgo",8,12.5
+"Cundinamarca","Anapoima",3.2,"Sin riesgo",2.3,3.7
+"Cundinamarca","Anolaima",9.6,"Bajo riesgo",6,14.1
+"Cundinamarca","Arbeláez",16.1,"Riesgo medio",14.3,23.8
+"Cundinamarca","Beltrán",7.2,"Bajo riesgo",5.7,12.7
+"Cundinamarca","Bituima",9.9,"Bajo riesgo",9.9,NA
+"Cundinamarca","Bojacá",4.6,"Sin riesgo",4.6,NA
+"Cundinamarca","Cabrera",10.8,"Bajo riesgo",8.2,18.7
+"Cundinamarca","Cachipay",8,"Bajo riesgo",NA,8
+"Cundinamarca","Cajicá",3.9,"Sin riesgo",5.3,3.1
+"Cundinamarca","Caparrapí",17.2,"Riesgo medio",17.2,NA
+"Cundinamarca","Cáqueza",10.8,"Bajo riesgo",10.8,NA
+"Cundinamarca","Carmen de Carupa",2.8,"Sin riesgo",2.8,NA
+"Cundinamarca","Chaguaní",19.4,"Riesgo medio",19.4,NA
+"Cundinamarca","Chía",3.6,"Sin riesgo",3.8,3.5
+"Cundinamarca","Chipaque",4.5,"Sin riesgo",3.5,9.9
+"Cundinamarca","Choachí",6.1,"Bajo riesgo",6.1,NA
+"Cundinamarca","Chocontá",1,"Sin riesgo",1,NA
+"Cundinamarca","Cogua",5,"Sin riesgo",1.5,13.1
+"Cundinamarca","Cota",2.8,"Sin riesgo",2,3.8
+"Cundinamarca","Cucunubá",9.3,"Bajo riesgo",6.1,11.8
+"Cundinamarca","El Colegio",7.8,"Bajo riesgo",5.8,10.7
+"Cundinamarca","El Peñón",2.3,"Sin riesgo",2.9,0
+"Cundinamarca","El Rosal",1,"Sin riesgo",1.2,0
+"Cundinamarca","Facatativá",4,"Sin riesgo",4.1,0
+"Cundinamarca","Funza",0.4,"Sin riesgo",0,1
+"Cundinamarca","Fusagasugá",1.5,"Sin riesgo",1.4,2.9
+"Cundinamarca","Gachalá",0,"Sin riesgo",0,NA
+"Cundinamarca","Gachancipá",1.7,"Sin riesgo",1.1,4.6
+"Cundinamarca","Gachetá",5,"Sin riesgo",5,NA
+"Cundinamarca","Gama",10.4,"Bajo riesgo",10.4,NA
+"Cundinamarca","Girardot",1.8,"Sin riesgo",1.7,2.6
+"Cundinamarca","Granada",2.8,"Sin riesgo",5.1,1.4
+"Cundinamarca","Guachetá",6.2,"Bajo riesgo",7.1,4.1
+"Cundinamarca","Guaduas",5,"Sin riesgo",4.4,7.7
+"Cundinamarca","Guasca",5.1,"Bajo riesgo",3.7,6.2
+"Cundinamarca","Guataquí",4.5,"Sin riesgo",4.9,0
+"Cundinamarca","Guatavita",4,"Sin riesgo",4,NA
+"Cundinamarca","Guayabal de Síquima",1.5,"Sin riesgo",2.3,0
+"Cundinamarca","Guayabetal",1.5,"Sin riesgo",1.5,NA
+"Cundinamarca","Gutiérrez",9.2,"Bajo riesgo",9.2,NA
+"Cundinamarca","Jerusalén",3.7,"Sin riesgo",0.3,5.7
+"Cundinamarca","Junín",2.5,"Sin riesgo",3.1,0.6
+"Cundinamarca","La Calera",6.1,"Bajo riesgo",0.8,12.4
+"Cundinamarca","La Mesa",8.6,"Bajo riesgo",3.3,16.2
+"Cundinamarca","La Palma",3.2,"Sin riesgo",3.2,NA
+"Cundinamarca","La Peña",1.4,"Sin riesgo",1.4,NA
+"Cundinamarca","La Vega",8.7,"Bajo riesgo",1.2,22.6
+"Cundinamarca","Lenguazaque",33,"Riesgo medio",19.6,73.1
+"Cundinamarca","Machetá",19.5,"Riesgo medio",20.9,14.7
+"Cundinamarca","Madrid",0.9,"Sin riesgo",0.8,1.4
+"Cundinamarca","Manta",5.6,"Bajo riesgo",5.6,NA
+"Cundinamarca","Medina",25.6,"Riesgo medio",25.6,NA
+"Cundinamarca","Mosquera",1.9,"Sin riesgo",1.9,NA
+"Cundinamarca","Nariño",12.8,"Bajo riesgo",12.8,NA
+"Cundinamarca","Nemocón",9.2,"Bajo riesgo",9.2,9.2
+"Cundinamarca","Nilo",6.1,"Bajo riesgo",6.4,4.6
+"Cundinamarca","Nimaima",4.7,"Sin riesgo",5,1.2
+"Cundinamarca","Nocaima",11.7,"Bajo riesgo",8.5,31.3
+"Cundinamarca","Venecia",5.8,"Bajo riesgo",5.8,NA
+"Cundinamarca","Pacho",1.7,"Sin riesgo",2,0
+"Cundinamarca","Paime",4.6,"Sin riesgo",4.6,NA
+"Cundinamarca","Pandi",5.1,"Bajo riesgo",3.9,6.2
+"Cundinamarca","Paratebueno",9.2,"Bajo riesgo",9.2,NA
+"Cundinamarca","Pasca",11.4,"Bajo riesgo",10.2,18.7
+"Cundinamarca","Puerto Salgar",6.4,"Bajo riesgo",6.4,NA
+"Cundinamarca","Pulí",10.6,"Bajo riesgo",10.6,NA
+"Cundinamarca","Quebradanegra",7.2,"Bajo riesgo",3.9,14.4
+"Cundinamarca","Quetame",4.3,"Sin riesgo",4.3,NA
+"Cundinamarca","Quipile",8.9,"Bajo riesgo",8.9,NA
+"Cundinamarca","Apulo",23.3,"Riesgo medio",23.3,NA
+"Cundinamarca","Ricaurte",0.4,"Sin riesgo",0.4,0
+"Cundinamarca","San Antonio del Tequendama",1.6,"Sin riesgo",0.4,5.8
+"Cundinamarca","San Bernardo",1.7,"Sin riesgo",1.7,NA
+"Cundinamarca","San Cayetano",2.1,"Sin riesgo",2.1,NA
+"Cundinamarca","San Francisco",1.6,"Sin riesgo",1.9,0.4
+"Cundinamarca","San Juan de Rioseco",9.2,"Bajo riesgo",10,0
+"Cundinamarca","Sasaima",3.7,"Sin riesgo",4.2,3.1
+"Cundinamarca","Sesquilé",4.6,"Sin riesgo",1.4,11.6
+"Cundinamarca","Sibaté",4.5,"Sin riesgo",3.1,10.7
+"Cundinamarca","Silvania",13.2,"Bajo riesgo",2.8,42.9
+"Cundinamarca","Simijaca",11,"Bajo riesgo",8,27
+"Cundinamarca","Soacha",1.1,"Sin riesgo",0.8,4.2
+"Cundinamarca","Sopó",3.5,"Sin riesgo",1.7,4.9
+"Cundinamarca","Subachoque",5.6,"Bajo riesgo",3.7,7.2
+"Cundinamarca","Suesca",3.2,"Sin riesgo",1.2,3.9
+"Cundinamarca","Supatá",3.5,"Sin riesgo",5.9,0.2
+"Cundinamarca","Susa",3.4,"Sin riesgo",3.4,NA
+"Cundinamarca","Sutatausa",8.1,"Bajo riesgo",12.2,4.6
+"Cundinamarca","Tabio",1.3,"Sin riesgo",0,2.2
+"Cundinamarca","Tausa",13.5,"Bajo riesgo",10.1,21.1
+"Cundinamarca","Tena",13.6,"Bajo riesgo",7.2,24.6
+"Cundinamarca","Tenjo",6.7,"Bajo riesgo",5.7,8.1
+"Cundinamarca","Tibacuy",0.2,"Sin riesgo",0.2,0.2
+"Cundinamarca","Tibirita",7.8,"Bajo riesgo",7,8.6
+"Cundinamarca","Tocaima",1.8,"Sin riesgo",1.8,NA
+"Cundinamarca","Tocancipá",0.3,"Sin riesgo",0,0.3
+"Cundinamarca","Topaipí",13.9,"Bajo riesgo",13.9,NA
+"Cundinamarca","Ubalá",9.5,"Bajo riesgo",9.5,NA
+"Cundinamarca","Ubaque",8.4,"Bajo riesgo",8.8,6.8
+"Cundinamarca","Villa de San Diego de Ubaté",0.4,"Sin riesgo",0.5,0
+"Cundinamarca","Une",5.7,"Bajo riesgo",6.1,1.2
+"Cundinamarca","Útica",3.3,"Sin riesgo",3.3,NA
+"Cundinamarca","Vergara",1.5,"Sin riesgo",1.5,NA
+"Cundinamarca","Vianí",12.4,"Bajo riesgo",12.4,NA
+"Cundinamarca","Villagómez",7.2,"Bajo riesgo",7.2,NA
+"Cundinamarca","Villapinzón",2.9,"Sin riesgo",1.9,5.2
+"Cundinamarca","Villeta",3.6,"Sin riesgo",3.1,9.3
+"Cundinamarca","Viotá",10,"Bajo riesgo",10,NA
+"Cundinamarca","Yacopí",20.5,"Riesgo medio",13.8,64.1
+"Cundinamarca","Zipacón",43.2,"Alto riesgo",35.4,64.6
+"Cundinamarca","Zipaquirá",0.7,"Sin riesgo",0.4,7.6
+"Chocó","Atrato",50.3,"Alto riesgo",50.3,NA
+"Chocó","Bagadó",20.6,"Riesgo medio",20.6,NA
+"Chocó","Condoto",38.8,"Alto riesgo",38.8,NA
+"Chocó","Tadó",93.6,"Inviable sanitariamente",93.6,NA
+"Huila","Neiva",1.6,"Sin riesgo",0.8,9.8
+"Huila","Acevedo",5.8,"Bajo riesgo",5.8,NA
+"Huila","Agrado",26.3,"Riesgo medio",22.3,90.3
+"Huila","Aipe",5.5,"Bajo riesgo",5.5,NA
+"Huila","Algeciras",1.6,"Sin riesgo",1.6,NA
+"Huila","Altamira",6.5,"Bajo riesgo",5.5,9.7
+"Huila","Baraya",4.7,"Sin riesgo",4.7,NA
+"Huila","Campoalegre",6.6,"Bajo riesgo",6.6,NA
+"Huila","Colombia",2.1,"Sin riesgo",2.1,NA
+"Huila","Elías",24.6,"Riesgo medio",24.6,NA
+"Huila","Garzón",0,"Sin riesgo",0,0
+"Huila","Gigante",0.9,"Sin riesgo",0.9,NA
+"Huila","Guadalupe",0,"Sin riesgo",0,NA
+"Huila","Hobo",5.8,"Bajo riesgo",5.8,NA
+"Huila","Íquira",13.7,"Bajo riesgo",13.7,NA
+"Huila","La Argentina",0,"Sin riesgo",0,NA
+"Huila","La Plata",2.7,"Sin riesgo",2.7,NA
+"Huila","Nátaga",8.1,"Bajo riesgo",8.1,NA
+"Huila","Oporapa",9.8,"Bajo riesgo",9.8,NA
+"Huila","Paicol",2.1,"Sin riesgo",2.1,NA
+"Huila","Palermo",7.3,"Bajo riesgo",6.1,10.3
+"Huila","Palestina",0.4,"Sin riesgo",0,1.2
+"Huila","Pital",2.2,"Sin riesgo",2.2,NA
+"Huila","Pitalito",0.7,"Sin riesgo",0.7,NA
+"Huila","Rivera",1.1,"Sin riesgo",1.4,0
+"Huila","Saladoblanco",0,"Sin riesgo",0,0
+"Huila","San Agustín",3.2,"Sin riesgo",3.2,NA
+"Huila","Santa María",0,"Sin riesgo",0,NA
+"Huila","Suaza",4,"Sin riesgo",4,NA
+"Huila","Tarqui",4.3,"Sin riesgo",4.3,NA
+"Huila","Tesalia",4.3,"Sin riesgo",4.3,NA
+"Huila","Tello",2.2,"Sin riesgo",2.2,NA
+"Huila","Teruel",5.8,"Bajo riesgo",5.8,NA
+"Huila","Timaná",0,"Sin riesgo",0,NA
+"Huila","Villavieja",4.8,"Sin riesgo",4.8,NA
+"Huila","Yaguará",1.9,"Sin riesgo",1.9,NA
+"La Guajira","Riohacha",10.1,"Bajo riesgo",10.2,6.3
+"La Guajira","Albania",15.9,"Riesgo medio",15,29.5
+"La Guajira","Barrancas",3.3,"Sin riesgo",3.3,NA
+"La Guajira","Dibulla",55,"Alto riesgo",78,43.5
+"La Guajira","Distracción",3.4,"Sin riesgo",3.4,NA
+"La Guajira","El Molino",24,"Riesgo medio",24,NA
+"La Guajira","Fonseca",3.3,"Sin riesgo",3.3,NA
+"La Guajira","Hatonuevo",17.7,"Riesgo medio",17.7,NA
+"La Guajira","La Jagua del Pilar",39.5,"Alto riesgo",39.5,NA
+"La Guajira","Maicao",8.1,"Bajo riesgo",8.1,NA
+"La Guajira","Manaure",1.5,"Sin riesgo",0.7,11.3
+"La Guajira","San Juan del Cesar",3.4,"Sin riesgo",3.4,NA
+"La Guajira","Uribia",3.2,"Sin riesgo",1.8,39.7
+"La Guajira","Urumita",25.8,"Riesgo medio",25.8,NA
+"La Guajira","Villanueva",13.8,"Bajo riesgo",13.8,NA
+"Magdalena","Santa Marta",2.1,"Sin riesgo",2.1,NA
+"Magdalena","Algarrobo",9.4,"Bajo riesgo",7.5,37.5
+"Magdalena","Ariguaní",42.2,"Alto riesgo",100,7.5
+"Magdalena","Chivolo",22.3,"Riesgo medio",22.3,NA
+"Magdalena","Ciénaga",2.4,"Sin riesgo",1.7,37.5
+"Magdalena","Concordia",45,"Alto riesgo",45,NA
+"Magdalena","El Banco",11.2,"Bajo riesgo",11.2,NA
+"Magdalena","El Piñón",0,"Sin riesgo",0,NA
+"Magdalena","El Retén",2.7,"Sin riesgo",2.7,NA
+"Magdalena","Fundación",1.1,"Sin riesgo",2,0
+"Magdalena","Nueva Granada",16.1,"Riesgo medio",28.1,0
+"Magdalena","Pedraza",2.9,"Sin riesgo",2.9,NA
+"Magdalena","Pijiño del Carmen",32.5,"Riesgo medio",32.5,NA
+"Magdalena","Pivijay",9.1,"Bajo riesgo",9.1,NA
+"Magdalena","Plato",6.5,"Bajo riesgo",6.5,NA
+"Magdalena","Puebloviejo",0,"Sin riesgo",0,0
+"Magdalena","Remolino",10.3,"Bajo riesgo",10.3,NA
+"Magdalena","Sabanas de San Ángel",0,"Sin riesgo",0,NA
+"Magdalena","Salamina",2.3,"Sin riesgo",2.3,NA
+"Magdalena","San Sebastián de Buenavista",12.5,"Bajo riesgo",13.5,0
+"Magdalena","Santa Ana",1.5,"Sin riesgo",1.5,NA
+"Magdalena","Santa Bárbara de Pinto",53.6,"Alto riesgo",53.6,NA
+"Magdalena","Sitionuevo",27.6,"Riesgo medio",27.6,NA
+"Magdalena","Tenerife",9.8,"Bajo riesgo",9.8,NA
+"Magdalena","Zapayán",9.4,"Bajo riesgo",6.3,18.8
+"Magdalena","Zona Bananera",0,"Sin riesgo",0,0
+"Meta","Villavicencio",5.6,"Bajo riesgo",5.4,12.7
+"Meta","Acacías",2.6,"Sin riesgo",0.3,10.6
+"Meta","Barranca de Upía",5.8,"Bajo riesgo",5.8,NA
+"Meta","Cabuyaro",0,"Sin riesgo",0,NA
+"Meta","Castilla La Nueva",2.4,"Sin riesgo",0.2,19.9
+"Meta","Cubarral",64.8,"Alto riesgo",64.8,NA
+"Meta","Cumaral",15.1,"Riesgo medio",15.1,NA
+"Meta","El Calvario",17.6,"Riesgo medio",17.6,NA
+"Meta","El Castillo",10.3,"Bajo riesgo",11.3,0
+"Meta","El Dorado",1.5,"Sin riesgo",1.5,NA
+"Meta","Fuente de Oro",16.1,"Riesgo medio",16.1,NA
+"Meta","Granada",39.8,"Alto riesgo",39.8,NA
+"Meta","Guamal",0.4,"Sin riesgo",0.4,0
+"Meta","Mapiripán",26,"Riesgo medio",26,NA
+"Meta","La Macarena",13.1,"Bajo riesgo",13.1,NA
+"Meta","Uribe",10.6,"Bajo riesgo",10.6,NA
+"Meta","Lejanías",21.6,"Riesgo medio",21.6,NA
+"Meta","Puerto Concordia",3.8,"Sin riesgo",3.8,NA
+"Meta","Puerto Gaitán",0.5,"Sin riesgo",0.5,NA
+"Meta","Puerto López",56.6,"Alto riesgo",56.6,NA
+"Meta","Puerto Lleras",5.3,"Bajo riesgo",5.3,NA
+"Meta","Puerto Rico",2.5,"Sin riesgo",2.5,NA
+"Meta","Restrepo",0.7,"Sin riesgo",0.7,NA
+"Meta","San Carlos de Guaroa",11.2,"Bajo riesgo",11.2,NA
+"Meta","San Juan de Arama",19.9,"Riesgo medio",19.9,NA
+"Meta","San Juanito",28.3,"Riesgo medio",28.3,NA
+"Meta","San Martín",10.6,"Bajo riesgo",10.6,NA
+"Nariño","Pasto",1.2,"Sin riesgo",1.1,1.5
+"Nariño","Aldana",17.6,"Riesgo medio",13.2,21.3
+"Nariño","Ancuya",43.8,"Alto riesgo",33.8,57.5
+"Nariño","Arboleda",40.9,"Alto riesgo",9.1,64.8
+"Nariño","Consacá",15.5,"Riesgo medio",15.5,NA
+"Nariño","Contadero",9,"Bajo riesgo",9,NA
+"Nariño","Córdoba",23.4,"Riesgo medio",23.3,23.5
+"Nariño","Cumbal",1.8,"Sin riesgo",1.2,3.7
+"Nariño","Cumbitara",0,"Sin riesgo",0,NA
+"Nariño","Chachagüí",25.2,"Riesgo medio",3.6,35
+"Nariño","El Peñol",20.9,"Riesgo medio",21,19.4
+"Nariño","El Tablón de Gómez",3.1,"Sin riesgo",3.1,NA
+"Nariño","Funes",1.9,"Sin riesgo",1.9,NA
+"Nariño","Guachucal",4.2,"Sin riesgo",4.2,NA
+"Nariño","Guaitarilla",24.3,"Riesgo medio",5.2,76.7
+"Nariño","Gualmatán",12.8,"Bajo riesgo",8.2,16
+"Nariño","Imués",3.2,"Sin riesgo",3.2,NA
+"Nariño","Ipiales",19.5,"Riesgo medio",4.1,72.5
+"Nariño","La Florida",0.1,"Sin riesgo",0,1
+"Nariño","La Llanada",8.8,"Bajo riesgo",8.8,NA
+"Nariño","La Unión",23.6,"Riesgo medio",15,75.1
+"Nariño","Leiva",54.9,"Alto riesgo",54.9,NA
+"Nariño","Linares",62.5,"Alto riesgo",NA,62.5
+"Nariño","Los Andes",7.5,"Bajo riesgo",7.5,NA
+"Nariño","Magüí",44.6,"Alto riesgo",57.7,24.8
+"Nariño","Mallama",45.1,"Alto riesgo",51.6,44.7
+"Nariño","Nariño",6.8,"Bajo riesgo",3.6,11.2
+"Nariño","Policarpa",39.6,"Alto riesgo",39.6,NA
+"Nariño","Potosí",4.4,"Sin riesgo",4.4,NA
+"Nariño","Providencia",6,"Bajo riesgo",6,NA
+"Nariño","Pupiales",12.3,"Bajo riesgo",8.8,49.7
+"Nariño","Ricaurte",26.7,"Riesgo medio",23,28.5
+"Nariño","Roberto Payán",38.2,"Alto riesgo",38.2,NA
+"Nariño","Samaniego",54.9,"Alto riesgo",34.4,62
+"Nariño","Sandoná",8.4,"Bajo riesgo",6.5,12.4
+"Nariño","San Bernardo",18.2,"Riesgo medio",18.2,NA
+"Nariño","San Lorenzo",22.8,"Riesgo medio",22.8,NA
+"Nariño","San Pedro de Cartago",17.3,"Riesgo medio",17.3,NA
+"Nariño","Santa Bárbara",37.1,"Alto riesgo",32.1,53.5
+"Nariño","Santacruz",35.1,"Alto riesgo",35.1,NA
+"Nariño","Sapuyes",4.5,"Sin riesgo",4.5,NA
+"Nariño","Tangua",34.5,"Riesgo medio",30.1,61.2
+"Nariño","San Andrés de Tumaco",16.7,"Riesgo medio",14.1,19.3
+"Nariño","Túquerres",0.4,"Sin riesgo",0.4,NA
+"Nariño","Yacuanquer",14.8,"Riesgo medio",14.8,NA
+"Norte de Santander","San José de Cúcuta",0,"Sin riesgo",0,0
+"Norte de Santander","Ábrego",7,"Bajo riesgo",7,NA
+"Norte de Santander","Arboledas",0,"Sin riesgo",0,NA
+"Norte de Santander","Bochalema",0,"Sin riesgo",0,0
+"Norte de Santander","Bucarasica",13.8,"Bajo riesgo",2.9,79.1
+"Norte de Santander","Cácota",12,"Bajo riesgo",12,NA
+"Norte de Santander","Cáchira",12.1,"Bajo riesgo",5.2,46.5
+"Norte de Santander","Chinácota",8.1,"Bajo riesgo",0,60.8
+"Norte de Santander","Chitagá",9.4,"Bajo riesgo",9.4,NA
+"Norte de Santander","Convención",0.2,"Sin riesgo",0.2,NA
+"Norte de Santander","Cucutilla",14.6,"Riesgo medio",14.6,NA
+"Norte de Santander","Durania",0,"Sin riesgo",0,NA
+"Norte de Santander","El Carmen",0,"Sin riesgo",0,NA
+"Norte de Santander","El Tarra",10.3,"Bajo riesgo",10.3,NA
+"Norte de Santander","El Zulia",0,"Sin riesgo",0,0
+"Norte de Santander","Gramalote",0,"Sin riesgo",0,NA
+"Norte de Santander","Hacarí",12.7,"Bajo riesgo",12.7,NA
+"Norte de Santander","Herrán",3.5,"Sin riesgo",3.5,NA
+"Norte de Santander","Labateca",3.2,"Sin riesgo",3.2,NA
+"Norte de Santander","La Esperanza",14.1,"Riesgo medio",14.1,NA
+"Norte de Santander","La Playa",0.4,"Sin riesgo",0.4,NA
+"Norte de Santander","Los Patios",0,"Sin riesgo",0,NA
+"Norte de Santander","Lourdes",0,"Sin riesgo",0,NA
+"Norte de Santander","Mutiscua",11.4,"Bajo riesgo",11.4,NA
+"Norte de Santander","Ocaña",0,"Sin riesgo",0,NA
+"Norte de Santander","Pamplona",0,"Sin riesgo",0,NA
+"Norte de Santander","Pamplonita",18.4,"Riesgo medio",18.4,NA
+"Norte de Santander","Puerto Santander",6.3,"Bajo riesgo",6.3,NA
+"Norte de Santander","Ragonvalia",0,"Sin riesgo",0,NA
+"Norte de Santander","Salazar",0.2,"Sin riesgo",0.2,NA
+"Norte de Santander","San Calixto",5.7,"Bajo riesgo",5.7,NA
+"Norte de Santander","San Cayetano",0,"Sin riesgo",0,0
+"Norte de Santander","Santiago",10.2,"Bajo riesgo",10.2,NA
+"Norte de Santander","Sardinata",13.7,"Bajo riesgo",13.7,NA
+"Norte de Santander","Silos",27.2,"Riesgo medio",27.2,NA
+"Norte de Santander","Teorama",2.2,"Sin riesgo",2.2,NA
+"Norte de Santander","Tibú",4.9,"Sin riesgo",4.9,NA
+"Norte de Santander","Toledo",17,"Riesgo medio",17,NA
+"Norte de Santander","Villa Caro",0,"Sin riesgo",0,NA
+"Norte de Santander","Villa del Rosario",0.8,"Sin riesgo",0.8,NA
+"Quindío","Armenia",0.5,"Sin riesgo",0.1,1.4
+"Quindío","Buenavista",0,"Sin riesgo",0,NA
+"Quindío","Calarcá",0.5,"Sin riesgo",0.6,0
+"Quindío","Circasia",0,"Sin riesgo",0,NA
+"Quindío","Córdoba",0,"Sin riesgo",0,NA
+"Quindío","Filandia",0.8,"Sin riesgo",0.8,NA
+"Quindío","Génova",0,"Sin riesgo",0,NA
+"Quindío","La Tebaida",0,"Sin riesgo",0,NA
+"Quindío","Montenegro",0.7,"Sin riesgo",0.7,NA
+"Quindío","Pijao",0,"Sin riesgo",0,NA
+"Quindío","Quimbaya",0,"Sin riesgo",0,NA
+"Quindío","Salento",0.2,"Sin riesgo",0.2,NA
+"Risaralda","Pereira",4.8,"Sin riesgo",0.1,29.2
+"Risaralda","Apía",3.6,"Sin riesgo",0.8,67.5
+"Risaralda","Balboa",16.5,"Riesgo medio",1.5,76.3
+"Risaralda","Belén de Umbría",7.3,"Bajo riesgo",1.9,22.5
+"Risaralda","Dosquebradas",4.6,"Sin riesgo",4.6,NA
+"Risaralda","Guática",68.3,"Alto riesgo",NA,68.3
+"Risaralda","La Celia",0,"Sin riesgo",0,NA
+"Risaralda","La Virginia",0,"Sin riesgo",0,0
+"Risaralda","Marsella",12.2,"Bajo riesgo",0.9,32.8
+"Risaralda","Mistrató",3.7,"Sin riesgo",0,7.2
+"Risaralda","Pueblo Rico",0.8,"Sin riesgo",0.8,NA
+"Risaralda","Quinchía",21.7,"Riesgo medio",0,69
+"Risaralda","Santa Rosa de Cabal",1.5,"Sin riesgo",1.1,3.7
+"Risaralda","Santuario",12.7,"Bajo riesgo",0,54.2
+"Santander","Bucaramanga",1.5,"Sin riesgo",1.5,NA
+"Santander","Aguada",34.6,"Riesgo medio",34.6,NA
+"Santander","Albania",0,"Sin riesgo",0,NA
+"Santander","Aratoca",7.9,"Bajo riesgo",7.9,NA
+"Santander","Barbosa",10.1,"Bajo riesgo",10.6,0
+"Santander","Barichara",39,"Alto riesgo",23.2,94
+"Santander","Barrancabermeja",0.9,"Sin riesgo",0.9,NA
+"Santander","Betulia",0,"Sin riesgo",0,0
+"Santander","Bolívar",0.5,"Sin riesgo",0.5,NA
+"Santander","Cabrera",13.1,"Bajo riesgo",13.1,NA
+"Santander","California",5.3,"Bajo riesgo",5.3,NA
+"Santander","Capitanejo",26.3,"Riesgo medio",26.3,NA
+"Santander","Carcasí",34.4,"Riesgo medio",34.4,NA
+"Santander","Cepitá",0.5,"Sin riesgo",0.5,NA
+"Santander","Cerrito",10.4,"Bajo riesgo",10.4,NA
+"Santander","Charalá",2.8,"Sin riesgo",2.8,NA
+"Santander","Charta",25.9,"Riesgo medio",25.9,NA
+"Santander","Chima",0.3,"Sin riesgo",0.3,NA
+"Santander","Chipatá",17.7,"Riesgo medio",17.7,NA
+"Santander","Cimitarra",1.7,"Sin riesgo",1.9,0
+"Santander","Concepción",4.5,"Sin riesgo",4.5,NA
+"Santander","Confines",11.9,"Bajo riesgo",11.9,NA
+"Santander","Contratación",27.9,"Riesgo medio",27.9,NA
+"Santander","Coromoro",0,"Sin riesgo",0,NA
+"Santander","Curití",10.9,"Bajo riesgo",17.1,0
+"Santander","El Carmen de Chucurí",18.3,"Riesgo medio",4,46.9
+"Santander","El Guacamayo",47.4,"Alto riesgo",47.4,NA
+"Santander","El Peñón",34,"Riesgo medio",34,NA
+"Santander","El Playón",32.6,"Riesgo medio",23.9,84.9
+"Santander","Encino",4.6,"Sin riesgo",4.6,NA
+"Santander","Enciso",8.7,"Bajo riesgo",11.1,1.5
+"Santander","Florián",0,"Sin riesgo",0,NA
+"Santander","Floridablanca",0,"Sin riesgo",0,0
+"Santander","Galán",4.9,"Sin riesgo",4.9,NA
+"Santander","Gámbita",22.9,"Riesgo medio",22.9,NA
+"Santander","Girón",1.7,"Sin riesgo",1.3,2.5
+"Santander","Guaca",11.2,"Bajo riesgo",11.2,NA
+"Santander","Guadalupe",21.3,"Riesgo medio",21.3,NA
+"Santander","Guapotá",13,"Bajo riesgo",13,NA
+"Santander","Guavatá",7,"Bajo riesgo",7,NA
+"Santander","Güepsa",0,"Sin riesgo",0,NA
+"Santander","Hato",11.2,"Bajo riesgo",11.2,NA
+"Santander","Jesús María",17.7,"Riesgo medio",17.7,NA
+"Santander","Jordán",74.4,"Alto riesgo",NA,74.4
+"Santander","La Belleza",0,"Sin riesgo",0,NA
+"Santander","Landázuri",9,"Bajo riesgo",9,NA
+"Santander","La Paz",0,"Sin riesgo",0,NA
+"Santander","Lebrija",2.4,"Sin riesgo",1.8,13.6
+"Santander","Los Santos",3,"Sin riesgo",3,NA
+"Santander","Macaravita",29.6,"Riesgo medio",29.6,NA
+"Santander","Málaga",2,"Sin riesgo",2,NA
+"Santander","Matanza",19.9,"Riesgo medio",19.9,NA
+"Santander","Mogotes",0,"Sin riesgo",0,NA
+"Santander","Molagavita",17.6,"Riesgo medio",17.6,NA
+"Santander","Ocamonte",0,"Sin riesgo",0,NA
+"Santander","Oiba",1.5,"Sin riesgo",1.5,NA
+"Santander","Onzaga",0,"Sin riesgo",0,NA
+"Santander","Palmar",13.2,"Bajo riesgo",13.2,NA
+"Santander","Palmas del Socorro",22.4,"Riesgo medio",0,32.3
+"Santander","Páramo",21.6,"Riesgo medio",21.6,NA
+"Santander","Pinchote",0,"Sin riesgo",0,NA
+"Santander","Puente Nacional",4.8,"Sin riesgo",0.4,22.4
+"Santander","Puerto Parra",12.4,"Bajo riesgo",12.8,11.4
+"Santander","Puerto Wilches",20.5,"Riesgo medio",20.5,NA
+"Santander","Rionegro",19.2,"Riesgo medio",11.2,67.4
+"Santander","Sabana de Torres",5.1,"Bajo riesgo",5.6,0
+"Santander","San Andrés",5.6,"Bajo riesgo",5.6,NA
+"Santander","San Benito",93.9,"Inviable sanitariamente",93.9,NA
+"Santander","San Gil",0.8,"Sin riesgo",0.8,NA
+"Santander","San Joaquín",6,"Bajo riesgo",6,NA
+"Santander","San José de Miranda",24.3,"Riesgo medio",24.3,NA
+"Santander","San Miguel",2.3,"Sin riesgo",2.3,NA
+"Santander","San Vicente de Chucurí",21.4,"Riesgo medio",16.4,29.2
+"Santander","Santa Bárbara",0,"Sin riesgo",0,NA
+"Santander","Santa Helena del Opón",46.5,"Alto riesgo",46.5,NA
+"Santander","Simacota",0,"Sin riesgo",0,NA
+"Santander","Socorro",3.6,"Sin riesgo",3.6,NA
+"Santander","Suaita",22.6,"Riesgo medio",0,33.9
+"Santander","Sucre",52.4,"Alto riesgo",52.4,NA
+"Santander","Suratá",5.2,"Bajo riesgo",5.2,NA
+"Santander","Tona",17.5,"Riesgo medio",0,52.6
+"Santander","Valle de San José",23.8,"Riesgo medio",23.8,NA
+"Santander","Vélez",5.3,"Bajo riesgo",5.3,NA
+"Santander","Vetas",33.8,"Riesgo medio",33.8,NA
+"Santander","Villanueva",25.8,"Riesgo medio",18.4,92.4
+"Santander","Zapatoca",21,"Riesgo medio",20.3,30.2
+"Sucre","Sincelejo",1.3,"Sin riesgo",1.1,6.3
+"Sucre","Buenavista",11.4,"Bajo riesgo",11.8,0
+"Sucre","Caimito",20.8,"Riesgo medio",20.8,NA
+"Sucre","Colosó",49.7,"Alto riesgo",49.7,NA
+"Sucre","Corozal",1.1,"Sin riesgo",1.1,NA
+"Sucre","Coveñas",18.6,"Riesgo medio",18.6,NA
+"Sucre","Chalán",45.5,"Alto riesgo",45.5,NA
+"Sucre","El Roble",15.4,"Riesgo medio",15.4,NA
+"Sucre","Galeras",3.1,"Sin riesgo",3.1,NA
+"Sucre","Guaranda",21.2,"Riesgo medio",21.2,NA
+"Sucre","La Unión",14.2,"Riesgo medio",14.2,NA
+"Sucre","Los Palmitos",14.8,"Riesgo medio",14.8,NA
+"Sucre","Majagual",20.3,"Riesgo medio",20.3,NA
+"Sucre","Morroa",33,"Riesgo medio",33,NA
+"Sucre","Ovejas",10.2,"Bajo riesgo",10.2,NA
+"Sucre","Palmito",25.8,"Riesgo medio",25.8,NA
+"Sucre","Sampués",7.4,"Bajo riesgo",7.4,NA
+"Sucre","San Juan de Betulia",44.3,"Alto riesgo",44.3,NA
+"Sucre","San Marcos",7.8,"Bajo riesgo",7.8,NA
+"Sucre","San Onofre",0,"Sin riesgo",0,NA
+"Sucre","San Pedro",13.2,"Bajo riesgo",13.2,NA
+"Sucre","San Luis de Sincé",5,"Sin riesgo",5,NA
+"Sucre","Santiago de Tolú",16.1,"Riesgo medio",16.1,NA
+"Sucre","San José de Toluviejo",52.6,"Alto riesgo",52.6,NA
+"Tolima","Ibagué",29.6,"Riesgo medio",28.2,45.8
+"Tolima","Alpujarra",10.7,"Bajo riesgo",10.7,NA
+"Tolima","Alvarado",25.4,"Riesgo medio",25.4,NA
+"Tolima","Ambalema",31.7,"Riesgo medio",31.7,NA
+"Tolima","Anzoátegui",3.1,"Sin riesgo",3.1,NA
+"Tolima","Armero",4.6,"Sin riesgo",4.6,NA
+"Tolima","Ataco",64.6,"Alto riesgo",64.6,NA
+"Tolima","Cajamarca",48.4,"Alto riesgo",48.4,NA
+"Tolima","Carmen de Apicalá",4.7,"Sin riesgo",4.7,NA
+"Tolima","Casabianca",7.5,"Bajo riesgo",7.5,NA
+"Tolima","Chaparral",5.8,"Bajo riesgo",5.8,NA
+"Tolima","Coello",50.2,"Alto riesgo",50.2,NA
+"Tolima","Coyaima",20.2,"Riesgo medio",20.2,NA
+"Tolima","Cunday",11.5,"Bajo riesgo",11.5,NA
+"Tolima","Dolores",39,"Alto riesgo",39,NA
+"Tolima","Espinal",0,"Sin riesgo",0,0
+"Tolima","Falan",5,"Sin riesgo",5,NA
+"Tolima","Flandes",6.9,"Bajo riesgo",6.9,NA
+"Tolima","Fresno",4.1,"Sin riesgo",4.1,NA
+"Tolima","Guamo",10.2,"Bajo riesgo",10.2,NA
+"Tolima","Herveo",14.5,"Riesgo medio",14.5,NA
+"Tolima","Honda",2,"Sin riesgo",2,NA
+"Tolima","Icononzo",23.5,"Riesgo medio",23.5,NA
+"Tolima","Lérida",11.3,"Bajo riesgo",11.3,NA
+"Tolima","Líbano",0,"Sin riesgo",0,NA
+"Tolima","San Sebastián de Mariquita",1.8,"Sin riesgo",1.8,NA
+"Tolima","Melgar",0.8,"Sin riesgo",0.8,NA
+"Tolima","Murillo",13,"Bajo riesgo",13,NA
+"Tolima","Natagaima",3.1,"Sin riesgo",3.1,NA
+"Tolima","Ortega",5.9,"Bajo riesgo",5.9,NA
+"Tolima","Palocabildo",2,"Sin riesgo",2,NA
+"Tolima","Piedras",20,"Riesgo medio",20,NA
+"Tolima","Planadas",30.8,"Riesgo medio",30.8,NA
+"Tolima","Prado",9.6,"Bajo riesgo",9.6,NA
+"Tolima","Purificación",0,"Sin riesgo",0,NA
+"Tolima","Rioblanco",0,"Sin riesgo",0,NA
+"Tolima","Roncesvalles",65.8,"Alto riesgo",65.8,NA
+"Tolima","Rovira",6,"Bajo riesgo",6,NA
+"Tolima","Saldaña",7.2,"Bajo riesgo",7.2,NA
+"Tolima","San Antonio",0,"Sin riesgo",0,NA
+"Tolima","San Luis",3.6,"Sin riesgo",3.8,0
+"Tolima","Santa Isabel",4.4,"Sin riesgo",4.4,NA
+"Tolima","Suárez",76.1,"Alto riesgo",76.1,NA
+"Tolima","Valle de San Juan",32.9,"Riesgo medio",32.9,NA
+"Tolima","Venadillo",2.2,"Sin riesgo",2.2,NA
+"Tolima","Villahermosa",0.9,"Sin riesgo",0.9,NA
+"Tolima","Villarrica",30,"Riesgo medio",30,NA
+"Valle del Cauca","Cali",0.2,"Sin riesgo",0.1,2.5
+"Valle del Cauca","Alcalá",14.5,"Riesgo medio",1.3,22.7
+"Valle del Cauca","Andalucía",0,"Sin riesgo",0,0
+"Valle del Cauca","Ansermanuevo",11,"Bajo riesgo",0,17.6
+"Valle del Cauca","Argelia",30.4,"Riesgo medio",0,60.9
+"Valle del Cauca","Bolívar",18.8,"Riesgo medio",0,25.4
+"Valle del Cauca","Buenaventura",0,"Sin riesgo",0,0
+"Valle del Cauca","Guadalajara de Buga",0,"Sin riesgo",0,NA
+"Valle del Cauca","Bugalagrande",7.2,"Bajo riesgo",0,11.7
+"Valle del Cauca","Caicedonia",0,"Sin riesgo",0,0
+"Valle del Cauca","Calima",50.8,"Alto riesgo",NA,50.8
+"Valle del Cauca","Candelaria",2.8,"Sin riesgo",0.9,12.1
+"Valle del Cauca","Dagua",6.4,"Bajo riesgo",0.1,10.3
+"Valle del Cauca","El Águila",5.1,"Bajo riesgo",0.4,13
+"Valle del Cauca","El Cairo",1.1,"Sin riesgo",1.1,NA
+"Valle del Cauca","El Cerrito",0.5,"Sin riesgo",0,1.7
+"Valle del Cauca","El Dovio",0,"Sin riesgo",0,0
+"Valle del Cauca","Florida",0.1,"Sin riesgo",0.1,0
+"Valle del Cauca","Ginebra",2.3,"Sin riesgo",0.2,10.5
+"Valle del Cauca","Guacarí",0.4,"Sin riesgo",0.1,3.7
+"Valle del Cauca","Jamundí",6.7,"Bajo riesgo",1.2,21.3
+"Valle del Cauca","La Cumbre",5.1,"Bajo riesgo",0.4,6.2
+"Valle del Cauca","La Unión",3.2,"Sin riesgo",0,11.2
+"Valle del Cauca","La Victoria",0,"Sin riesgo",0,0
+"Valle del Cauca","Obando",12.5,"Bajo riesgo",0.1,49.7
+"Valle del Cauca","Palmira",5.3,"Bajo riesgo",0,8.4
+"Valle del Cauca","Pradera",0.2,"Sin riesgo",0.2,0
+"Valle del Cauca","Restrepo",0,"Sin riesgo",0,0
+"Valle del Cauca","Riofrío",7.8,"Bajo riesgo",0,18
+"Valle del Cauca","Roldanillo",0.7,"Sin riesgo",0.9,0.1
+"Valle del Cauca","San Pedro",0.8,"Sin riesgo",0.2,1.4
+"Valle del Cauca","Sevilla",5.9,"Bajo riesgo",0.1,25.4
+"Valle del Cauca","Toro",12.4,"Bajo riesgo",0,21.7
+"Valle del Cauca","Trujillo",4.4,"Sin riesgo",0,21.8
+"Valle del Cauca","Tuluá",3.3,"Sin riesgo",0.1,7.1
+"Valle del Cauca","Ulloa",1.4,"Sin riesgo",2.2,0
+"Valle del Cauca","Versalles",32.9,"Riesgo medio",0.7,65
+"Valle del Cauca","Vijes",1.8,"Sin riesgo",1.8,NA
+"Valle del Cauca","Yotoco",8.2,"Bajo riesgo",0.1,40.6
+"Valle del Cauca","Yumbo",8.3,"Bajo riesgo",4.5,13
+"Valle del Cauca","Zarzal",1.1,"Sin riesgo",0,3.8
+"Arauca","Arauca",3.8,"Sin riesgo",1.8,35.2
+"Arauca","Arauquita",8.1,"Bajo riesgo",0,21.4
+"Arauca","Cravo Norte",1,"Sin riesgo",1,NA
+"Arauca","Fortul",0.2,"Sin riesgo",0.2,NA
+"Arauca","Puerto Rondón",0,"Sin riesgo",0,NA
+"Arauca","Saravena",19.8,"Riesgo medio",0.6,49.5
+"Arauca","Tame",1.9,"Sin riesgo",1.9,NA
+"Casanare","Yopal",0.7,"Sin riesgo",0.3,3.2
+"Casanare","Chámeza",3.2,"Sin riesgo",3.2,NA
+"Casanare","Hato Corozal",0,"Sin riesgo",0,NA
+"Casanare","La Salina",1.5,"Sin riesgo",1.5,NA
+"Casanare","Maní",6.1,"Bajo riesgo",6.1,NA
+"Casanare","Monterrey",3,"Sin riesgo",3,NA
+"Casanare","Nunchía",1.8,"Sin riesgo",1.8,NA
+"Casanare","Orocué",2.5,"Sin riesgo",2.5,NA
+"Casanare","Paz de Ariporo",3,"Sin riesgo",3,NA
+"Casanare","Pore",2.6,"Sin riesgo",2.6,NA
+"Casanare","Sabanalarga",1.8,"Sin riesgo",1.8,NA
+"Casanare","Sácama",1.5,"Sin riesgo",1.5,NA
+"Casanare","San Luis de Palenque",12.7,"Bajo riesgo",16.7,0.5
+"Casanare","Támara",6.4,"Bajo riesgo",6.4,NA
+"Casanare","Tauramena",4.1,"Sin riesgo",3.5,20.7
+"Casanare","Trinidad",18.2,"Riesgo medio",18.2,NA
+"Casanare","Villanueva",1,"Sin riesgo",1,NA
+"Putumayo","Mocoa",0.8,"Sin riesgo",0.8,NA
+"Putumayo","Colón",9.2,"Bajo riesgo",9.2,NA
+"Putumayo","Orito",29.9,"Riesgo medio",29.9,NA
+"Putumayo","Puerto Asís",17.9,"Riesgo medio",17.9,NA
+"Putumayo","Puerto Caicedo",0,"Sin riesgo",0,NA
+"Putumayo","Puerto Guzmán",24.8,"Riesgo medio",25.3,20.7
+"Putumayo","Puerto Leguízamo",0,"Sin riesgo",0,NA
+"Putumayo","Sibundoy",19.7,"Riesgo medio",19.7,NA
+"Putumayo","San Francisco",31.4,"Riesgo medio",31.4,NA
+"Putumayo","Santiago",18.4,"Riesgo medio",18.4,NA
+"Putumayo","Valle del Guamuez",13.8,"Bajo riesgo",13.8,NA
+"Putumayo","Villagarzón",0,"Sin riesgo",0,NA
+"Archipiélago de San Andrés, Providencia Y Santa Catalina","San Andrés",3.6,"Sin riesgo",0.5,8.5
+"Amazonas","Leticia",4.9,"Sin riesgo",4.9,NA
+"Amazonas","Puerto Nariño",14.1,"Riesgo medio",18.5,2.4
+"Guainía","Inírida",32.8,"Riesgo medio",32.8,NA
+"Guaviare","San José del Guaviare",1.9,"Sin riesgo",1.9,NA
+"Guaviare","Calamar",20.6,"Riesgo medio",20.6,NA
+"Guaviare","El Retorno",8.4,"Bajo riesgo",6.7,12.9
+"Guaviare","Miraflores",14.6,"Riesgo medio",14.6,NA
+"Vichada","La Primavera",2.3,"Sin riesgo",2.3,NA
+"Vichada","Santa Rosalía",25.3,"Riesgo medio",25.3,NA
+"Vichada","Cumaribo",17.6,"Riesgo medio",17.6,NA
+"Antioquia","Medellín",1.3,"Sin riesgo",0.7,3
+"Antioquia","Abejorral",0.4,"Sin riesgo",0.4,NA
+"Antioquia","Abriaquí",7.2,"Bajo riesgo",7.2,NA
+"Antioquia","Alejandría",3.2,"Sin riesgo",3.2,NA
+"Antioquia","Amagá",40.6,"Alto riesgo",0.4,62
+"Antioquia","Amalfi",0,"Sin riesgo",0,NA
+"Antioquia","Andes",1.6,"Sin riesgo",0.3,8.4
+"Antioquia","Angelópolis",19.7,"Riesgo medio",0,61
+"Antioquia","Angostura",6.3,"Bajo riesgo",0,16.3
+"Antioquia","Anorí",3.2,"Sin riesgo",3.8,0.6
+"Antioquia","Santa Fé de Antioquia",6.3,"Bajo riesgo",0.8,19.8
+"Antioquia","Anzá",20.7,"Riesgo medio",0.8,96.4
+"Antioquia","Apartadó",2.9,"Sin riesgo",0.4,13.8
+"Antioquia","Arboletes",0,"Sin riesgo",0,NA
+"Antioquia","Argelia",0,"Sin riesgo",0,0
+"Antioquia","Armenia",0.6,"Sin riesgo",0.6,NA
+"Antioquia","Barbosa",9.5,"Bajo riesgo",0.1,49
+"Antioquia","Belmira",5.2,"Bajo riesgo",0.8,38.5
+"Antioquia","Bello",0.2,"Sin riesgo",0.2,NA
+"Antioquia","Betania",11.2,"Bajo riesgo",0,26.9
+"Antioquia","Betulia",5.5,"Bajo riesgo",0.4,26.9
+"Antioquia","Ciudad Bolívar",2.6,"Sin riesgo",1.6,42.7
+"Antioquia","Briceño",1.1,"Sin riesgo",1.1,NA
+"Antioquia","Buriticá",0.3,"Sin riesgo",0.3,NA
+"Antioquia","Cáceres",0,"Sin riesgo",0,NA
+"Antioquia","Caicedo",2.2,"Sin riesgo",2.2,NA
+"Antioquia","Caldas",3.7,"Sin riesgo",2.2,57.6
+"Antioquia","Campamento",1.8,"Sin riesgo",1.8,NA
+"Antioquia","Cañasgordas",2.9,"Sin riesgo",2.9,NA
+"Antioquia","Caracolí",0.6,"Sin riesgo",0.6,NA
+"Antioquia","Caramanta",8.3,"Bajo riesgo",1.1,89.4
+"Antioquia","Carepa",1.4,"Sin riesgo",0,32
+"Antioquia","El Carmen de Viboral",2.6,"Sin riesgo",0.2,5.9
+"Antioquia","Carolina",1.2,"Sin riesgo",1.2,NA
+"Antioquia","Caucasia",0.8,"Sin riesgo",0.8,NA
+"Antioquia","Chigorodó",0.8,"Sin riesgo",0.8,NA
+"Antioquia","Cisneros",57.3,"Alto riesgo",57.3,NA
+"Antioquia","Cocorná",17.7,"Riesgo medio",4.8,29.3
+"Antioquia","Concepción",1.5,"Sin riesgo",1.5,NA
+"Antioquia","Concordia",0.6,"Sin riesgo",0.6,NA
+"Antioquia","Copacabana",7.1,"Bajo riesgo",1.7,14
+"Antioquia","Dabeiba",1,"Sin riesgo",1,NA
+"Antioquia","Donmatías",5.4,"Bajo riesgo",0.6,97.4
+"Antioquia","Ebéjico",9.1,"Bajo riesgo",2.4,24.1
+"Antioquia","El Bagre",3.2,"Sin riesgo",1.3,100
+"Antioquia","Entrerríos",13.9,"Bajo riesgo",14.4,11.4
+"Antioquia","Envigado",3.2,"Sin riesgo",0.7,7.3
+"Antioquia","Fredonia",0.7,"Sin riesgo",0.9,0
+"Antioquia","Frontino",1.8,"Sin riesgo",0.4,32.5
+"Antioquia","Giraldo",16.7,"Riesgo medio",4.9,97.4
+"Antioquia","Girardota",19.4,"Riesgo medio",0.4,27.9
+"Antioquia","Gómez Plata",4.6,"Sin riesgo",4.6,NA
+"Antioquia","Granada",0,"Sin riesgo",0,NA
+"Antioquia","Guadalupe",0.9,"Sin riesgo",0.9,0
+"Antioquia","Guarne",0.5,"Sin riesgo",0.8,0.2
+"Antioquia","Guatapé",1.8,"Sin riesgo",1.9,0
+"Antioquia","Heliconia",6,"Bajo riesgo",1.2,97.4
+"Antioquia","Hispania",3.2,"Sin riesgo",1.7,13.4
+"Antioquia","Itagüí",1.6,"Sin riesgo",1,15.2
+"Antioquia","Ituango",0,"Sin riesgo",0,NA
+"Antioquia","Jardín",0,"Sin riesgo",0,0
+"Antioquia","Jericó",1.1,"Sin riesgo",0.4,13.3
+"Antioquia","La Ceja",8.9,"Bajo riesgo",0.3,38.1
+"Antioquia","La Estrella",2.2,"Sin riesgo",2.6,1.5
+"Antioquia","La Pintada",3.1,"Sin riesgo",3.1,NA
+"Antioquia","La Unión",9.3,"Bajo riesgo",0,25.2
+"Antioquia","Liborina",23.4,"Riesgo medio",0,79.1
+"Antioquia","Maceo",8.1,"Bajo riesgo",1.2,53.1
+"Antioquia","Marinilla",5.5,"Bajo riesgo",0.1,6.2
+"Antioquia","Montebello",16.3,"Riesgo medio",16.3,NA
+"Antioquia","Mutatá",0.7,"Sin riesgo",0.7,NA
+"Antioquia","Nariño",0.6,"Sin riesgo",0.6,NA
+"Antioquia","Necoclí",3.1,"Sin riesgo",3.4,0
+"Antioquia","Nechí",1,"Sin riesgo",1,NA
+"Antioquia","Olaya",1.5,"Sin riesgo",1.4,1.5
+"Antioquia","Peñol",0.1,"Sin riesgo",0.1,NA
+"Antioquia","Peque",1.1,"Sin riesgo",1.1,NA
+"Antioquia","Pueblorrico",1,"Sin riesgo",1,NA
+"Antioquia","Puerto Berrío",1.1,"Sin riesgo",1.1,NA
+"Antioquia","Puerto Nare",8.9,"Bajo riesgo",6.8,16
+"Antioquia","Puerto Triunfo",6.4,"Bajo riesgo",0.6,13.9
+"Antioquia","Remedios",0,"Sin riesgo",0,0
+"Antioquia","Retiro",9.8,"Bajo riesgo",0.9,16.3
+"Antioquia","Rionegro",5.9,"Bajo riesgo",0.6,6.8
+"Antioquia","Sabanalarga",3.1,"Sin riesgo",3.1,NA
+"Antioquia","Sabaneta",2.1,"Sin riesgo",1.5,7.4
+"Antioquia","Salgar",3.1,"Sin riesgo",2.1,84.2
+"Antioquia","San Andrés de Cuerquía",1.8,"Sin riesgo",1.8,NA
+"Antioquia","San Carlos",0.7,"Sin riesgo",0.7,NA
+"Antioquia","San Francisco",3.2,"Sin riesgo",3.8,0
+"Antioquia","San Jerónimo",10.4,"Bajo riesgo",0,53.2
+"Antioquia","San José de La Montaña",1.3,"Sin riesgo",1.3,NA
+"Antioquia","San Juan de Urabá",3.2,"Sin riesgo",3.2,NA
+"Antioquia","San Luis",3.5,"Sin riesgo",2.3,42
+"Antioquia","San Pedro de Los Milagros",1.7,"Sin riesgo",0.1,5.6
+"Antioquia","San Pedro de Urabá",1,"Sin riesgo",1,NA
+"Antioquia","San Rafael",0,"Sin riesgo",0,NA
+"Antioquia","San Roque",0,"Sin riesgo",0,NA
+"Antioquia","San Vicente Ferrer",3.4,"Sin riesgo",0.2,12.5
+"Antioquia","Santa Bárbara",4.4,"Sin riesgo",1.9,32.5
+"Antioquia","Santa Rosa de Osos",0.7,"Sin riesgo",1,0
+"Antioquia","Santo Domingo",2.2,"Sin riesgo",2.2,NA
+"Antioquia","El Santuario",0.1,"Sin riesgo",0.1,NA
+"Antioquia","Segovia",0,"Sin riesgo",0,NA
+"Antioquia","Sonsón",2.3,"Sin riesgo",0.7,35.4
+"Antioquia","Sopetrán",0,"Sin riesgo",0,0
+"Antioquia","Támesis",18.7,"Riesgo medio",4.1,63.9
+"Antioquia","Tarazá",0.3,"Sin riesgo",0.3,0
+"Antioquia","Tarso",0.1,"Sin riesgo",0.1,0
+"Antioquia","Titiribí",54.9,"Alto riesgo",1.7,88.3
+"Antioquia","Toledo",1.5,"Sin riesgo",1.5,NA
+"Antioquia","Turbo",1.4,"Sin riesgo",1.5,0
+"Antioquia","Uramita",2.3,"Sin riesgo",2.3,NA
+"Antioquia","Urrao",5,"Sin riesgo",0.3,70.8
+"Antioquia","Valdivia",1.2,"Sin riesgo",1.2,NA
+"Antioquia","Valparaíso",0.8,"Sin riesgo",0.8,NA
+"Antioquia","Vegachí",3.1,"Sin riesgo",0.1,35.4
+"Antioquia","Venecia",0,"Sin riesgo",0,0
+"Antioquia","Yalí",1.2,"Sin riesgo",1.2,NA
+"Antioquia","Yarumal",3.5,"Sin riesgo",0.2,29.5
+"Antioquia","Yolombó",0.4,"Sin riesgo",0.4,NA
+"Antioquia","Yondó",0.8,"Sin riesgo",0.8,NA
+"Antioquia","Zaragoza",96.5,"Inviable sanitariamente",96.5,NA
+"Atlántico","Barranquilla",0,"Sin riesgo",0,0
+"Atlántico","Baranoa",4.5,"Sin riesgo",0,36.1
+"Atlántico","Campo de La Cruz",4,"Sin riesgo",3.7,9.2
+"Atlántico","Candelaria",1.2,"Sin riesgo",1.5,0
+"Atlántico","Galapa",0,"Sin riesgo",0,0
+"Atlántico","Juan de Acosta",0,"Sin riesgo",0,0
+"Atlántico","Luruaco",6.9,"Bajo riesgo",5.3,9.4
+"Atlántico","Malambo",6.5,"Bajo riesgo",0,33.6
+"Atlántico","Manatí",0,"Sin riesgo",0,0
+"Atlántico","Palmar de Varela",0,"Sin riesgo",0,NA
+"Atlántico","Piojó",0,"Sin riesgo",0,0
+"Atlántico","Polonuevo",0,"Sin riesgo",0,0
+"Atlántico","Ponedera",4.8,"Sin riesgo",0,13.7
+"Atlántico","Puerto Colombia",1.5,"Sin riesgo",2.1,0
+"Atlántico","Repelón",1.7,"Sin riesgo",0,6.5
+"Atlántico","Sabanagrande",0,"Sin riesgo",0,NA
+"Atlántico","Sabanalarga",2.5,"Sin riesgo",0,4.9
+"Atlántico","Santa Lucía",0,"Sin riesgo",0,0
+"Atlántico","Santo Tomás",0,"Sin riesgo",0,NA
+"Atlántico","Soledad",0,"Sin riesgo",0,NA
+"Atlántico","Suan",0,"Sin riesgo",0,NA
+"Atlántico","Tubará",4.9,"Sin riesgo",0,9.8
+"Atlántico","Usiacurí",0,"Sin riesgo",0,NA

@@ -1,0 +1,1808 @@
+---
+title: "Bioestadística"
+subtitle: "Estadística Descriptiva"
+author:
+    name: Giovany Babativa-Márquez, PhD
+    email: jgbabativam@unal.edu.co
+format:
+  gbabativa-revealjs:
+    footer: "Diapositivas disponibles en [GitHub](https://github.com/jgbabativam)."
+    logo: "images/UNAL.png"
+lang: es
+incremental: false
+embed-resources: true
+highlight-style: dracula
+execute:
+  echo: false
+  eval: true
+  warning: false
+  message: false
+filters:
+  - webr
+revealjs-plugins:
+  - drop
+---
+
+```{r}
+library(pacman)
+p_load(ggplot2, dplyr, patchwork)
+```
+
+## Fechas importantes
+
+```{=html}
+<style>
+/* Logo más pequeño para que no tape la primera línea de texto */
+.reveal .slide-logo { max-height: 11% !important; }
+</style>
+```
+
+\newcommand\norm[1]{\left\lVert#1\right\rVert}
+
+<br><br>
+
+1. Examen 3 (Estadística descriptiva): jueves 12 de noviembre
+2. Examen 4 (Pruebas de hipótesis): jueves 26 de noviembre
+3. Examen 5 (Intervalos de confianza): jueves 10 de diciembre
+
+# POBLACIÓN Y MUESTRA {background-color="#0077b6"}
+
+## ¿A quién queremos estudiar? {style="font-size: 75%;"}
+
+::: columns
+
+::: {.column width="50%"}
+
+### Población
+
+Conjunto **completo** de individuos o unidades que comparten una característica de interés.
+
+**Ejemplos:**
+
+- Todos los lotes de un medicamento producidos en una planta farmacéutica
+- Todas las muestras de agua de un río en una región
+- Todas las plantas de una especie en un ecosistema
+
+:::
+
+::: {.column width="50%"}
+
+### Muestra
+
+**Subconjunto** de la población, seleccionado para ser estudiado.
+
+**Ejemplos:**
+
+- 300 lotes de un medicamento producidos en tres plantas
+- 80 muestras de agua tomadas en el programa de monitoreo
+- 50 plantas seleccionadas para el estudio ecológico
+
+:::
+
+:::
+
+::: {.fragment}
+
+::: {.callout-tip}
+Trabajamos con muestras por razones de **costo, tiempo y factibilidad**. El objetivo es que la muestra sea **representativa** de la población.
+:::
+
+:::
+
+## De la población a la muestra {style="font-size: 85%;"}
+
+```{r}
+#| fig-align: center
+#| fig-height: 4.4
+#| fig-width: 12
+
+set.seed(10)
+pob <- expand.grid(x = 1:20, y = 1:10)
+pob$sel <- seq_len(nrow(pob)) %in% sample(nrow(pob), 25)
+
+p_pob <- ggplot(pob, aes(x, y)) +
+  geom_point(aes(color = sel), size = 4) +
+  scale_color_manual(values = c("FALSE" = "#B0BEC5", "TRUE" = "#C62828"),
+                     guide = "none") +
+  theme_void(base_size = 14) +
+  labs(title = "Población: N = 200 unidades",
+       subtitle = "Se describe con PARÁMETROS (desconocidos)") +
+  theme(plot.title = element_text(hjust = 0.5, face = "bold"),
+        plot.subtitle = element_text(hjust = 0.5, color = "#555555"))
+
+p_mue <- ggplot(subset(pob, sel), aes(x, y)) +
+  geom_point(color = "#C62828", size = 4) +
+  xlim(1, 20) + ylim(1, 10) +
+  theme_void(base_size = 14) +
+  labs(title = "Muestra: n = 25 unidades",
+       subtitle = "Se resume con ESTADÍSTICOS (calculables)") +
+  theme(plot.title = element_text(hjust = 0.5, face = "bold"),
+        plot.subtitle = element_text(hjust = 0.5, color = "#555555"),
+        panel.border = element_rect(color = "#C62828", fill = NA, linewidth = 1))
+
+p_pob + p_mue
+```
+
+::: {.fragment}
+
+Seleccionamos la muestra (puntos rojos) → calculamos **estadísticos** ($\bar{x}$, $s$, $\hat{p}$) → con ellos **estimamos** los **parámetros** de la población ($\mu$, $\sigma$, $p$). La estadística descriptiva se ocupa del primer paso: **resumir bien la muestra**.
+
+:::
+
+## Parámetros y Estadísticos {style="font-size: 85%;"}
+
+::: columns
+
+::: {.column width="50%"}
+
+### Parámetro
+
+Valor que describe una **característica de la población**. Se denota con letras griegas.
+
+| Característica | Símbolo |
+|----------------|:-------:|
+| Media | $\mu$ |
+| Desviación estándar | $\sigma$ |
+| Proporción | $p$ |
+
+:::
+
+::: {.column width="50%"}
+
+### Estadístico
+
+Valor calculado a partir de la **muestra**. Estima el parámetro poblacional a partir de los valores de la muestra.
+
+| Característica | Símbolo |
+|----------------|:-------:|
+| Media muestral | $\bar{x}$ |
+| Desv. estándar muestral | $s$ |
+| Proporción muestral | $\hat{p}$ |
+
+:::
+
+:::
+
+::: {.fragment}
+
+> Usamos los **estadísticos** (muestra) para **estimar** los **parámetros** (población). Esta inferencia es el objetivo del análisis estadístico en ciencias experimentales.
+
+:::
+
+## Estimador y estimación {style="font-size: 85%;"}
+
+- **Estimador:** regla o **fórmula** que se aplica a los datos de la muestra para aproximar un parámetro. Es un estadístico usado con ese fin: su valor **cambia de una muestra a otra**.
+- **Estimación:** el **número** que se obtiene al aplicar el estimador a una muestra concreta.
+
+<div style="font-size:0.9em;">
+
+| Parámetro (población) | Estimador (fórmula) | Estimación (una muestra de 40 rocas) |
+|:---------------------:|:-------------------:|:------------------------------------:|
+| $\mu$ | $\bar{x} = \dfrac{1}{n}\sum x_i$ | $\bar{x} = 37.2$ % de cuarzo |
+| $\sigma^2$ | $s^2 = \dfrac{1}{n-1}\sum (x_i - \bar{x})^2$ | $s^2 = 16.4$ |
+| $p$ | $\hat{p} = \dfrac{\text{n.º de casos}}{n}$ | $\hat{p} = 6/40 = 0.15$ rocas metamórficas |
+
+</div>
+
+::: {.fragment}
+
+::: {.callout-note}
+Otra muestra de 40 rocas daría **otras estimaciones**. Esa variabilidad de muestra a muestra es la base de las **pruebas de hipótesis** y los **intervalos de confianza** (Exámenes 4 y 5).
+:::
+
+:::
+
+## Escala de medición y estadísticos apropiados
+
+<div style="font-size:0.78em; line-height:1.8;">
+
+| Escala | Tipo de variable | Tendencia central | Dispersión | Posición |
+|--------|:----------------:|:-----------------:|:----------:|:--------:|
+| Nominal | Cualitativa | Moda | — | — |
+| Ordinal | Cualitativa | Moda, Mediana | RIC | Percentiles |
+| Intervalo | Cuantitativa | Media, Mediana | $s$, $s^2$ | Percentiles |
+| Razón | Cuantitativa | Media, Mediana | $s$, $s^2$, CV | Percentiles |
+
+</div>
+
+::: {.fragment}
+
+::: {.callout-note}
+**Regla fundamental:** no calcule la media de variables ordinales. Si la pureza de un compuesto se mide como *baja / media / alta*, la media carece de sentido; use la mediana o los percentiles.
+:::
+
+:::
+
+## Ejemplo: Población, muestra y variables {style="font-size: 85%;"}
+
+Un grupo de investigación quiere conocer el **contenido promedio de cuarzo** de las rocas de una formación geológica. Recolecta **40 muestras** de roca y registra en cada una:
+
+<div style="font-size:0.9em;">
+
+| Variable | Ejemplo de registro |
+|:---------|:-------------------:|
+| Contenido de cuarzo (%) | 37.5 |
+| Tipo de roca | ígnea / sedimentaria / metamórfica |
+| Grado de meteorización | bajo / medio / alto |
+| Número de fracturas visibles | 3 |
+| Temperatura del afloramiento al muestrear (°C) | 18.2 |
+
+: {tbl-colwidths="[55,45]"}
+
+</div>
+
+::: {.fragment}
+
+Identifique: **(a)** la población y la muestra; **(b)** el parámetro de interés y el estadístico que lo estima; **(c)** el tipo y la escala de cada variable, y qué medida de tendencia central es válida.
+
+:::
+
+## Solución {style="font-size: 78%;"}
+
+::: {.fragment}
+
+**(a)** Población: **todas** las rocas de la formación geológica. Muestra: las **40 muestras** recolectadas.
+
+**(b)** Parámetro: contenido promedio de cuarzo de la formación, $\mu$ (desconocido). Estadístico: la media de las 40 muestras, $\bar{x}$.
+
+:::
+
+::: {.fragment}
+
+<div style="font-size:0.9em;">
+
+| Variable | Tipo | Escala | Tendencia central válida |
+|:---------|:----:|:------:|:------------------------:|
+| Contenido de cuarzo (%) | Cuantitativa continua | Razón | Media, mediana |
+| Tipo de roca | Cualitativa | Nominal | Moda |
+| Grado de meteorización | Cualitativa | Ordinal | Moda, mediana |
+| Número de fracturas | Cuantitativa discreta | Razón | Media, mediana |
+| Temperatura (°C) | Cuantitativa continua | Intervalo | Media, mediana |
+
+: {tbl-colwidths="[30,26,16,28]"}
+
+</div>
+
+:::
+
+::: {.fragment}
+
+> La temperatura en °C es de **intervalo**: el 0 °C no significa "ausencia de temperatura", por eso no tiene sentido decir que 20 °C es "el doble" de 10 °C.
+
+:::
+
+## Tu turno: Población, muestra y variables {style="font-size: 88%;"}
+
+::: {.callout-warning title="Tu turno"}
+
+**Ejercicio.** Para un estudio de estabilidad se toman al azar **25 frascos** de un lote de **5.000 frascos** de un jarabe. En cada frasco se mide: pH, concentración del principio activo (mg/mL), color (ámbar / amarillo / transparente), aspecto (conforme / no conforme) y número de partículas visibles. Identifique la población, la muestra, un parámetro, el estadístico que lo estima y el tipo/escala de cada variable.
+
+:::
+
+## Solución {style="font-size: 80%;"}
+
+::: {.fragment}
+
+- **Población:** los 5.000 frascos del lote. **Muestra:** los 25 frascos analizados.
+- **Parámetro:** concentración media del principio activo en el lote ($\mu$), o la proporción de frascos no conformes del lote ($p$).
+- **Estadístico:** la concentración media de los 25 frascos ($\bar{x}$), o la proporción de no conformes en la muestra ($\hat{p}$).
+
+:::
+
+::: {.fragment}
+
+<div style="font-size:0.9em;">
+
+| Variable | Tipo | Escala |
+|:---------|:----:|:------:|
+| pH | Cuantitativa continua | Intervalo |
+| Concentración (mg/mL) | Cuantitativa continua | Razón |
+| Color | Cualitativa | Nominal |
+| Aspecto (conforme / no conforme) | Cualitativa dicotómica | Nominal |
+| Número de partículas | Cuantitativa discreta | Razón |
+
+</div>
+
+:::
+
+
+# TABLAS DE FRECUENCIA {background-color="#0077b6"}
+
+## Tabla de frecuencias {style="font-size: 85%;"}
+
+Organiza los datos mostrando **cuántas veces** aparece cada valor (o cada intervalo).
+
+<div style="font-size:0.85em;">
+
+| Columna | Símbolo | Fórmula | Pregunta que responde |
+|:--------|:-------:|:-------:|:----------------------|
+| Frecuencia absoluta | $n_i$ | conteo | ¿Cuántos datos toman el valor $x_i$? |
+| Frecuencia relativa | $f_i$ | $n_i / n$ | ¿Qué proporción toma el valor $x_i$? |
+| Frecuencia absoluta acumulada | $N_i$ | $n_1 + \cdots + n_i$ | ¿Cuántos datos son $\leq x_i$? |
+| Frecuencia relativa acumulada | $F_i$ | $N_i / n$ | ¿Qué proporción es $\leq x_i$? |
+
+: {tbl-colwidths="[30,10,18,42]"}
+
+</div>
+
+::: {.fragment}
+
+::: {.callout-note}
+Las frecuencias **acumuladas** solo tienen sentido si los valores tienen **orden** (ordinales o cuantitativas). Para una variable nominal (tipo de roca, especie) se reportan solo $n_i$ y $f_i$.
+:::
+
+:::
+
+::: {.fragment}
+
+A partir de la tabla también se calcula la media: $\displaystyle \bar{x} = \frac{\sum x_i\, n_i}{n} = \sum x_i\, f_i$
+
+:::
+
+## Ejemplo: Germinación de semillas {style="font-size: 85%;"}
+
+En un ensayo se siembran **5 semillas** en cada una de **20 cajas de Petri** y se cuenta cuántas germinan en cada caja:
+
+<div style="font-size:0.9em;">
+
+| Semillas germinadas ($x_i$) | 0 | 1 | 2 | 3 | 4 | 5 |
+|:---|:---:|:---:|:---:|:---:|:---:|:---:|
+| Número de cajas ($n_i$) | 1 | 2 | 4 | 6 | 5 | 2 |
+
+</div>
+
+::: {.fragment}
+
+**(a)** Complete la tabla con $f_i$, $N_i$ y $F_i$.
+
+**(b)** ¿Qué porcentaje de cajas tuvo **al menos 3** semillas germinadas?
+
+**(c)** Calcule la media, la mediana y la moda del número de semillas germinadas por caja.
+
+:::
+
+## Solución {style="font-size: 72%;"}
+
+::: columns
+
+::: {.column width="54%"}
+
+::: {.fragment style="font-size: 0.85em;"}
+
+| $x_i$ | $n_i$ | $f_i$ | $N_i$ | $F_i$ | $x_i n_i$ |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| 0 | 1 | 0.05 | 1 | 0.05 | 0 |
+| 1 | 2 | 0.10 | 3 | 0.15 | 2 |
+| 2 | 4 | 0.20 | 7 | 0.35 | 8 |
+| 3 | 6 | 0.30 | 13 | 0.65 | 18 |
+| 4 | 5 | 0.25 | 18 | 0.90 | 20 |
+| 5 | 2 | 0.10 | 20 | 1.00 | 10 |
+| **Total** | **20** | **1** | | | **58** |
+
+:::
+
+:::
+
+::: {.column width="44%"}
+
+::: {.fragment style="font-size: 0.92em;"}
+
+**(b)** $P(X \geq 3) = 1 - F_2 = 1 - 0.35 = 0.65$ → el **65%** de las cajas.
+
+:::
+
+::: {.fragment style="font-size: 0.92em;"}
+
+**(c)** $\bar{x} = \dfrac{58}{20} = \mathbf{2.9}$ semillas por caja.
+
+Mediana: los datos 10.° y 11.° están en $x = 3$ (pues $N_2 = 7 < 10$ y $N_3 = 13 \geq 11$) → $\tilde{x} = \mathbf{3}$.
+
+Moda: $x = \mathbf{3}$ (6 cajas).
+
+:::
+
+:::
+
+:::
+
+::: {.fragment}
+
+**Interpretación:** En una caja típica germinan 3 de las 5 semillas (≈ 58% de germinación en promedio: 2.9/5).
+
+:::
+
+## Tu turno: Tablas de frecuencia {style="font-size: 85%;"}
+
+::: {.callout-warning title="Tu turno"}
+
+**Ejercicio.** Se clasificaron 25 muestras de roca: 8 ígneas, 12 sedimentarias y 5 metamórficas. Construya la tabla con $n_i$ y $f_i$ (en %), indique la moda y explique por qué no se calculan frecuencias acumuladas.
+
+:::
+
+## Solución {style="font-size: 85%;"}
+
+::: {.fragment}
+
+| Tipo de roca | $n_i$ | $f_i$ (%) |
+|:-------------|:-----:|:---------:|
+| Ígnea | 8 | 32 |
+| Sedimentaria | 12 | 48 |
+| Metamórfica | 5 | 20 |
+| **Total** | **25** | **100** |
+
+:::
+
+::: {.fragment}
+
+- **Moda:** sedimentaria (48% de las muestras).
+- No se acumula porque la variable es **nominal**: no existe un orden natural entre los tipos de roca, así que "ígnea o menos" no tiene significado.
+
+:::
+
+# MEDIDAS DE TENDENCIA CENTRAL {background-color="#0077b6"}
+
+## ¿Qué es la tendencia central?
+
+Las medidas de tendencia central indican el **valor representativo** o típico de un conjunto de datos.
+
+</br>
+
+::: columns
+
+::: {.column width="33%"}
+
+### Media $\bar{x}$
+Promedio aritmético. Sensible a valores extremos.
+
+:::
+
+::: {.column width="33%"}
+
+### Mediana $\tilde{x}$
+Valor que divide los datos por la mitad. Resistente a atípicos.
+
+:::
+
+::: {.column width="33%"}
+
+### Moda $\hat{x}$
+Valor más frecuente. Usable en cualquier escala.
+
+:::
+
+:::
+
+## Media aritmética {style="font-size: 90%;"}
+
+### Definición
+
+$$\boxed{\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i = \frac{x_1 + x_2 + \cdots + x_n}{n}}$$
+
+::: {.fragment}
+
+### Ejemplo: Tiempo de disolución de 8 tabletas (min)
+
+$$4, \; 6, \; 5, \; 8, \; 7, \; 5, \; 9, \; 6$$
+
+$$\bar{x} = \frac{4+6+5+8+7+5+9+6}{8} = \frac{50}{8} = \mathbf{6.25 \text{ min}}$$
+
+:::
+
+::: {.fragment}
+
+**Interpretación:** En promedio, las tabletas se disuelven en **6.25 minutos**.
+
+:::
+
+## La media es el punto de equilibrio {style="font-size: 85%;"}
+
+```{r}
+#| fig-align: center
+#| fig-height: 4.3
+#| fig-width: 12
+
+balanza <- function(v, tt) {
+  d <- data.frame(x = v) |>
+    group_by(x) |>
+    mutate(y = row_number() - 0.5) |>
+    ungroup()
+  m <- mean(v)
+  tri <- data.frame(x = c(m - 0.6, m + 0.6, m), y = c(-1.6, -1.6, -0.15))
+  ggplot(d, aes(x, y)) +
+    annotate("segment", x = 2, xend = max(26, max(v) + 1), y = -0.1, yend = -0.1,
+             linewidth = 1.6, color = "#455A64") +
+    geom_polygon(data = tri, aes(x, y), fill = "#C62828") +
+    geom_point(size = 7, color = "#1565C0") +
+    annotate("text", x = m, y = -2.3, label = paste0("media = ", m),
+             color = "#C62828", size = 5, fontface = "bold") +
+    scale_x_continuous(breaks = seq(2, 26, 2), limits = c(2, 27)) +
+    scale_y_continuous(limits = c(-2.6, 3)) +
+    theme_minimal(base_size = 13) +
+    labs(x = "Tiempo de disolución (min)", y = "", title = tt) +
+    theme(axis.text.y = element_blank(), panel.grid = element_blank(),
+          plot.title = element_text(hjust = 0.5, face = "bold"))
+}
+
+balanza(c(4, 6, 5, 8, 7, 5, 9, 6), "Datos originales") /
+  balanza(c(4, 6, 5, 8, 7, 5, 25, 6), "Una tableta tarda 25 min en lugar de 9")
+```
+
+::: {.fragment}
+Si cada dato fuera una pesa sobre una regla, la **media** es el punto donde la regla queda en equilibrio. Un solo dato lejano **desplaza** el punto de apoyo de 6.25 a 8.25 min.
+:::
+
+## Mediana {style="font-size: 90%;"}
+
+### Definición
+
+La **mediana** es el valor central cuando los datos están ordenados de menor a mayor.
+
+::: columns
+
+::: {.column width="50%"}
+
+**$n$ impar:**
+$$\tilde{x} = x_{\left(\frac{n+1}{2}\right)}$$
+
+:::
+
+::: {.column width="50%"}
+
+**$n$ par:**
+$$\tilde{x} = \frac{x_{\left(\frac{n}{2}\right)} + x_{\left(\frac{n}{2}+1\right)}}{2}$$
+
+:::
+
+:::
+
+::: {.fragment}
+
+### Ejemplo: Tiempo de disolución
+
+Datos ordenados: $4, \; 5, \; 5, \; \mathbf{6}, \; \mathbf{6}, \; 7, \; 8, \; 9$
+
+$$\tilde{x} = \frac{x_{(4)} + x_{(5)}}{2} = \frac{6 + 6}{2} = \mathbf{6 \text{ min}}$$
+
+:::
+
+## Moda {style="font-size: 70%;"}
+
+### Definición
+
+La **moda** es el valor que aparece con **mayor frecuencia**. Un conjunto puede ser unimodal, bimodal o multimodal.
+
+::: {.fragment}
+
+### Ejemplo 1: Tiempo de disolución
+
+$$4, \; \mathbf{5, \; 5}, \; \mathbf{6, \; 6}, \; 7, \; 8, \; 9$$
+
+$\hat{x} = 5$ y $\hat{x} = 6$ → distribución **bimodal**
+
+:::
+
+::: {.fragment}
+
+### Ejemplo 2: Turbidez del agua, escala 0–7 (10 muestras)
+
+$$0, \; 1, \; \mathbf{3, \; 3, \; 3}, \; 4, \; 5, \; 5, \; 6, \; 7 \qquad \hat{x} = 3$$
+
+La turbidez leve-moderada es la lectura más frecuente.
+
+:::
+
+::: {.fragment}
+
+### Ejemplo 3: Solvente utilizado (50 experimentos)
+
+$$\text{Agua}: 22 \quad \text{Etanol}: 15 \quad \text{Acetona}: 8 \quad \text{Hexano}: 5 \qquad \hat{x} = \text{Agua}$$
+
+Variable nominal: la moda es la **única** medida de tendencia central válida.
+
+:::
+
+## ¿Cuándo usar cada medida?
+
+<div style="font-size:0.78em; line-height:1.8;">
+
+| Situación | Medida recomendada | Justificación |
+|:----------|:------------------:|:------|
+| Variable nominal (solvente, especie) | Moda | Única opción válida |
+| Variable ordinal (pureza, nivel de contaminación) | Mediana | Escala sin aritmética real |
+| Cuantitativa, distribución simétrica, sin atípicos | Media | Usa toda la información |
+| Cuantitativa con datos atípicos | Mediana | Resistente a extremos |
+| Cuantitativa con distribución muy asimétrica | Mediana | Más representativa |
+
+: {tbl-colwidths="[40,20, 40]"}
+
+</div>
+
+## Efecto de los datos atípicos sobre la media {style="font-size: 74%;"}
+
+### Ejemplo: Tiempo de reacción en 8 réplicas experimentales (minutos)
+
+$$10, \; 15, \; 18, \; 20, \; 25, \; 28, \; 32, \; \mathbf{65}$$
+
+::: {.fragment}
+
+**Sin el dato extremo (65 min):**
+
+$$\bar{x} = \frac{10+15+18+20+25+28+32}{7} = \frac{148}{7} \approx 21.1 \text{ min}$$
+
+:::
+
+::: {.fragment}
+
+**Con el dato extremo (65 min):**
+
+$$\bar{x} = \frac{148 + 65}{8} = \frac{213}{8} \approx 26.6 \text{ min}$$
+
+:::
+
+::: {.fragment}
+
+**Mediana (con los 8 datos):** $\tilde{x} = \dfrac{20+25}{2} = 22.5$ min → **no se afecta**
+
+> La media se desplazó **5.5 minutos** por una sola réplica extrema. La mediana permanece estable.
+
+:::
+
+## Media vs Mediana: Forma de la distribución {style="font-size: 90%;"}
+
+```{r}
+#| echo: false
+#| fig-align: center
+#| fig-height: 5.2
+#| fig-width: 12
+
+set.seed(7)
+sim_sym  <- rnorm(300, mean = 72, sd = 8)
+sim_skew <- c(rnorm(270, mean = 18, sd = 3), rexp(30, rate = 0.06) + 30)
+
+df_shapes <- bind_rows(
+  data.frame(x = sim_sym,  dist = "Simétrica\n(concentración de un analito, mg/L)"),
+  data.frame(x = sim_skew, dist = "Asimétrica positiva\n(tiempo de reacción, min)")
+)
+
+df_stats <- df_shapes |>
+  group_by(dist) |>
+  summarise(media   = mean(x),
+            mediana = median(x))
+
+ggplot(df_shapes, aes(x = x)) +
+  geom_histogram(aes(y = after_stat(density)), bins = 30,
+                 fill = "#90CAF9", color = "white", alpha = 0.8) +
+  geom_density(color = "#1565C0", linewidth = 1.4) +
+  geom_vline(data = df_stats, aes(xintercept = media,   color = "Media"),
+             linewidth = 1.3, linetype = "dashed") +
+  geom_vline(data = df_stats, aes(xintercept = mediana, color = "Mediana"),
+             linewidth = 1.3, linetype = "solid") +
+  scale_color_manual(values = c("Media" = "#C62828", "Mediana" = "#2E7D32"),
+                     name = "") +
+  facet_wrap(~dist, scales = "free") +
+  theme_minimal(base_size = 13) +
+  labs(x = "", y = "Densidad",
+       title = "Simétrica: media y mediana coinciden  |  Asimétrica positiva: media > mediana") +
+  theme(plot.title    = element_text(hjust = 0.5, face = "bold", size = 12),
+        legend.position = "top",
+        panel.grid.minor = element_blank())
+```
+
+::: {.fragment}
+En distribuciones con **cola larga a la derecha**, la media es mayor que la mediana porque queda "jalada" hacia los valores extremos. El tiempo de reacción, el tiempo hasta la degradación de una muestra y los costos de producción suelen tener esta forma.
+:::
+
+## Ejemplo: Nitratos en pozos {style="font-size: 88%;"}
+
+Se midió la concentración de nitratos (mg/L) en el agua de **7 pozos** de una vereda:
+
+$$12, \; 8, \; 15, \; 9, \; 41, \; 11, \; 9$$
+
+::: {.fragment}
+
+**(a)** Calcule la media, la mediana y la moda.
+
+**(b)** Repita el cálculo sin el pozo de 41 mg/L. ¿Cuál medida cambió más?
+
+**(c)** Si tuviera que reportar **un solo valor típico** para la vereda, ¿cuál usaría? ¿Por qué?
+
+:::
+
+## Solución {style="font-size: 82%;"}
+
+::: {.fragment}
+
+**(a)** $\bar{x} = \dfrac{12+8+15+9+41+11+9}{7} = \dfrac{105}{7} = \mathbf{15}$ mg/L
+
+Ordenados: $8,\ 9,\ 9,\ \mathbf{11},\ 12,\ 15,\ 41$ → $\tilde{x} = x_{(4)} = \mathbf{11}$ mg/L; $\quad \hat{x} = \mathbf{9}$ mg/L
+
+:::
+
+::: {.fragment}
+
+**(b)** Sin el 41: $\bar{x} = \dfrac{64}{6} \approx 10.7$ mg/L; $\quad \tilde{x} = \dfrac{9+11}{2} = 10$ mg/L
+
+La media bajó **4.3 mg/L**; la mediana solo **1 mg/L**.
+
+:::
+
+::: {.fragment}
+
+**(c)** La **mediana** (11 mg/L): 6 de los 7 pozos están por debajo de la media de 15 mg/L, así que la media no representa al pozo típico. El pozo de 41 mg/L debe **reportarse aparte e investigarse** (¿fuente de contaminación cercana?).
+
+:::
+
+## Tu turno: Tendencia central {style="font-size: 88%;"}
+
+::: {.callout-warning title="Tu turno"}
+
+**Ejercicio.** Se midió la longitud (cm) de 10 peces capturados en una represa:
+
+$$22, \; 25, \; 24, \; 27, \; 25, \; 23, \; 26, \; 25, \; 28, \; 35$$
+
+Calcule la media, la mediana y la moda. Según la relación entre media y mediana, ¿qué forma tiene la distribución?
+
+:::
+
+## Solución {style="font-size: 85%;"}
+
+::: {.fragment}
+
+$$\bar{x} = \frac{22+25+24+27+25+23+26+25+28+35}{10} = \frac{260}{10} = \mathbf{26} \text{ cm}$$
+
+:::
+
+::: {.fragment}
+
+Ordenados: $22,\ 23,\ 24,\ 25,\ \mathbf{25},\ \mathbf{25},\ 26,\ 27,\ 28,\ 35$
+
+$$\tilde{x} = \frac{x_{(5)} + x_{(6)}}{2} = \frac{25+25}{2} = \mathbf{25} \text{ cm} \qquad \hat{x} = \mathbf{25} \text{ cm}$$
+
+:::
+
+::: {.fragment}
+
+**Interpretación:** media (26) > mediana (25) = moda (25): ligera **asimetría positiva**, causada por el pez de 35 cm. La mitad de los peces mide 25 cm o menos.
+
+:::
+
+# MEDIDAS DE DISPERSIÓN {background-color="#0077b6"}
+
+## ¿Por qué medir la dispersión? {style="font-size: 90%;"}
+
+```{r}
+#| echo: false
+#| fig-align: center
+#| fig-height: 4.8
+#| fig-width: 11
+
+df_disp <- bind_rows(
+  data.frame(rend = c(68, 70, 72, 74, 76), grupo = "Grupo A — Estable"),
+  data.frame(rend = c(50, 62, 72, 82, 94), grupo = "Grupo B — Variable")
+)
+
+ggplot(df_disp, aes(x = rend, y = grupo, color = grupo)) +
+  geom_point(size = 7, alpha = 0.85) +
+  geom_vline(xintercept = 72, linetype = "dashed", color = "#C62828",
+             linewidth = 1.2) +
+  annotate("text", x = 73.5, y = 2.42,
+           label = "Media = 72%",
+           color = "#C62828", size = 4.5, fontface = "italic") +
+  scale_color_manual(values = c("#1565C0", "#2E7D32"), guide = "none") +
+  scale_x_continuous(limits = c(40, 100),
+                     breaks = seq(40, 100, by = 10)) +
+  theme_minimal(base_size = 14) +
+  labs(x = "Rendimiento de la reacción (%)", y = "",
+       title = "Misma media, diferente dispersión") +
+  theme(plot.title = element_text(hjust = 0.5, face = "bold"),
+        panel.grid.minor = element_blank())
+```
+
+::: {.fragment}
+La **media sola no es suficiente**. El Grupo A oscila entre 68% y 76% de rendimiento (estable); el Grupo B entre 50% y 94% (muy variable). Sin medir la dispersión, esta diferencia queda oculta.
+:::
+
+## Rango
+
+### Definición
+
+$$\boxed{R = x_{\max} - x_{\min}}$$
+
+::: {.fragment}
+
+### Ejemplo: Tiempo de disolución
+
+$$4, \; 5, \; 5, \; 6, \; 6, \; 7, \; 8, \; 9$$
+
+$$R = 9 - 4 = \mathbf{5 \text{ min}}$$
+
+:::
+
+::: {.fragment}
+
+::: {.callout-note}
+El rango es muy **sensible a valores extremos**, un solo dato atípico lo infla completamente. Es una medida preliminar; siempre complemente con la desviación estándar o el RIC.
+:::
+
+:::
+
+## Varianza y Desviación Estándar {style="font-size: 90%;"}
+
+### Definiciones
+
+$$\boxed{s^2 = \frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar{x})^2}$$
+
+$$\boxed{s = \sqrt{s^2}}$$
+
+::: {.fragment}
+
+El divisor es $n-1$ (no $n$) porque usamos la muestra para **estimar** la varianza poblacional, esto es lo que corrige el sesgo.
+
+:::
+
+::: {.fragment}
+
+> La desviación estándar $s$ está en las **mismas unidades** que los datos originales, lo que facilita la interpretación experimental.
+
+:::
+
+## ¿Qué mide la varianza? {style="font-size: 85%;"}
+
+```{r}
+#| fig-align: center
+#| fig-height: 4.4
+#| fig-width: 12
+
+df_dev <- bind_rows(
+  data.frame(id = 1:5, rend = c(68, 70, 72, 74, 76), grupo = "Grupo A: s = 3.2"),
+  data.frame(id = 1:5, rend = c(50, 62, 72, 82, 94), grupo = "Grupo B: s = 17.1")
+)
+
+ggplot(df_dev, aes(x = id, y = rend)) +
+  geom_hline(yintercept = 72, color = "#C62828", linetype = "dashed", linewidth = 1.1) +
+  geom_segment(aes(xend = id, yend = 72), color = "#FB8C00", linewidth = 1.6) +
+  geom_point(size = 5, color = "#1565C0") +
+  geom_text(aes(label = paste0(ifelse(rend - 72 > 0, "+", ""), rend - 72)),
+            nudge_x = 0.28, size = 4.2, color = "#E65100", fontface = "bold") +
+  annotate("text", x = 0.55, y = 75, label = "media", color = "#C62828",
+           size = 4.2, hjust = 0) +
+  facet_wrap(~grupo) +
+  scale_x_continuous(breaks = 1:5, limits = c(0.5, 5.5)) +
+  theme_minimal(base_size = 13) +
+  labs(x = "Réplica", y = "Rendimiento (%)",
+       title = "Desviaciones de cada dato respecto a la media (líneas naranja)") +
+  theme(plot.title = element_text(hjust = 0.5, face = "bold"),
+        strip.text = element_text(face = "bold", size = 13),
+        panel.grid.minor = element_blank())
+```
+
+::: {.fragment}
+Las desviaciones $x_i - \bar{x}$ siempre **suman cero**; por eso se elevan al cuadrado. La varianza es (casi) el **promedio de los cuadrados** de las líneas naranja: líneas largas → varianza grande.
+:::
+
+## Cálculo: Varianza y Desviación Estándar {style="font-size: 82%;"}
+
+### Turbidez del agua en 8 muestras (NTU)
+
+$$3, \; 5, \; 4, \; 6, \; 5, \; 7, \; 4, \; 6 \qquad \bar{x} = \frac{40}{8} = 5$$
+
+::: {.fragment style="font-size: 0.65em;"}
+
+| $x_i$ | $x_i - \bar{x}$ | $(x_i - \bar{x})^2$ |
+|:-----:|:---------------:|:-------------------:|
+| 3 | $-2$ | 4 |
+| 5 | $0$ | 0 |
+| 4 | $-1$ | 1 |
+| 6 | $+1$ | 1 |
+| 5 | $0$ | 0 |
+| 7 | $+2$ | 4 |
+| 4 | $-1$ | 1 |
+| 6 | $+1$ | 1 |
+| **Total** | | **12** |
+
+:::
+
+::: {.fragment}
+
+$$s^2 = \frac{12}{8-1} = \frac{12}{7} \approx 1.71 \quad \Rightarrow \quad s = \sqrt{1.71} \approx \mathbf{1.31 \text{ NTU}}$$
+
+:::
+
+## Interpretación de la Desviación Estándar {style="font-size: 90%;"}
+
+::: {.callout-tip}
+**Regla práctica:** en distribuciones aproximadamente simétricas, alrededor del 95% de los datos cae en el intervalo $[\bar{x} - 2s, \;\bar{x} + 2s]$.
+:::
+
+::: {.fragment}
+
+**Ejemplo turbidez:** $\bar{x} = 5$, $s = 1.31$
+
+$$[\bar{x} - 2s, \;\bar{x} + 2s] = [5 - 2.62, \;5 + 2.62] = [2.38, \;7.62]$$
+
+La mayoría de las muestras tendrá una turbidez entre **2.4 y 7.6 NTU**.
+
+:::
+
+::: {.fragment}
+
+Una muestra con turbidez = 9 NTU quedaría **fuera de ese rango** → podría requerir una inspección especial antes de continuar el proceso habitual de potabilización.
+
+:::
+
+## Coeficiente de Variación (CV) {style="font-size: 72%;"}
+
+$$\boxed{CV = \frac{s}{\bar{x}} \times 100\%}$$
+
+> Expresa la desviación estándar **como porcentaje de la media**. Permite comparar variabilidades entre variables en **diferentes unidades**.
+
+::: {.fragment}
+
+### Ejemplo experimental
+
+Variabilidad de dos parámetros de proceso en 20 lotes:
+
+| Variable | $\bar{x}$ | $s$ | $CV$ | Interpretación |
+|----------|:---------:|:---:|:----:|:---------------|
+| Rendimiento de reacción (%) | 74 | 9.2 | **12.4%** | Alta variabilidad |
+| Temperatura del reactor (°C) | 36.8 | 0.4 | **1.1%** | Muy estable |
+
+: {tbl-colwidths="[40,12,10,12,26]"}
+
+:::
+
+::: {.fragment}
+
+**Conclusión:** El rendimiento es mucho más variable (12.4%) que la temperatura del reactor (1.1%), lo cual es esperable pues la temperatura se controla automáticamente. El CV permite esta comparación aunque las unidades sean completamente distintas.
+
+:::
+
+## Ejemplo: Precisión de dos analistas {style="font-size: 88%;"}
+
+Dos analistas miden **5 veces** un patrón de referencia de **50 mg/L**:
+
+| Analista | Mediciones (mg/L) |
+|:--------:|:-----------------:|
+| A | 49, 50, 51, 50, 50 |
+| B | 46, 52, 50, 54, 48 |
+
+::: {.fragment}
+
+**(a)** Calcule la media, la varianza, la desviación estándar y el CV de cada analista.
+
+**(b)** ¿Cuál analista es más **preciso**? ¿Alguno tiene un **sesgo** respecto al valor del patrón?
+
+:::
+
+## Solución {style="font-size: 76%;"}
+
+::: columns
+
+::: {.column width="50%"}
+
+::: {.fragment}
+
+**Analista A:** $\bar{x} = 250/5 = 50$
+
+Desviaciones: $-1,\ 0,\ 1,\ 0,\ 0$
+
+$$s^2 = \frac{1+0+1+0+0}{4} = 0.5$$
+
+$$s = \sqrt{0.5} \approx \mathbf{0.71} \text{ mg/L}$$
+
+$$CV = \frac{0.71}{50} \times 100 \approx \mathbf{1.4\%}$$
+
+:::
+
+:::
+
+::: {.column width="50%"}
+
+::: {.fragment}
+
+**Analista B:** $\bar{x} = 250/5 = 50$
+
+Desviaciones: $-4,\ 2,\ 0,\ 4,\ -2$
+
+$$s^2 = \frac{16+4+0+16+4}{4} = 10$$
+
+$$s = \sqrt{10} \approx \mathbf{3.16} \text{ mg/L}$$
+
+$$CV = \frac{3.16}{50} \times 100 \approx \mathbf{6.3\%}$$
+
+:::
+
+:::
+
+:::
+
+::: {.fragment}
+
+**(b)** Ambos tienen media 50 = valor del patrón → **ninguno tiene sesgo** (son exactos). Pero A es mucho más **preciso**: su desviación estándar es 4.5 veces menor. La media dice *dónde* están los datos; la dispersión dice *qué tan confiables* son.
+
+:::
+
+## Tu turno: Dispersión {style="font-size: 88%;"}
+
+::: {.callout-warning title="Tu turno"}
+
+**Ejercicio.** Se midió la porosidad (%) de 6 muestras de arenisca:
+
+$$12, \; 15, \; 10, \; 14, \; 13, \; 14$$
+
+Calcule el rango, la varianza, la desviación estándar y el coeficiente de variación. Interprete $s$.
+:::
+
+## Solución {style="font-size: 82%;"}
+
+::: {.fragment}
+
+$R = 15 - 10 = \mathbf{5}$ puntos porcentuales; $\quad \bar{x} = \dfrac{78}{6} = 13$%
+
+:::
+
+::: {.fragment}
+
+| $x_i$ | 12 | 15 | 10 | 14 | 13 | 14 | Total |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| $x_i - \bar{x}$ | $-1$ | 2 | $-3$ | 1 | 0 | 1 | 0 |
+| $(x_i - \bar{x})^2$ | 1 | 4 | 9 | 1 | 0 | 1 | **16** |
+
+$$s^2 = \frac{16}{5} = \mathbf{3.2} \qquad s = \sqrt{3.2} \approx \mathbf{1.79}\% \qquad CV = \frac{1.79}{13} \times 100 \approx \mathbf{13.8\%}$$
+
+:::
+
+::: {.fragment}
+
+**Interpretación:** en promedio, la porosidad de una muestra se aleja unos **1.8 puntos porcentuales** de la porosidad media (13%).
+
+:::
+
+
+# MEDIDAS DE POSICIÓN {background-color="#0077b6"}
+
+## Percentiles {style="font-size: 76%;"}
+
+### Definición
+
+El **percentil $k$** ($P_k$) es el valor por debajo del cual se encuentra el $k\%$ de las observaciones.
+
+::: {.fragment}
+
+### Ejemplos en ciencias experimentales
+
+| Percentil | Aplicación |
+|:---------:|:-------------------|
+| $P_{50}$ | Mediana: 50% de valores por debajo |
+| $P_{25}$ | Primer cuartil (Q1) |
+| $P_{75}$ | Tercer cuartil (Q3) |
+| $P_{90}$ | Curvas de crecimiento de cultivos: 90% de las plantas pesa menos |
+| $P_{95}$ | Punto de corte de alerta en monitoreo ambiental |
+| $P_{97}$ | Límite superior en valores de referencia de un método analítico |
+
+:::
+
+## Cuartiles y Rango Intercuartílico {style="font-size: 76%;"}
+
+Los **cuartiles** son los percentiles 25, 50 y 75. Dividen los datos en cuatro partes iguales.
+
+::: columns
+
+::: {.column width="58%"}
+
+- $Q_1 = P_{25}$: 25% de los datos es menor
+- $Q_2 = P_{50}$: mediana
+- $Q_3 = P_{75}$: 75% de los datos es menor
+
+$$\boxed{RIC = Q_3 - Q_1}$$
+
+El **Rango Intercuartílico (RIC)** mide la dispersión del **50% central** de los datos. Es resistente a valores atípicos.
+
+**Cálculo (método de las mitades):** $Q_1$ es la mediana de la mitad inferior y $Q_3$ la de la mitad superior; si $n$ es **impar**, la mediana se incluye en ambas mitades.
+
+:::
+
+::: {.column width="42%"}
+
+```{r}
+#| echo: false
+#| fig-height: 5.2
+#| fig-width: 4.5
+
+set.seed(42)
+x_q <- sort(rnorm(60, 72, 12))
+q_vals <- quantile(x_q, probs = c(0.25, 0.5, 0.75))
+
+df_q <- data.frame(x = x_q, y = 1)
+
+ggplot(df_q, aes(x = x, y = y)) +
+  geom_jitter(height = 0.07, color = "#1565C0", alpha = 0.55, size = 2) +
+  geom_vline(xintercept = q_vals,
+             color = "#C62828",
+             linetype = c("solid", "dashed", "solid"),
+             linewidth = 1.3) +
+  annotate("text",
+           x    = q_vals + c(-4.5, 0, 4.5),
+           y    = c(1.19, 1.24, 1.19),
+           label = c("Q1", "Q2", "Q3"),
+           color = "#C62828", size = 4.5, fontface = "bold") +
+  scale_y_continuous(limits = c(0.82, 1.32)) +
+  theme_minimal(base_size = 12) +
+  labs(x = "Rendimiento de reacción (%)", y = "",
+       title = "Cuartiles en\n60 experimentos") +
+  theme(axis.text.y      = element_blank(),
+        panel.grid.major.y = element_blank(),
+        plot.title = element_text(hjust = 0.5, face = "bold"))
+```
+
+:::
+
+:::
+
+## Ejemplo: Tiempo de reacción en 8 réplicas (minutos) {style="font-size: 75%;"}
+
+Datos ordenados: $10, \; 15, \; 18, \; 20, \; 25, \; 28, \; 32, \; 65$
+
+::: {.fragment}
+
+**Mediana ($Q_2$):**
+$$\tilde{x} = \frac{x_{(4)} + x_{(5)}}{2} = \frac{20 + 25}{2} = \mathbf{22.5} \text{ min}$$
+
+:::
+
+::: {.fragment}
+
+**$Q_1$:** mediana de la mitad inferior $\{10, 15, 18, 20\}$:
+$$Q_1 = \frac{15 + 18}{2} = \mathbf{16.5} \text{ min}$$
+
+**$Q_3$:** mediana de la mitad superior $\{25, 28, 32, 65\}$:
+$$Q_3 = \frac{28 + 32}{2} = \mathbf{30} \text{ min}$$
+
+:::
+
+::: {.fragment}
+
+$$RIC = 30 - 16.5 = \mathbf{13.5} \text{ min}$$
+
+El 50% central de las réplicas tuvo un tiempo de reacción entre **16.5 y 30 minutos**.
+
+:::
+
+## Puntaje z: posición relativa {style="font-size: 75%;"}
+
+El **puntaje z** indica a cuántas desviaciones estándar está un dato de la media:
+
+$$\boxed{z = \frac{x - \bar{x}}{s}}$$
+
+- $z > 0$: el dato está por **encima** de la media; $z < 0$: por **debajo**.
+- No tiene unidades → permite comparar datos de **variables distintas**.
+- En distribuciones aproximadamente simétricas, $|z| > 2$ es poco común y $|z| > 3$ es muy raro.
+
+::: {.fragment}
+
+**Ejemplo:** un pez de la especie A mide 28 cm ($\bar{x} = 24$, $s = 2$) y uno de la especie B mide 50 cm ($\bar{x} = 45$, $s = 4$).
+
+$$z_A = \frac{28 - 24}{2} = \mathbf{2.00} \qquad z_B = \frac{50 - 45}{4} = \mathbf{1.25}$$
+
+El pez A es **más excepcional dentro de su especie**, aunque el pez B sea más largo en centímetros.
+
+:::
+
+## Diagrama de Caja (*Boxplot*)
+
+```{r}
+#| echo: false
+#| fig-align: center
+#| fig-height: 5.2
+#| fig-width: 11
+
+tiempo_vec <- c(10, 15, 18, 20, 25, 28, 32, 65)
+cinco <- fivenum(tiempo_vec)
+ric   <- cinco[4] - cinco[2]
+vallas <- c(cinco[2] - 1.5 * ric, cinco[4] + 1.5 * ric)
+bigote_sup <- max(tiempo_vec[tiempo_vec <= vallas[2]])
+
+ggplot() +
+  annotate("rect", xmin = cinco[2], xmax = cinco[4], ymin = 0.8, ymax = 1.2,
+           fill = "#90CAF9", color = "#1565C0", linewidth = 1.1) +
+  annotate("segment", x = cinco[3], xend = cinco[3], y = 0.8, yend = 1.2,
+           color = "#1565C0", linewidth = 1.8) +
+  annotate("segment", x = c(cinco[1], cinco[4]), xend = c(cinco[2], bigote_sup),
+           y = 1, yend = 1, color = "#1565C0", linewidth = 1.1) +
+  geom_vline(xintercept = vallas, linetype = "dotted", color = "#C62828", linewidth = 1) +
+  geom_point(aes(x = tiempo_vec, y = 0.6), color = "#1565C0", size = 3.5, alpha = 0.7) +
+  annotate("point", x = 65, y = 1, color = "#C62828", size = 5) +
+  annotate("text", x = cinco[2:4], y = c(1.27, 1.40, 1.27),
+           hjust = c(1, 0.5, 0),
+           label = c("Q1 = 16.5", "Mediana = 22.5", "Q3 = 30"),
+           color = "#1565C0", size = 4.2, fontface = "bold") +
+  annotate("text", x = vallas + c(1, -1), y = 1.55, hjust = c(0, 1),
+           label = c("valla inferior = -3.75", "valla superior = 50.25"),
+           color = "#C62828", size = 4) +
+  annotate("text", x = 65, y = 1.15, label = "Atípico: 65 min",
+           color = "#C62828", size = 4.2, fontface = "bold") +
+  annotate("text", x = 8, y = 0.6, label = "datos", color = "#555555",
+           size = 3.8, hjust = 1) +
+  scale_y_continuous(limits = c(0.5, 1.6)) +
+  scale_x_continuous(limits = c(-8, 70), breaks = seq(0, 70, 10)) +
+  theme_minimal(base_size = 13) +
+  labs(x = "Tiempo de reacción (min)", y = "",
+       title = "Diagrama de caja — Tiempo de reacción en el laboratorio") +
+  theme(plot.title = element_text(hjust = 0.5, face = "bold"),
+        axis.text.y = element_blank(),
+        panel.grid.minor = element_blank(), panel.grid.major.y = element_blank())
+```
+
+::: {.fragment style="font-size: 80%;"}
+La caja va de $Q_1$ a $Q_3$; los bigotes llegan hasta el dato más extremo **dentro** de las vallas (10 y 32); el 65 queda fuera de la valla superior y se marca como atípico.
+:::
+
+## Lectura del Diagrama de Caja {style="font-size: 85%;"}
+
+</br>
+
+::: columns
+
+::: {.column width="65%"}
+
+**Caja:** contiene el **50% central** de los datos (de Q1 a Q3).
+
+**Línea interna:** mediana ($Q_2$).
+
+**Bigotes:** se extienden hasta el valor más extremo que **no sea atípico** (dentro de las vallas de Tukey).
+
+**Puntos separados:** datos atípicos más allá de $Q_1 - 1.5 \times RIC$ o $Q_3 + 1.5 \times RIC$.
+
+:::
+
+::: {.column width="35%"}
+
+```{r}
+#| echo: false
+#| fig-height: 5.8
+#| fig-width: 4.8
+
+set.seed(11)
+df_bx2 <- data.frame(
+  y = c(rnorm(40, 75, 10), 120),
+  g = "Grupo"
+)
+
+ggplot(df_bx2, aes(x = g, y = y)) +
+  geom_boxplot(fill = "#90CAF9", color = "#1565C0",
+               outlier.color = "#C62828", outlier.size = 5,
+               width = 0.38, linewidth = 1.2) +
+  annotate("text", x = 1.30, y = median(df_bx2$y),
+           label = "Mediana", hjust = 0, size = 3.8, color = "#333333") +
+  annotate("text", x = 1.30, y = quantile(df_bx2$y, 0.25),
+           label = "Q1", hjust = 0, size = 3.8, color = "#333333") +
+  annotate("text", x = 1.30, y = quantile(df_bx2$y, 0.75),
+           label = "Q3", hjust = 0, size = 3.8, color = "#333333") +
+  annotate("text", x = 1.30, y = 120,
+           label = "Atípico", hjust = 0, size = 3.8,
+           color = "#C62828", fontface = "bold") +
+  annotate("segment",
+           x = 0.69, xend = 0.69,
+           y = quantile(df_bx2$y, 0.25),
+           yend = quantile(df_bx2$y, 0.75),
+           color = "#0077b6", linewidth = 2.5, alpha = 0.3) +
+  annotate("text", x = 0.55, y = 75, label = "RIC",
+           size = 3.5, color = "#0077b6", angle = 90) +
+  theme_minimal(base_size = 12) +
+  labs(x = "", y = "Valor",
+       title = "Partes del\ndiagrama de caja") +
+  theme(axis.text.x  = element_blank(),
+        plot.title   = element_text(hjust = 0.5, face = "bold"),
+        panel.grid.minor = element_blank())
+```
+
+:::
+
+:::
+
+## La forma se ve en la caja {style="font-size: 85%;"}
+
+```{r}
+#| fig-align: center
+#| fig-height: 5
+#| fig-width: 12
+
+set.seed(3)
+df_forma <- bind_rows(
+  data.frame(x = rnorm(400, 5, 1.2),          forma = "Simétrica"),
+  data.frame(x = rgamma(400, 2, 0.8) + 1,     forma = "Asimétrica positiva"),
+  data.frame(x = 9 - rgamma(400, 2, 0.8),     forma = "Asimétrica negativa")
+) |>
+  filter(x > 0, x < 10) |>
+  mutate(forma = factor(forma, levels = c("Asimétrica negativa", "Simétrica",
+                                          "Asimétrica positiva")))
+
+g_h <- ggplot(df_forma, aes(x)) +
+  geom_histogram(bins = 25, fill = "#90CAF9", color = "white") +
+  facet_wrap(~forma) +
+  theme_minimal(base_size = 13) +
+  labs(x = NULL, y = "Frecuencia") +
+  theme(strip.text = element_text(face = "bold", size = 13),
+        panel.grid.minor = element_blank())
+
+g_b <- ggplot(df_forma, aes(x = x, y = "")) +
+  geom_boxplot(fill = "#1565C0", alpha = 0.6, outlier.color = "#C62828") +
+  facet_wrap(~forma) +
+  theme_minimal(base_size = 13) +
+  labs(x = "Valor de la variable", y = NULL) +
+  theme(strip.text = element_blank(), panel.grid.minor = element_blank())
+
+g_h / g_b + plot_layout(heights = c(3, 1))
+```
+
+::: {.fragment}
+Con **asimetría positiva**, la mediana está más cerca de $Q_1$ y el bigote derecho es más largo (y al revés con asimetría negativa). En una distribución **simétrica**, la mediana queda en el centro de la caja.
+:::
+
+# DATOS ATÍPICOS {background-color="#0077b6"}
+
+## ¿Qué es un dato atípico? {style="font-size: 90%;"}
+
+Un **dato atípico** (*outlier*) es una observación que se aleja notablemente del patrón general de los datos.
+
+::: {.fragment}
+
+### Regla de la valla: criterio de Tukey
+
+$$\boxed{\text{Atípico si: } x < Q_1 - 1.5 \times RIC \quad \text{o} \quad x > Q_3 + 1.5 \times RIC}$$
+
+:::
+
+::: {.fragment}
+
+### Aplicación al ejemplo del laboratorio
+
+$$Q_1 = 16.5, \quad Q_3 = 30, \quad RIC = 13.5$$
+
+$$\text{Valla superior} = 30 + 1.5 \times 13.5 = 30 + 20.25 = \mathbf{50.25} \text{ min}$$
+
+Como $65 > 50.25$ → el tiempo de **65 minutos es atípico** $\checkmark$
+
+:::
+
+## Impacto de los datos atípicos {style="font-size: 90%;"}
+
+```{r}
+#| echo: false
+#| fig-align: center
+#| fig-height: 4.8
+#| fig-width: 11
+
+tiempo_v   <- c(10, 15, 18, 20, 25, 28, 32, 65)
+tiempo_sin <- tiempo_v[-8]
+
+df_impact <- bind_rows(
+  data.frame(x = tiempo_v,   grupo = "Con atípico (n = 8)"),
+  data.frame(x = tiempo_sin, grupo = "Sin atípico (n = 7)")
+)
+
+df_stats_i <- df_impact |>
+  group_by(grupo) |>
+  summarise(media = mean(x), mediana = median(x))
+
+ggplot(df_impact, aes(x = grupo, y = x)) +
+  geom_boxplot(fill = "#90CAF9", color = "#1565C0",
+               outlier.color = "#C62828", outlier.size = 4,
+               width = 0.42, linewidth = 1.1) +
+  geom_point(data = df_stats_i,
+             aes(x = grupo, y = media),
+             shape = 18, size = 6, color = "#C62828") +
+  geom_label(data = df_stats_i,
+             aes(x = grupo, y = media,
+                 label = paste0("Media = ", round(media, 1))),
+             nudge_x = 0.32, size = 3.9, color = "#C62828") +
+  geom_label(data = df_stats_i,
+             aes(x = grupo, y = mediana,
+                 label = paste0("Mediana = ", round(mediana, 1))),
+             nudge_x = -0.33, size = 3.9, color = "#2E7D32") +
+  theme_minimal(base_size = 13) +
+  labs(x = "", y = "Tiempo de reacción (min)",
+       title = "Efecto del atípico sobre la media (rombo rojo) y la mediana (línea de la caja)") +
+  theme(plot.title = element_text(hjust = 0.5, face = "bold"),
+        panel.grid.minor = element_blank())
+```
+
+::: {.fragment}
+La **mediana** pasa de 22.5 a 20 (cambio leve). La **media** pasa de 26.6 a 21.1 (cambio importante). La mediana es más **robusta** frente a valores extremos.
+:::
+
+## ¿Qué hacer con los datos atípicos? {style="font-size: 67%;"}
+
+::: {.fragment}
+
+**1. Investigar, no eliminar automáticamente**
+
+- ¿Error de digitación o de calibración del instrumento? → Corregir o eliminar
+- ¿Caso experimental extremo pero real (p. ej. contaminación cruzada)? → Reportar y analizar con cautela
+
+:::
+
+::: {.fragment}
+
+**2. Reportar su presencia**
+
+- Indicar cuántos se detectaron y en qué dirección
+- Si se excluyen, explicar el criterio
+
+:::
+
+::: {.fragment}
+
+**3. Usar estadísticos robustos**
+
+- Prefiera la **mediana** sobre la media
+- Use el **RIC** en lugar de la desviación estándar
+- El **diagrama de caja** los revela de inmediato
+
+:::
+
+::: {.fragment}
+
+::: {.callout-note}
+En un laboratorio, un dato atípico puede ser el **caso experimentalmente más importante**: la réplica que tardó 65 minutos en reaccionar merece atención especial, no ser descartada del análisis.
+:::
+
+:::
+
+## Ejemplo: Plomo en sedimentos {style="font-size: 88%;"}
+
+Se midió la concentración de plomo (µg/g) en **10 muestras** de sedimento de una quebrada:
+
+$$8, \; 12, \; 9, \; 15, \; 11, \; 10, \; 13, \; 35, \; 12, \; 14$$
+
+::: {.fragment}
+
+**(a)** Calcule el resumen de cinco números y el RIC.
+
+**(b)** Use el criterio de Tukey para identificar datos atípicos y dibuje el diagrama de caja.
+
+**(c)** Con $\bar{x} = 13.9$ y $s = 7.72$, calcule el puntaje $z$ de la muestra de 35 µg/g. ¿Qué observa?
+
+:::
+
+## Solución {style="font-size: 72%;"}
+
+::: columns
+
+::: {.column width="52%"}
+
+::: {.fragment}
+
+**(a)** Ordenados: $8,\ 9,\ 10,\ 11,\ 12,\ 12,\ 13,\ 14,\ 15,\ 35$
+
+$\tilde{x} = \dfrac{12+12}{2} = 12$
+
+$Q_1$ = mediana de $\{8, 9, 10, 11, 12\}$ = **10**
+
+$Q_3$ = mediana de $\{12, 13, 14, 15, 35\}$ = **14**
+
+Cinco números: **8, 10, 12, 14, 35**; $\ RIC = 14 - 10 = \mathbf{4}$
+
+:::
+
+::: {.fragment}
+
+**(b)** Vallas: $10 - 1.5(4) = \mathbf{4}$ y $14 + 1.5(4) = \mathbf{20}$
+
+$35 > 20$ → **35 µg/g es atípico**. Bigotes: de 8 a 15.
+
+:::
+
+:::
+
+::: {.column width="48%"}
+
+```{r}
+#| fig-height: 3.6
+#| fig-width: 5.6
+pb <- c(8, 12, 9, 15, 11, 10, 13, 35, 12, 14)
+ggplot(data.frame(pb), aes(x = pb, y = "")) +
+  geom_boxplot(fill = "#90CAF9", color = "#1565C0", outlier.color = "#C62828",
+               outlier.size = 4, width = 0.5, coef = 1.5) +
+  geom_vline(xintercept = c(4, 20), linetype = "dotted", color = "#C62828") +
+  theme_minimal(base_size = 13) +
+  labs(x = "Plomo (µg/g)", y = NULL) +
+  theme(panel.grid.minor = element_blank())
+```
+
+:::
+
+:::
+
+::: {.fragment}
+
+**(c)** $z = \dfrac{35 - 13.9}{7.72} \approx \mathbf{2.73}$: está casi a 3 desviaciones estándar. Ojo: el propio 35 **infla** $\bar{x}$ y $s$ (sin él, $\bar{x} = 11.6$ y $s = 2.30$), por eso el criterio de Tukey, basado en cuartiles, lo detecta con más claridad.
+
+:::
+
+## Tu turno: Posición, caja y atípicos {style="font-size: 88%;"}
+
+::: {.callout-warning title="Tu turno"}
+
+**Ejercicio.** Se registró el tiempo (días) hasta la floración de 12 plantas:
+
+$$30, \; 34, \; 35, \; 36, \; 37, \; 38, \; 38, \; 39, \; 40, \; 41, \; 43, \; 55$$
+
+Calcule el resumen de cinco números, el RIC y las vallas de Tukey. ¿Hay datos atípicos? Dibuje el diagrama de caja.
+:::
+
+## Solución {style="font-size: 75%;"}
+
+::: columns
+
+::: {.column width="55%"}
+
+::: {.fragment}
+
+$n = 12$: $\ \tilde{x} = \dfrac{x_{(6)} + x_{(7)}}{2} = \dfrac{38+38}{2} = \mathbf{38}$
+
+$Q_1$ = mediana de $\{30, 34, 35, 36, 37, 38\} = \dfrac{35+36}{2} = \mathbf{35.5}$
+
+$Q_3$ = mediana de $\{38, 39, 40, 41, 43, 55\} = \dfrac{40+41}{2} = \mathbf{40.5}$
+
+Cinco números: **30, 35.5, 38, 40.5, 55**; $RIC = \mathbf{5}$
+
+:::
+
+::: {.fragment}
+
+Vallas: $35.5 - 7.5 = \mathbf{28}$ y $40.5 + 7.5 = \mathbf{48}$
+
+**55 días es atípico** (> 48). El 30 no lo es (≥ 28). Bigotes: de 30 a 43.
+
+:::
+
+:::
+
+::: {.column width="45%"}
+
+```{r}
+#| fig-height: 3.6
+#| fig-width: 5.4
+fl <- c(30, 34, 35, 36, 37, 38, 38, 39, 40, 41, 43, 55)
+ggplot(data.frame(fl), aes(x = fl, y = "")) +
+  geom_boxplot(fill = "#90CAF9", color = "#1565C0", outlier.color = "#C62828",
+               outlier.size = 4, width = 0.5) +
+  geom_vline(xintercept = c(28, 48), linetype = "dotted", color = "#C62828") +
+  theme_minimal(base_size = 13) +
+  labs(x = "Días hasta la floración", y = NULL) +
+  theme(panel.grid.minor = element_blank())
+```
+
+:::
+
+:::
+
+::: {.fragment}
+
+**Interpretación:** la mitad central de las plantas florece entre los días 35.5 y 40.5; una planta tardó 55 días, mucho más que el resto (¿enfermedad, sombra, otra variedad?).
+
+:::
+
+
+# TABLAS CRUZADAS {background-color="#0077b6"}
+
+## Tabla de Contingencia {style="font-size: 90%;"}
+
+Una **tabla de contingencia** muestra la distribución conjunta de **dos variables categóricas**.
+
+::: {.fragment}
+
+### Ejemplo
+
+70 muestras de agua analizadas. Variables: **Fuente** × **Nivel de contaminación**
+
+</br>
+
+<div style="font-size:0.85em;">
+
+| | Alta | Media | Baja | **Total** |
+|:---|:---:|:---:|:---:|:---:|
+| **Río** | 12 | 10 | 8 | **30** |
+| **Pozo** | 22 | 10 | 8 | **40** |
+| **Total** | **34** | **20** | **16** | **70** |
+
+</div>
+
+:::
+
+::: {.fragment}
+
+> Esta tabla muestra **frecuencias absolutas** (conteos). Para comparar grupos necesitamos **frecuencias relativas** (porcentajes por fila o columna).
+
+:::
+
+## Perfiles Fila {style="font-size: 85%;"}
+
+Los **perfiles fila** expresan los porcentajes **dentro de cada fila** (respecto al total de esa fila).
+
+$$\text{Perfil fila}_{ij} = \frac{n_{ij}}{n_{i \cdot}} \times 100\%$$
+
+::: {.fragment}
+
+<div style="font-size:0.85em;">
+
+| | Alta | Media | Baja | **Total** |
+|:---|:---:|:---:|:---:|:---:|
+| **Río** | 12/30 = **40.0%** | 10/30 = **33.3%** | 8/30 = **26.7%** | 100% |
+| **Pozo** | 22/40 = **55.0%** | 10/40 = **25.0%** | 8/40 = **20.0%** | 100% |
+
+</div>
+
+:::
+
+::: {.fragment}
+
+**Interpretación:** La contaminación alta es más frecuente en muestras de pozo (55%) que en muestras de río (40%). Las muestras de río presentan mayor proporción de contaminación baja (26.7% vs 20.0%).
+
+> Los perfiles fila responden: **¿Cómo se distribuye el nivel de contaminación dentro de cada fuente?**
+
+:::
+
+## Perfiles Columna {style="font-size: 79%;"}
+
+Los **perfiles columna** expresan los porcentajes **dentro de cada columna** (respecto al total de esa columna).
+
+$$\text{Perfil columna}_{ij} = \frac{n_{ij}}{n_{\cdot j}} \times 100\%$$
+
+::: {.fragment}
+
+<div style="font-size:0.85em;">
+
+| | Alta | Media | Baja |
+|:---|:---:|:---:|:---:|
+| **Río** | 12/34 = **35.3%** | 10/20 = **50.0%** | 8/16 = **50.0%** |
+| **Pozo** | 22/34 = **64.7%** | 10/20 = **50.0%** | 8/16 = **50.0%** |
+| **Total** | **100%** | **100%** | **100%** |
+
+</div>
+
+:::
+
+::: {.fragment}
+
+**Interpretación:** Entre las muestras con contaminación **alta**, el 64.7% provienen de pozo. En los niveles media y baja, la distribución es exactamente 50/50 entre fuentes.
+
+> Los perfiles columna responden: **¿Cómo se compone cada nivel de contaminación según la fuente?**
+
+:::
+
+## Visualización de la Tabla Cruzada
+
+```{r}
+#| echo: false
+#| fig-align: center
+#| fig-height: 5.5
+#| fig-width: 11
+
+df_cross <- data.frame(
+  fuente = c(rep("Río", 30), rep("Pozo", 40)),
+  contaminacion = c(rep("Alta", 12), rep("Media", 10), rep("Baja", 8),
+                    rep("Alta", 22), rep("Media", 10), rep("Baja", 8))
+) |>
+  mutate(contaminacion = factor(contaminacion, levels = c("Baja", "Media", "Alta")))
+
+df_pct <- df_cross |>
+  count(fuente, contaminacion) |>
+  group_by(fuente) |>
+  mutate(pct   = n / sum(n) * 100,
+         label = paste0(round(pct, 1), "%"))
+
+ggplot(df_pct, aes(x = fuente, y = pct, fill = contaminacion)) +
+  geom_col(position = "fill", color = "white", linewidth = 0.5) +
+  geom_text(aes(label = label),
+            position = position_fill(vjust = 0.5),
+            size = 5, fontface = "bold", color = "white") +
+  scale_fill_manual(values = c("#EF9A9A", "#90CAF9", "#1565C0"),
+                    name = "Contaminación") +
+  scale_y_continuous(labels = scales::percent_format()) +
+  theme_minimal(base_size = 14) +
+  labs(x = "", y = "Proporción",
+       title = "Perfiles fila: distribución del nivel de contaminación por fuente",
+       subtitle = "Diagrama de barras apiladas") +
+  theme(plot.title    = element_text(hjust = 0.5, face = "bold"),
+        plot.subtitle = element_text(hjust = 0.5, color = "#555555"),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor   = element_blank())
+```
+
+
+## Ejemplo: Proveedores y control de calidad {style="font-size: 85%;"}
+
+Un laboratorio clasifica **150 lotes** de un reactivo según el proveedor y el resultado del control de calidad:
+
+| Proveedor | Conforme | No conforme | **Total** |
+|:---------:|:--------:|:-----------:|:---------:|
+| A | 45 | 5 | **50** |
+| B | 52 | 8 | **60** |
+| C | 30 | 10 | **40** |
+| **Total** | **127** | **23** | **150** |
+
+::: {.fragment}
+
+**(a)** ¿Qué porcentaje de los lotes de cada proveedor es no conforme? ¿Qué perfil usó?
+
+**(b)** De los lotes no conformes, ¿qué porcentaje proviene de cada proveedor? ¿Qué perfil usó?
+
+**(c)** ¿Qué proveedor recomendaría revisar? Justifique.
+
+:::
+
+## Solución {style="font-size: 80%;"}
+
+::: {.fragment}
+
+**(a)** **Perfiles fila** (dentro de cada proveedor):
+
+$$A: \frac{5}{50} = \mathbf{10\%} \qquad B: \frac{8}{60} \approx \mathbf{13.3\%} \qquad C: \frac{10}{40} = \mathbf{25\%}$$
+
+:::
+
+::: {.fragment}
+
+**(b)** **Perfil columna** de "No conforme" (dentro de los 23 lotes no conformes):
+
+$$A: \frac{5}{23} \approx \mathbf{21.7\%} \qquad B: \frac{8}{23} \approx \mathbf{34.8\%} \qquad C: \frac{10}{23} \approx \mathbf{43.5\%}$$
+
+:::
+
+::: {.fragment}
+
+**(c)** El proveedor **C**: uno de cada cuatro de sus lotes falla (25%), más del doble que A. Además aporta el 43.5% de los rechazos, aunque solo entrega el 26.7% de los lotes (40/150).
+
+> Para **comparar proveedores** se usan los perfiles **fila**; el perfil columna describe la **composición** de los rechazos y depende de cuántos lotes entrega cada uno.
+
+:::
+
+## Tu turno: Tablas cruzadas {style="font-size: 85%;"}
+
+::: {.callout-warning title="Tu turno"}
+
+**Ejercicio.** Se clasificaron 120 rocas de dos zonas de una cuenca:
+
+| Zona | Ígnea | Sedimentaria | Metamórfica | Total |
+|:----:|:-----:|:------------:|:-----------:|:-----:|
+| Norte | 18 | 22 | 10 | 50 |
+| Sur | 12 | 28 | 30 | 70 |
+
+a) ¿Qué porcentaje de las rocas de la zona sur es metamórfica? b) De las rocas ígneas, ¿qué porcentaje viene del norte? c) ¿Qué zona tiene mayor proporción de rocas sedimentarias?
+
+:::
+
+## Solución {style="font-size: 85%;"}
+
+::: {.fragment}
+
+**a)** Perfil fila (zona sur): $\dfrac{30}{70} \approx \mathbf{42.9\%}$ de las rocas del sur son metamórficas.
+
+:::
+
+::: {.fragment}
+
+**b)** Perfil columna (ígneas): total de ígneas $= 18 + 12 = 30$ → $\dfrac{18}{30} = \mathbf{60\%}$ provienen del norte.
+
+:::
+
+::: {.fragment}
+
+**c)** Perfiles fila de sedimentarias: Norte $\dfrac{22}{50} = \mathbf{44\%}$; Sur $\dfrac{28}{70} = \mathbf{40\%}$.
+
+El **norte** tiene mayor proporción de sedimentarias, aunque el sur tenga más rocas sedimentarias en número (28 > 22). Comparar **conteos** entre grupos de distinto tamaño lleva a conclusiones erradas.
+
+:::
+
+
+# GRACIAS! {background-color="#ddf3ff"}
+
+# Citación y derechos de autor
+
+Este material ha sido creado por [Giovany Babativa-Márquez](https://github.com/jgbabativam) y es de libre distribución bajo la licencia [Creative Commons Attribution-ShareAlike 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+
+Cualquier copia parcial o total de este material, debe citar la fuente como:
+
+> Babativa-Márquez, J.G. *Diapositivas del curso de Bioestadística*. URL: https://jgbabativam.github.io/EstadFundSalud/
