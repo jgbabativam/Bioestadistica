@@ -64,7 +64,7 @@ p_load(ggplot2, dplyr, tidyr, patchwork)
 
 <br><br>
 
-1. Examen 4 (Pruebas de hipótesis): **jueves 26 de noviembre**
+1. Examen 4 (Pruebas de hipótesis): **jueves 03 de diciembre**
 2. Examen 5 (Intervalos de confianza): jueves 10 de diciembre
 
 <br>
